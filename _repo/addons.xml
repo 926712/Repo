@@ -187,7 +187,7 @@
         </extension>
     </addon>
 
-<addon id="script.extendedinfo" name="Extended Info Mod" version="5.6.4" provider-name="Original work by phil65">
+<addon id="script.extendedinfo" name="Extended Info Mod" version="5.6.6" provider-name="Original work by phil65">
   <requires>
     <import addon="xbmc.python"                     version="2.19.0"/>
     <import addon="plugin.program.super.favourites" version="1.0.48"/>
