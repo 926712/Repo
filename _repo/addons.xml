@@ -128,7 +128,7 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.projectx" name="Project X" version="1.0.5" provider-name="Mr X">
+<addon id="plugin.video.projectx" name="Project X" version="1.0.6" provider-name="Mr X">
     <requires>
         <import addon="xbmc.python" version="2.19.0" />
         <import addon="script.module.universalscrapers" version="1.0.0" />
@@ -156,7 +156,7 @@
 
 <addon
   id="plugin.video.SportsDevil"
-  version="1.0"
+  version="2018.01.19x"
   name="SportsDevil"
   provider-name="SportsDevil">
   <requires>
@@ -188,7 +188,7 @@
     <forum>http://forums.koditips.com/index.php?topic=11.0</forum>
     <website>http://forums.koditips.com/index.php?topic=11.0</website>
     <source>http://forums.koditips.com/index.php?topic=11.0</source>
-    <news></news>
+    <news>version="2018.01.19x" (mirror@xvbmc)</news>
   <assets>
     <icon>icon.png</icon>
     <fanart>fanart.jpg</fanart>
@@ -196,7 +196,7 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.uranus" version="2018.02.20" name="Uranus" provider-name="Uranus">
+<addon id="plugin.video.uranus" version="2018.02.22" name="Uranus" provider-name="Uranus">
     <requires>
         <import addon="xbmc.python" version="2.19.0"/>
         <import addon="script.uranus.artwork" version="2018.02.20"/>
@@ -363,7 +363,7 @@
   </extension>
 </addon>
 
-<addon id="script.module.universalscrapers" name="Universal Scrapers" version="1.0.4.5" provider-name="Team Universal">
+<addon id="script.module.universalscrapers" name="Universal Scrapers" version="1.0.5" provider-name="Team Universal">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
         <import addon="script.module.beautifulsoup" version="3.2.1"/>
@@ -387,5 +387,20 @@
             <license>GPL v3</license>
             <source>https://</source>
         </extension>
+</addon>
+
+<addon id="script.uranus.artwork" version="2018.02.20" name="Uranus Artwork" provider-name="Uranus">
+	<requires>
+		<import addon="xbmc.python" version="2.19.0"/>
+	</requires>
+	<extension point="xbmc.python.script" library="default.py">
+		<provides>executable</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary>Themes for the Uranus Addon</summary>
+		<description></description>
+		<platform>all</platform>
+		<news>Added new artwork</news>
+	</extension>
 </addon>
 </addons>
