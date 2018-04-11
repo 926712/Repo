@@ -196,34 +196,6 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.uranus" version="2018.02.22" name="Uranus" provider-name="Uranus">
-    <requires>
-        <import addon="xbmc.python" version="2.19.0"/>
-        <import addon="script.uranus.artwork" version="2018.02.20"/>
-        <import addon="script.module.resolveurl" />
-        <import addon="script.module.metahandler" version="2.9.0"/>
-        <import addon="script.module.requests" version="2.12.4"/>
-        <import addon="script.module.beautifulsoup" version="3.2.1"/>
-        <import addon="script.module.schism.common" version="2017.06.08"/>
-        <import addon="script.module.futures" version="2.2.0"/>
-        <import addon="script.module.universalscrapers" version="1.0.0"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="uranus.py">
-        <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-        <summary lang="en">Uranus movies and TV shows</summary>
-        <description lang="en">Watch movies and TV shows in high quality! Please note that this addon is not an official part of the Kodi media player and is therefore not to be mentioned within Kodi's official support channels. This addon has nothing to do with the media player itself, nor its intended use, it is simply a third party plugin which has been added to your system.</description>
-        <disclaimer lang="en">The author does not host any content, nor is he affiliated with any of the content providers.</disclaimer>
-        <platform>all</platform>
-        <news>Fork of Elysium credit to original Devs / Replaced more lists / Fixed channels / Added resolution to scraper dialog (thanks to Mr Blamo)</news>
-        <assets>
-            <icon>icon.png</icon>
-            <fanart>fanart.jpg</fanart>
-        </assets>
-    </extension>
-</addon>
-
 <addon id="repository.catchup4kodi" name="LittleWiz Repo" version="1.4" provider-name="LittleWiz">
 	<extension point="xbmc.addon.repository" name="LittleWiz Repo">
 		<dir>
@@ -272,12 +244,23 @@
         </extension>
     </addon>
 
-<addon id="repository.xvbmc" name=" [COLOR lime][B]X[/B][/COLOR]vBMC (Add-ons) REPOsitory" version="4.2.0" provider-name="XvBMC Nederland">
+<addon id="repository.xvbmc" name=" [COLOR lime][B]X[/B][/COLOR]vBMC (Add-ons) REPOsitory" version="4.2.1" provider-name="XvBMC Nederland">
     <extension point="xbmc.addon.repository" name=" [COLOR lime][B]X[/B][/COLOR]vBMC (Add-ons) REPOsitory">
         <dir>
+            <info compressed="false">https://raw.githubusercontent.com/teamuniversal/scrapers/master/_modules4all/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/teamuniversal/scrapers/master/_modules4all/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/teamuniversal/scrapers/master/_modules4all/zips/</datadir>
+            <hashes>false</hashes>
+        </dir>
+    <!--<dir>
             <info compressed="false">https://raw.githubusercontent.com/noobsandnerds/modules4all/master/zips/addons.xml</info>
             <checksum>https://raw.githubusercontent.com/noobsandnerds/modules4all/master/zips/addons.xml.md5</checksum>
             <datadir zip="true">https://raw.githubusercontent.com/noobsandnerds/modules4all/master/zips/</datadir>
+        </dir>-->
+        <dir>
+            <info compressed="false">https://raw.githubusercontent.com/jsergio123/zips/master/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/jsergio123/zips/master/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/jsergio123/zips/master/</datadir>
         </dir>
         <dir>
             <info compressed="false">https://github.com/tvaddonsco/tva-resolvers-repo/raw/master/addons.xml</info>
@@ -319,11 +302,12 @@
         <forum>https://www.fb.com/groups/XvBMCnederland/</forum>
         <website>http://bit.ly/XvBMC-NL</website>
         <source>https://archive.org/download/repository.xvbmc/</source>
-        <news>Release v4.2.0</news>
+        <size>946176</size>
+        <news>Release v4.2.1 Mo' XvBMC VoOdOo...</news>
         <assets>
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
-            <screenshot></screenshot>
+            <screenshot>xbmc.png</screenshot>
         </assets>
     </extension>
 </addon>
@@ -387,20 +371,5 @@
             <license>GPL v3</license>
             <source>https://</source>
         </extension>
-</addon>
-
-<addon id="script.uranus.artwork" version="2018.02.20" name="Uranus Artwork" provider-name="Uranus">
-	<requires>
-		<import addon="xbmc.python" version="2.19.0"/>
-	</requires>
-	<extension point="xbmc.python.script" library="default.py">
-		<provides>executable</provides>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<summary>Themes for the Uranus Addon</summary>
-		<description></description>
-		<platform>all</platform>
-		<news>Added new artwork</news>
-	</extension>
 </addon>
 </addons>
