@@ -57,6 +57,38 @@
 
 </addon>
 
+<addon id="plugin.video.bbciplayer" name="BBC iPlayer" version="0.5.9" provider-name="LittleWiz">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+	<import addon="repository.catchup4kodi" />
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">BBC iPlayer</summary>
+    <description lang="en">BBC iPlayer</description>
+    <platform>all</platform>
+    <news>Fixed search</news>
+  </extension>
+</addon>
+
+<addon id="plugin.video.itv" name="ITV" version="2.4.9" provider-name="LittleWiz">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+	<import addon="repository.catchup4kodi" />
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <summary>Plugin for ITV Live Tv Player</summary>
+    <description>ITV Player Front End</description>
+    <news>Fixed regex so video links are now being picked up correctly</news>
+  </extension>
+</addon>
+
 <addon id="plugin.video.metalliq" name="MetalliQ" version="2.1.15" provider-name="MetalliQ">
 	<requires>
 		<import addon="xbmc.python" version="2.19.0"/>
@@ -154,6 +186,21 @@
 		<source></source>
 		<video_guide></video_guide>
     </extension>
+</addon>
+
+<addon id="plugin.video.uktvplay" name="UKTV Play" version="0.0.7" provider-name="catchup4kodi">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+	<import addon="repository.catchup4kodi" />
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">UKTV Play</summary>
+    <description lang="en">Watch All Your Favourite UK TV from Dave,Really,Yesterday and Drama</description>
+    <platform>all</platform>
+  </extension>
 </addon>
 
 <addon id="repository.catchup4kodi" name="LittleWiz Repo" version="1.4" provider-name="LittleWiz">
