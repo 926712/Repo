@@ -223,7 +223,7 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.projectx" name="Project X" version="2.1.4" provider-name="Mr X">
+<addon id="plugin.video.projectx" name="Project X" version="2.1.5" provider-name="Mr X">
     <requires>
 	    <import addon="repository.xvbmc" />
 	    <import addon="repository.catchup4kodi" />
