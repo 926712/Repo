@@ -223,7 +223,7 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.projectx" name="Project X" version="2.1.5" provider-name="Mr X">
+<addon id="plugin.video.projectx" name="Project X" version="2.1.6" provider-name="Mr X">
     <requires>
 	    <import addon="repository.xvbmc" />
 	    <import addon="repository.catchup4kodi" />
@@ -236,6 +236,7 @@
         <import addon="script.module.xmltodict" version="0.9.0" />
         <!--<import addon="script.module.web-pdb" version="1.0"/>-->
         <import addon="script.module.resolveurl" />
+		<!--<import addon="script.module.urlresolver" />-->
     </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>video</provides>
@@ -248,6 +249,7 @@
         <website></website>
 		<source></source>
 		<video_guide></video_guide>
+		<reuselanguageinvoker>false</reuselanguageinvoker>
     </extension>
 </addon>
 
@@ -482,30 +484,6 @@
   <extension point="xbmc.addon.metadata">
     <summary lang="en_gb">SwiftStreamz APK</summary>
     <description lang="en_gb">SwiftStreamz APK</description>
-    <disclaimer lang="en_gb"></disclaimer>
-    <language></language>
-    <platform>all</platform>
-    <license></license>
-    <forum></forum>
-    <website></website>
-    <email></email>
-    <source></source>
-  </extension>
-</addon>
-
-<addon id="script.module.uktv.now" name="UKTV Now" version="1.0" provider-name="RACC">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-    <import addon="script.module.livestreamer" />
-    <import addon="script.module.requests" />
-    <import addon="script.module.routing" />
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="addon.py">
-    <provides>all</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en_gb">UKTV Now</summary>
-    <description lang="en_gb">UKTV Now</description>
     <disclaimer lang="en_gb"></disclaimer>
     <language></language>
     <platform>all</platform>
