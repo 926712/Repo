@@ -223,9 +223,8 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.projectx" name="Project X" version="2.1.6" provider-name="Mr X">
+<addon id="plugin.video.projectx" name="Project X" version="2.1.7" provider-name="Mr X">
     <requires>
-	    <import addon="repository.xvbmc" />
 	    <import addon="repository.catchup4kodi" />
         <import addon="xbmc.python" version="2.19.0" />
         <import addon="script.module.universalscrapers" version="1.0.0" />
@@ -234,6 +233,7 @@
         <import addon="script.module.requests" version="2.9.1" />
         <import addon="script.module.addon.common" version="2.0.0" />
         <import addon="script.module.xmltodict" version="0.9.0" />
+		<import addon="script.module.dateutil" />
         <!--<import addon="script.module.web-pdb" version="1.0"/>-->
         <import addon="script.module.resolveurl" />
 		<!--<import addon="script.module.urlresolver" />-->
@@ -251,6 +251,46 @@
 		<video_guide></video_guide>
 		<reuselanguageinvoker>false</reuselanguageinvoker>
     </extension>
+</addon>
+
+<addon
+  id="plugin.video.SportsDevil"
+  version="1.1.1"
+  name="SportsDevil"
+  provider-name="SportsDevil">
+  <requires>
+   <import addon="xbmc.python" version="2.14.0"/>
+   <import addon="script.module.dateutil" />
+   <import addon="script.module.simplejson" />
+   <import addon="script.module.six" />
+   <import addon="script.module.requests" />
+   <import addon="script.module.streamlink.base" />
+   <import addon="script.video.F4mProxy" />
+   <import addon="plugin.video.f4mTester" />
+   <!-- <import addon="script.module.livestreamer" />  *Changed-2-StreamLink* -->
+   <!-- *broken* <import addon="repository.unofficialsportsdevil" version="1.0.0" optional="true"/> *broken* -->
+  </requires>
+  <extension
+    point="xbmc.python.pluginsource"
+    library="default.py">
+  </extension>
+  <!-- <extension point="xbmc.service" library="service/proxy_service.py" start="startup"/> *Changed-2-StreamLink* -->
+  <extension point="xbmc.service" library="service/streamlink_proxy.py" start="startup" />
+  <extension point="xbmc.addon.metadata">
+    <summary>Play videos of different ad-financed sports streaming sites (XvBMC-NL acts only as a mirror for SportsDevil).</summary>
+    <description>Play videos of different ad-financed sports streaming sites (XvBMC-NL acts only as a mirror for SportsDevil).</description>
+    <disclaimer>SportsDevil does not provide any streams of its own; stream quality, content and copyright are responsibility of the ad-financed source web site. For updates - check the readme (XvBMC-NL acts only as a mirror for SportsDevil).</disclaimer>
+    <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+    <platform>all</platform>
+    <forum>http://forums.koditips.com/index.php?topic=11.0</forum>
+    <website>http://forums.koditips.com/index.php?topic=11.0</website>
+    <source>http://forums.koditips.com/index.php?topic=11.0</source>
+    <news>version="2018.01.19x" (mirror@xvbmc)</news>
+  <assets>
+    <icon>icon.png</icon>
+    <fanart>fanart.jpg</fanart>
+  </assets>
+  </extension>
 </addon>
 
 <addon id="plugin.video.uktvplay" name="UKTV Play" version="0.0.7" provider-name="catchup4kodi">
@@ -316,74 +356,6 @@
         </extension>
     </addon>
 
-<addon id="repository.xvbmc" name=" [COLOR lime][B]X[/B][/COLOR]vBMC (Add-ons) REPOsitory" version="4.2.1" provider-name="XvBMC Nederland">
-    <extension point="xbmc.addon.repository" name=" [COLOR lime][B]X[/B][/COLOR]vBMC (Add-ons) REPOsitory">
-        <dir>
-            <info compressed="false">https://raw.githubusercontent.com/teamuniversal/scrapers/master/_modules4all/zips/addons.xml</info>
-            <checksum>https://raw.githubusercontent.com/teamuniversal/scrapers/master/_modules4all/zips/addons.xml.md5</checksum>
-            <datadir zip="true">https://raw.githubusercontent.com/teamuniversal/scrapers/master/_modules4all/zips/</datadir>
-            <hashes>false</hashes>
-        </dir>
-    <!--<dir>
-            <info compressed="false">https://raw.githubusercontent.com/noobsandnerds/modules4all/master/zips/addons.xml</info>
-            <checksum>https://raw.githubusercontent.com/noobsandnerds/modules4all/master/zips/addons.xml.md5</checksum>
-            <datadir zip="true">https://raw.githubusercontent.com/noobsandnerds/modules4all/master/zips/</datadir>
-        </dir>-->
-        <dir>
-            <info compressed="false">https://raw.githubusercontent.com/jsergio123/zips/master/addons.xml</info>
-            <checksum>https://raw.githubusercontent.com/jsergio123/zips/master/addons.xml.md5</checksum>
-            <datadir zip="true">https://raw.githubusercontent.com/jsergio123/zips/master/</datadir>
-        </dir>
-        <dir>
-            <info compressed="false">https://github.com/tvaddonsco/tva-resolvers-repo/raw/master/addons.xml</info>
-            <checksum>https://github.com/tvaddonsco/tva-resolvers-repo/raw/master/addons.xml.md5</checksum>
-            <datadir zip="true">https://github.com/tvaddonsco/tva-resolvers-repo/raw/master/zips/</datadir>
-        </dir>
-        <dir>
-            <info compressed="false">https://raw.githubusercontent.com/XvBMC/repository.xvbmc/master/Dependencies/xvbmc-addons.xml</info>
-            <checksum>https://raw.githubusercontent.com/XvBMC/repository.xvbmc/master/Dependencies/xvbmc-addons.xml.md5</checksum>
-            <datadir zip="true">https://raw.githubusercontent.com/XvBMC/repository.xvbmc/master/Dependencies/zips/</datadir>
-            <hashes>false</hashes>
-        </dir>
-        <dir>
-            <info compressed="false">https://raw.githubusercontent.com/XvBMC/repository.xvbmc/master/Look-and-Feel/xvbmc-addons.xml</info>
-            <checksum>https://raw.githubusercontent.com/XvBMC/repository.xvbmc/master/Look-and-Feel/xvbmc-addons.xml.md5</checksum>
-            <datadir zip="true">https://raw.githubusercontent.com/XvBMC/repository.xvbmc/master/Look-and-Feel/zips/</datadir>
-            <hashes>false</hashes>
-        </dir>
-        <dir>
-            <info compressed="false">https://raw.githubusercontent.com/XvBMC/repository.xvbmc/master/REPOsitory/xvbmc-addons.xml</info>
-            <checksum>https://raw.githubusercontent.com/XvBMC/repository.xvbmc/master/REPOsitory/xvbmc-addons.xml.md5</checksum>
-            <datadir zip="true">https://raw.githubusercontent.com/XvBMC/repository.xvbmc/master/REPOsitory/zips/</datadir>
-            <hashes>false</hashes>
-        </dir>
-            <info compressed="false">https://raw.githubusercontent.com/XvBMC/repository.xvbmc/master/xvbmc-addons.xml</info>
-            <checksum>https://raw.githubusercontent.com/XvBMC/repository.xvbmc/master/xvbmc-addons.xml.md5</checksum>
-            <datadir zip="true">https://raw.githubusercontent.com/XvBMC/repository.xvbmc/master/zips/</datadir>
-            <hashes>false</hashes>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-        <summary lang="en">XvBMC The Netherlands (Add-ons) REPOsitory #DUTCH #NL</summary>
-        <summary lang="nl">XvBMC Nederland (Add-ons) REPOsitory #NL #DUTCH</summary>
-        <description lang="en">XvBMC The Netherlands (Add-ons) Repository | XvBMC-NL (Add-on) Depot  |  be sure to check out our FB-page: http://bit.ly/XvBMC-NL !!! USE AT YOUR OWN RISK !!!</description>
-        <description lang="nl">XvBMC Nederland (Add-ons) Repository | XvBMC-NL (Add-on) Depot  |  en volg zeker ook onze Facebook pagina: http://bit.ly/XvBMC-NL !!! USE AT YOUR OWN RISK !!!</description>
-        <disclaimer lang="en">The owners and submitters to this repository do not host or distribute any of the content displayed by these add-ons nor do they have any affiliation with its content. Please Read: https://raw.githubusercontent.com/XvBMC/repository.xvbmc/master/LICENSE ...just because you can  ;)  !!! USE-AT-YOUR-OWN-RISK !!!</disclaimer>
-        <disclaimer lang="nl">The owners and submitters to this repository do not host or distribute any of the content displayed by these add-ons nor do they have any affiliation with its content. Please Read: https://raw.githubusercontent.com/XvBMC/repository.xvbmc/master/LICENSE ...just because you can  ;)  !!! USE-AT-YOUR-OWN-RISK !!!</disclaimer>
-        <platform>all</platform>
-        <license>GNU GENERAL PUBLIC LICENSE. Version 3, June 2007</license>
-        <forum>https://www.fb.com/groups/XvBMCnederland/</forum>
-        <website>http://bit.ly/XvBMC-NL</website>
-        <source>https://archive.org/download/repository.xvbmc/</source>
-        <size>946176</size>
-        <news>Release v4.2.1 Mo' XvBMC VoOdOo...</news>
-        <assets>
-            <icon>icon.png</icon>
-            <fanart>fanart.jpg</fanart>
-            <screenshot>xbmc.png</screenshot>
-        </assets>
-    </extension>
-</addon>
-
 <addon id="script.extendedinfo" name="Extended Info Mod" version="9.6.7" provider-name="Original work by phil65">
   <requires>
     <import addon="xbmc.python"                     version="2.19.0"/>
@@ -419,7 +391,7 @@
   </extension>
 </addon>
 
-<addon id="script.module.universalscrapers" name="Universal Scrapers" version="1.0.9.1" provider-name="Team Universal">
+<addon id="script.module.universalscrapers" name="Universal Scrapers" version="1.0.9.6" provider-name="Team Universal">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
         <import addon="script.module.beautifulsoup" version="3.2.1"/>
