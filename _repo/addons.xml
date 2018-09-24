@@ -223,7 +223,7 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.metalliq-forqed" name="[COLOR limegreen]M[/COLOR]etalli[COLOR limegreen]Q[/COLOR] 4[COLOR limegreen]Q[/COLOR]ed" version="6.0.17krypton" provider-name="[COLOR lime][B]Serious Fork[/B][/COLOR]">
+<addon id="plugin.video.metalliq-forqed" name="MetalliQ4Qed" version="6.0.17" provider-name="Serious Fork">
 	<requires>
 		<import addon="xbmc.python" version="2.19.0"/>
 		<import addon="script.module.requests" version="2.9.1"/>
@@ -237,7 +237,7 @@
 	<extension point="kodi.context.item">
 		<menu id="kodi.core.main">
 			<menu>
-				<label>[COLOR lime]M[/COLOR]etalli[COLOR lime]Q[/COLOR] For[COLOR lime]Q[/COLOR]ed</label>
+				<label>MetalliQ ForQed</label>
 				<item library="context_toggle.py">
 					<label>Preferred toggle</label>
 					<visible>!System.HasAddon(context.metalliq-forqed) + !Skin.HasSetting(Toggling)</visible>
@@ -265,7 +265,7 @@
 		<platform>all</platform>
 		<language></language>
 		<summary lang="en">TMDb, TVDb, Trakt, AudioDb, LastFM Browser</summary>
-		<description lang="en">[COLOR lime]I don’t take any credits for this add-on. Without the original developers this add-on would never exist. Thanks for all they have brought to the community.[/COLOR][CR]Browse The MovieDb, The TVDb, Trakt, The AudioDb and LastFM and pass info along to library or an addon to try and play it. Needs player-files and the appropriate addon to actually play.</description>
+		<description lang="en">I don’t take any credits for this add-on. Without the original developers this add-on would never exist. Thanks for all they have brought to the community.[CR]Browse The MovieDb, The TVDb, Trakt, The AudioDb and LastFM and pass info along to library or an addon to try and play it. Needs player-files and the appropriate addon to actually play.</description>
 		<summary lang="nl">Blader door TMDb, TVDb, Trakt, AudioDb en LastFM</summary>
 		<description lang="nl">Blader door The MovieDb, The TVDb, Trakt, The AudioDb en LastFM en geef info door aan de bibliotheek of een addon om te proberen het af te spelen. Vereist player-bestanden en de bijbehorende addon om daadwerkelijk af te kunnen spelen.</description>
 		<supportedcontent>
@@ -434,7 +434,7 @@
         </extension>
     </addon>
 
-<addon id="script.extendedinfo" name="[COLOR limegreen]EIM[/COLOR]4[COLOR limegreen]Q[/COLOR]ed" version="100.0.3" provider-name="[COLOR lime][B]Serious Fork[/B][/COLOR], original by phil65">
+<addon id="script.extendedinfo" name="EIM4 Qed" version="100.0.3" provider-name="Serious Fork, original by phil65">
   <requires>
     <import addon="xbmc.python"                     version="2.19.0"/>
     <import addon="plugin.program.super.favourites"/>
@@ -455,10 +455,10 @@
   </extension>
   <extension point="xbmc.addon.metadata">
     <language/>
-    <summary lang="en">Modded for [COLOR limegreen]M[/COLOR]etalli[COLOR limegreen]Q[/COLOR] 4[COLOR limegreen]Q[/COLOR]ed</summary>
-    <description lang="en">This script offers various possibilities to display online content inside skins as well as a complete MovieDB browser including info dialogs for various media types. Used services are themoviedb.org, theaudiodb.org, Trakt.TV, omdbapi.com and a lot more. Needs skin implementation for lot of functions. Uses [COLOR limegreen]M[/COLOR]etalli[COLOR limegreen]Q[/COLOR] 4[COLOR limegreen]Q[/COLOR]ed for playback and library functions.</description>
-    <summary lang="nl">[COLOR ff0084ff]E[/COLOR]xtended [COLOR ff0084ff]I[/COLOR]nfo [COLOR ff0084ff]M[/COLOR]od</summary>
-    <description lang="nl">Dit script biedt meerdere mogelijkheden om online content weer te geven in skins en bevat ook een complete MovieDB browser inclusief info dialogen voor verscheidene media types. Gebruikte diensten zijn themoviedb.org, theaudiodb.org, Trakt.TV, omdbapi.com en nog veel meer. Vereist skin implementatie voor de meeste functies. Gebruikt [COLOR limegreen]M[/COLOR]etalli[COLOR limegreen]Q[/COLOR] 4[COLOR limegreen]Q[/COLOR]ed voor afspeel en bibliotheek functies.</description>
+    <summary lang="en">Modded for MetalliQ 4Qed</summary>
+    <description lang="en">This script offers various possibilities to display online content inside skins as well as a complete MovieDB browser including info dialogs for various media types. Used services are themoviedb.org, theaudiodb.org, Trakt.TV, omdbapi.com and a lot more. Needs skin implementation for lot of functions. Uses MetalliQ 4Qed for playback and library functions.</description>
+    <summary lang="nl">ff0084ff]Extended ff0084ff]Info ff0084ff]Mod</summary>
+    <description lang="nl">Dit script biedt meerdere mogelijkheden om online content weer te geven in skins en bevat ook een complete MovieDB browser inclusief info dialogen voor verscheidene media types. Gebruikte diensten zijn themoviedb.org, theaudiodb.org, Trakt.TV, omdbapi.com en nog veel meer. Vereist skin implementatie voor de meeste functies. Gebruikt MetalliQ 4Qed voor afspeel en bibliotheek functies.</description>
     <platform>all</platform>
     <genre>movies,tv,trailers</genre>
     <video_guide>3nlzITuJizg</video_guide>
