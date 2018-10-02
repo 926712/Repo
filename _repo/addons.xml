@@ -301,7 +301,7 @@
 
 </addon>
 
-<addon id="plugin.video.projectx" name="Project X" version="2.1.8" provider-name="Mr X">
+<addon id="plugin.video.projectx" name="Project X" version="2.1.9" provider-name="Mr X">
     <requires>
 	    <import addon="repository.catchup4kodi" />
         <import addon="xbmc.python" version="2.19.0" />
