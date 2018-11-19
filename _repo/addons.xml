@@ -313,7 +313,7 @@
         </extension>
     </addon>
 
-<addon id="script.extendedinfo" name="EIM4 Qed" version="101.0.4" provider-name="Serious Fork, original by phil65">
+<addon id="script.extendedinfo" name="EIM4 Qed" version="101.2.0" provider-name="Serious Fork, original by phil65">
   <requires>
     <import addon="xbmc.python"                     version="2.19.0"/>
     <import addon="plugin.program.super.favourites"/>
