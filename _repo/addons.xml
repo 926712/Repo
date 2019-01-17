@@ -57,7 +57,7 @@
 
 </addon>
 
-<addon id="plugin.video.metalliq-forqed" name="MetalliQ4Qed" version="7.1.17" provider-name="Serious Fork">
+<addon id="plugin.video.metalliq-forqed" name="MetalliQ4Qed" version="7.1.18" provider-name="Serious Fork">
 	<requires>
 		<import addon="xbmc.python" version="2.19.0"/>
 		<import addon="script.module.requests" version="2.9.1"/>
