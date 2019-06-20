@@ -59,7 +59,6 @@
 
 <addon id="plugin.video.projectx" name="Project X" version="3.0" provider-name="Mr X">
     <requires>
-	    <import addon="repository.catchup4kodi" />
         <import addon="xbmc.python" version="2.19.0" />
         <import addon="script.module.universalscrapers" version="1.0.0" />
         <import addon="script.module.python.koding.aio" version="0.9.6.6" />
@@ -116,21 +115,6 @@
   </extension>
 </addon>
 
-<addon id="repository.catchup4kodi" name="LittleWiz Repo" version="1.4" provider-name="LittleWiz">
-	<extension point="xbmc.addon.repository" name="LittleWiz Repo">
-		<dir>
-		<info compressed="false">https://raw.githubusercontent.com/catchup4kodi/catchup4kodi/master/zips/addons.xml</info>
-		<checksum>https://raw.githubusercontent.com/catchup4kodi/catchup4kodi/master/zips/addons.xml.md5</checksum>
-		<datadir zip="true">https://raw.githubusercontent.com/catchup4kodi/catchup4kodi/master/zips/</datadir>
-		</dir>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en">Catchup and live addons for Kodi</summary>
-		<description lang="en">Some of the addons in here are geo locked so may not work in your region without a proxy/vpn. There are certainly a few UK based ones which will only work with a UK IP.</description>
-		<genre>livetv,tvshows,kids,sports</genre>
-	</extension>
-</addon>
-
     <addon id="repository.projectx" name="Project X Repo" version="1.0.1" provider-name="Mr X">
         <requires>
             <import addon="xbmc.addon" version="12.0.0"/>
@@ -164,7 +148,7 @@
         </extension>
     </addon>
 
-<addon id="script.module.universalscrapers" name="Universal Scrapers" version="1.1.4.a" provider-name="Team Universal">
+<addon id="script.module.universalscrapers" name="Universal Scrapers" version="1.1.6" provider-name="Team Universal">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
         <import addon="script.module.beautifulsoup" version="3.2.1"/>
