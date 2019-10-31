@@ -57,7 +57,7 @@
 
 </addon>
 
-<addon id="plugin.video.projectx" name="Project X" version="3.0.1" provider-name="Mr X">
+<addon id="plugin.video.projectx" name="Project X" version="3.0.2" provider-name="Mr X">
     <requires>
         <import addon="xbmc.python" version="2.19.0" />
         <import addon="script.module.universalscrapers" version="1.0.0" />
@@ -1051,7 +1051,7 @@
   </extension>
 </addon>
 
-<addon id="script.module.urlresolver" name="URLResolver" version="5.0.39" provider-name="tvaddons">
+<addon id="script.module.urlresolver" name="URLResolver" version="5.0.41" provider-name="tvaddons">
     <requires>
         <import addon="xbmc.python" version="2.1.0" />
         <import addon="plugin.video.youtube" optional="true" />
