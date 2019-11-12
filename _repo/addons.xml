@@ -785,7 +785,7 @@
   </extension>
 </addon>
 
-<addon id="script.module.resolveurl" name="ResolveURL" version="5.0.33" provider-name="jsergio">
+<addon id="script.module.resolveurl" name="ResolveURL" version="5.0.35" provider-name="jsergio">
     <requires>
         <import addon="xbmc.python" version="2.1.0" />
         <import addon="plugin.video.youtube" optional="true" />
@@ -899,34 +899,27 @@
   </extension>
 </addon>
 
-<addon id="script.module.streamlink.base" name="Streamlink Library" version="2019.03.17" provider-name="Streamlink Devs, Twilight0">
+<addon id="script.module.streamlink.base" name="Streamlink Library" version="2019.11.11.1" provider-name="Streamlink Devs, Twilight0">
   <requires>
-    <import addon="xbmc.python" version="2.24.0"/>
-    <import addon="script.module.requests" version="2.12.4"/>
-    <import addon="script.module.futures" version="2.2.0"/>
-    <import addon="script.module.streamlink.crypto" version="1.5.0"/>
+      <import addon="xbmc.python" version="2.24.0"/>
+      <import addon="script.module.requests" version="2.12.4"/>
+      <import addon="script.module.futures" version="2.2.0"/>
+      <import addon="script.module.cryptolib" version="1.1.0"/>
   </requires>
   <extension point="xbmc.python.module" library="resources/lib/"/>
   <extension point="xbmc.addon.metadata">
-    <summary>Streamlink Library</summary>
-    <description>Streamlink Library for Kodi</description>
-    <platform>all</platform>
-    <license>Simplified BSD</license>
-    <source>https://github.com/Twilight0/script.module.streamlink.base/</source>
-    <language>en</language>
-    <assets>
-        <icon>icon.png</icon>
-    </assets>
-    <news>+ 2019.03.17
-- Fixed icon
-- Updated changelog.txt
-- Moved and updated six module into utils directory
-
-+ 2019.03.16
-- Updated to latest upstream commit e96c725cb553027dd1ca7b1c278211b57947b05c
-
-+ 2018.12.05
-- Corrected icon asset location, ensuring backwards compatibility</news>
+      <summary>Streamlink Library for Kodi</summary>
+      <description>Streamlink Library for Kodi. It is a collection of plugins to help resolve web page urls into streamable links. Known issue: Does not work on Xbox, specifically throws exception when trying to import something from ctypes module.</description>
+      <platform>all</platform>
+      <license>Simplified BSD</license>
+      <source>https://github.com/Twilight0/script.module.streamlink.base/</source>
+      <language>en</language>
+      <assets>
+          <icon>icon.png</icon>
+      </assets>
+      <news>+2019.11.11.X
+- Updated to cc32730ea7c9749169df34e2f1a82c1fdb704df4 from upstream
+      > USTVNOW plugin has been removed due to improper crypto library imports (due to backwards compatibility)</news>
   </extension>
 </addon>
 
@@ -1000,7 +993,7 @@
 	</extension>
 </addon>
 
-<addon id="script.module.universalscrapers" name="Universal Scrapers" version="1.2.0" provider-name="Team Universal">
+<addon id="script.module.universalscrapers" name="Universal Scrapers" version="1.2.1" provider-name="Team Universal">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
         <import addon="script.module.beautifulsoup" version="3.2.1"/>
@@ -1028,22 +1021,19 @@
 
 <addon id="script.module.urllib3"
        name="urllib3"
-       version="1.25.3"
-       provider-name="shazow">
+       version="1.25.6"
+       provider-name="Andrey Petrov">
   <requires>
     <import addon="xbmc.python" version="2.25.0"/>
   </requires>
   <extension point="xbmc.python.module"
              library="lib" />
   <extension point="xbmc.addon.metadata">
-    <summary lang="en_GB">urllib3 is a powerful, sanity-friendly HTTP client for Python</summary>
+    <summary lang="en_GB">HTTP library with thread-safe connection pooling, file post, and more.</summary>
     <description lang="en_GB">Packed for KODI from https://pypi.org/project/urllib3/</description>
-    <platform>all</platform>
-    <language></language>
     <license>MIT</license>
-    <forum></forum>
     <website>https://urllib3.readthedocs.io/en/latest/</website>
-    <source>https://github.com/Freso/script.module.urllib3</source>
+    <source>https://github.com/urllib3/urllib3</source>
     <email>freso.dk AT gmail.com</email>
     <assets>
       <icon>resources/icon.png</icon>
@@ -1051,7 +1041,7 @@
   </extension>
 </addon>
 
-<addon id="script.module.urlresolver" name="URLResolver" version="5.0.42" provider-name="tvaddons">
+<addon id="script.module.urlresolver" name="URLResolver" version="5.0.43" provider-name="tvaddons">
     <requires>
         <import addon="xbmc.python" version="2.1.0" />
         <import addon="plugin.video.youtube" optional="true" />
