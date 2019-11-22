@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
-<addon id="plugin.program.super.favourites" name="Super Favourites" version="1.0.59" provider-name="spoyser">
+<addon id="plugin.program.super.favourites" name="Super Favourites" version="2.0" provider-name="spoyser">
   <requires>
-    <import addon="xbmc.python" version="2.14.0"/>
-    <import addon="script.module.metahandler" optional="true" />
+    <import addon="xbmc.python" version="2.1.0"/>
+	<import addon="script.module.metahandler" optional="true" />
   </requires>
-
 
   <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>executable</provides>
   </extension>
 
-
   <extension point="xbmc.service" library="service.py" start="startup" />
-
 
   <extension point="xbmc.addon.metadata">
     <summary lang="en">Put all your favourites bits of all your favourites addons into one easy to use addon.</summary>
@@ -21,40 +18,18 @@
     <platform>all</platform>
     <language>en</language>
     <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
-    <forum></forum>
+    <forum>http://forum.xbmc.org/showthread.php?tid=192662</forum>
     <website></website>
-    <source></source>
-    <email></email>
-
-    <news>
-1.0.59: 29th May 2017
-    - 'Now playing' text now defined by SF due to skin variations
-    </news>
-
+    <source>https://github.com/spoyser/spoyser-repo/tree/master/plugin.program.super.favourites</source>
+    <email>seanpoyser at gmail.com</email>
   </extension>
 
-
-  <extension point="kodi.context.item">
-    <menu id="kodi.core.main">
-
-      <item library="capture.py">
-        <label>$ADDON[plugin.program.super.favourites 30002]</label>
-        <visible>!IsEmpty(Window(Home).Property(SF_STD_CONTEXTMENU_ENABLED)) + !StringCompare(Container.PluginName,plugin.program.super.favourites)</visible>
+  <extension point="kodi.context.item" library="capture.py">
+      <item>
+        <label>30000</label>
+        <visible>!IsEmpty(Window(10000).Property(SF_STD_CONTEXTMENU_ENABLED))</visible>
       </item>
-
-      <item library="menu_addtofaves.py">
-        <label>$ADDON[plugin.program.super.favourites 30047]</label>
-        <visible>!IsEmpty(Window(Home).Property(SF_STD_ADDTOFAVES_ENABLED)) + !StringCompare(Container.PluginName,plugin.program.super.favourites)</visible>
-      </item>
-
-      <item library="menu_download.py">
-        <label>$ADDON[plugin.program.super.favourites 30259]</label>
-        <visible>!IsEmpty(Window(Home).Property(SF_STD_DOWNLOAD_ENABLED)) + Player.IsInternetStream</visible>
-      </item>
-
-    </menu>
-  </extension>
-
+    </extension>
 </addon>
 
 <addon id="plugin.video.projectx" name="Project X" version="3.0.2" provider-name="Mr X">
@@ -159,6 +134,30 @@
     <summary lang="en">Common caching api for xbmc plugins.</summary>
   </extension>
   <extension library="lib" point="xbmc.python.module" />
+</addon>
+
+<addon id="script.exodusredux.artwork" version="1.0.2" name="Exodus Redux Artwork" provider-name="I-A-C">
+	<requires>
+		<import addon="xbmc.python" version="2.19.0"/>
+	</requires>
+	<extension point="xbmc.python.module" library="lib" />
+	<extension point="xbmc.addon.metadata">
+		<summary>Themes for the Exodus Redux Addon</summary>
+		<description></description>
+		<platform>all</platform>
+	</extension>
+</addon>
+
+<addon id="script.exodusredux.metadata" version="1.0.2" name="Exodus Redux Metadata" provider-name="I-A-C">
+	<requires>
+		<import addon="xbmc.python" version="2.19.0"/>
+	</requires>
+	<extension point="xbmc.python.module" library="lib" />
+	<extension point="xbmc.addon.metadata">
+		<summary>Metadata for the Exodus Redux Addon</summary>
+		<description>Metadata for Exodus Redux are maintained separately to make distribution of the the addon itself easier/faster.</description>
+		<platform>all</platform>
+	</extension>
 </addon>
 
 <addon id="script.module.addon.common"
@@ -340,6 +339,18 @@
   </extension>
 </addon>
 
+<addon id="script.module.exodusredux" name="Exodus Redux Module" version="2.0.4" provider-name="I-A-C">
+	<requires>
+		<import addon="xbmc.python" version="2.1.0" />
+		<import addon="script.module.beautifulsoup4"/>
+	</requires>
+	<extension point="xbmc.python.module" library="lib" />
+	<extension point="xbmc.addon.metadata">
+		<platform>all</platform>
+		<summary lang="en">Exodus Redux</summary>
+	</extension>
+</addon>
+
 <addon id="script.module.futures"
        name="futures"
        version="2.2.0"
@@ -430,8 +441,8 @@
 
 <addon id="script.module.metahandler"
      name="metahandler"
-     version="3.0.3"
-     provider-name="Eldorado, jsergio">
+     version="2.9.0"
+     provider-name="Eldorado">
   <requires>
     <import addon="xbmc.python" version="2.1.0" />
     <import addon="script.module.simplejson" version="3.3.0"/>
@@ -441,7 +452,7 @@
   <extension point="xbmc.python.module" library="lib" />
   <extension point="xbmc.addon.metadata">
     <summary lang="en">Downloads Artwork for TV shows, Movies and Music videos for addons and stores them in a local SQLITE database</summary>
-    <description lang="en">Queries, stores, and returns metadata for TV shows, Movies and Musicvideos. [CR]Sources:[CR]www.thetvdb.com[CR]www.themoviedb.org[CR]www.imdb.com[CR]www.omdbapi.com[CR]This product uses the TMDb API but is not endorsed or certified by TMDb.</description>
+    <description lang="en">Queries, stores, and returns metadata for TV shows, Movies and Musicvideos. [CR]Sources:[CR]www.thetvdb.com[CR]www.themoviedb.org[CR]www.imdb.com</description>
     <disclaimer lang="en"></disclaimer>
     <language></language>
     <platform>all</platform>
@@ -489,7 +500,7 @@
     </extension>
 </addon>
 
-<addon id="script.module.openscrapers" name="OpenScrapers Module" version="0.0.1.98" provider-name="Addons4Kodi">
+<addon id="script.module.openscrapers" name="OpenScrapers Module" version="0.0.1.99" provider-name="Addons4Kodi">
     <requires>
         <import addon="xbmc.python" version="2.25.0" />
         <import addon="script.module.beautifulsoup4"/>
