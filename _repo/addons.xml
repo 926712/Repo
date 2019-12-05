@@ -197,17 +197,29 @@
         </extension>
     </addon>
 
-<addon id="script.common.plugin.cache" name="Common plugin cache" provider-name="TheCollective" version="2.5.10">
-  <requires>
-    <import addon="xbmc.python" version="2.24.0" />
-  </requires>
-  <extension library="default.py" point="xbmc.service" start="startup">
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <platform>all</platform>
-    <summary lang="en">Common caching api for xbmc plugins.</summary>
-  </extension>
-  <extension library="lib" point="xbmc.python.module" />
+<addon id="script.common.plugin.cache" name="Common plugin cache" provider-name="anxdpanic, TheCollective" version="2.6.0">
+    <requires>
+        <import addon="xbmc.python" version="2.24.0"/>
+    </requires>
+    <extension point="xbmc.service" library="resources/lib/entry_point.py" start="startup"/>
+    <extension point="xbmc.python.module" library="resources/lib/storage_server/"/>
+    <extension point="xbmc.addon.metadata">
+        <news>
+- Kodi 19 / Python 3 ready
+- convert strings.xml to strings.po
+- use new language paths ie. ../resource.language.en_gb
+- refactor
+- housekeeping
+- replace icon to resolve transparency issue
+        </news>
+        <assets>
+            <icon>icon.png</icon>
+        </assets>
+        <platform>all</platform>
+        <summary lang="en_GB">A common caching API for Kodi add-ons.</summary>
+        <license>GPL-3.0-only</license>
+        <source>https://github.com/anxdpanic/script.common.plugin.cache</source>
+    </extension>
 </addon>
 
 <addon id="script.exodusredux.artwork" version="1.0.2" name="Exodus Redux Artwork" provider-name="I-A-C">
@@ -670,7 +682,7 @@
     </extension>
 </addon>
 
-<addon id="script.module.openscrapers" name="OpenScrapers Module" version="0.0.1.99" provider-name="Addons4Kodi">
+<addon id="script.module.openscrapers" name="OpenScrapers Module" version="0.0.1.99a" provider-name="Addons4Kodi">
     <requires>
         <import addon="xbmc.python" version="2.25.0" />
         <import addon="script.module.beautifulsoup4"/>
