@@ -197,31 +197,6 @@
         </extension>
     </addon>
 
-<addon id="script.common.plugin.cache" name="Common plugin cache" provider-name="anxdpanic, TheCollective" version="2.6.0">
-    <requires>
-        <import addon="xbmc.python" version="2.24.0"/>
-    </requires>
-    <extension point="xbmc.service" library="resources/lib/entry_point.py" start="startup"/>
-    <extension point="xbmc.python.module" library="resources/lib/storage_server/"/>
-    <extension point="xbmc.addon.metadata">
-        <news>
-- Kodi 19 / Python 3 ready
-- convert strings.xml to strings.po
-- use new language paths ie. ../resource.language.en_gb
-- refactor
-- housekeeping
-- replace icon to resolve transparency issue
-        </news>
-        <assets>
-            <icon>icon.png</icon>
-        </assets>
-        <platform>all</platform>
-        <summary lang="en_GB">A common caching API for Kodi add-ons.</summary>
-        <license>GPL-3.0-only</license>
-        <source>https://github.com/anxdpanic/script.common.plugin.cache</source>
-    </extension>
-</addon>
-
 <addon id="script.exodusredux.artwork" version="1.0.2" name="Exodus Redux Artwork" provider-name="I-A-C">
 	<requires>
 		<import addon="xbmc.python" version="2.19.0"/>
@@ -389,28 +364,6 @@
     <website>https://www.crummy.com/software/BeautifulSoup/</website>
     <assets>
       <icon>icon.png</icon>
-    </assets>
-  </extension>
-</addon>
-
-<addon id="script.module.certifi"
-       name="certifi"
-       version="2019.9.11"
-       provider-name="Kenneth Reitz">
-  <requires>
-    <import addon="xbmc.python" version="2.25.0"/>
-  </requires>
-  <extension point="xbmc.python.module"
-             library="lib" />
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en_GB">Python package for providing Mozilla's CA Bundle.</summary>
-    <description lang="en_GB">Certifi is a carefully curated collection of Root Certificates for validating the trustworthiness of SSL certificates while verifying the identity of TLS hosts. It has been extracted from the Requests project.</description>
-    <license>MPL-2.0</license>
-    <website>https://certifi.io</website>
-    <source>https://github.com/certifi/python-certifi</source>
-    <email>freso.dk AT gmail.com</email>
-    <assets>
-      <icon>resources/icon.png</icon>
     </assets>
   </extension>
 </addon>
@@ -726,32 +679,6 @@
    </extension>
 </addon>
 
-<addon id="script.module.python.koding.aio"
-   name="Python Koding AIO"
-   version="1.0"
-   provider-name="Total Revolution">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-    <import addon="script.module.urlresolver" version="1.2.0"/>
-    <import addon="script.module.requests" version="2.3.0"/>
-    <import addon="script.module.beautifulsoup" version="2.1.31"/>
-    <import addon="script.module.unidecode" version="0.4.16"/>
-  </requires>
-  <extension point="xbmc.python.module" library="lib" />
-  <extension point="xbmc.addon.metadata">
-    <platform>all</platform>
-    <summary lang="en">Python Koding All In One</summary>
-    <description lang="en">Python Koding AIO contains a bunch of time saving modules that allows for quick and simple development.</description>
-    <disclaimer lang="en"></disclaimer>
-    <language></language>
-    <license>Creative Commons 4.0-NC-ND</license>
-    <forum>http://totalrevolution.tv/forum</forum>
-    <website>http://totalrevolution.tv</website>
-    <news>1.0 Stable release</news>
-    <source>https://github.com/totalrevolution/python-koding/tree/master/script.module.python.koding.aio</source>
-  </extension>
-</addon>
-
 <addon id="script.module.requests"
        name="requests"
        version="2.22.0"
@@ -979,23 +906,6 @@
     </extension>
 </addon>
 
-<addon id="script.module.unidecode" name="unidecode" version="0.4.16" provider-name="Tomaz Solc (Tomaz.solc@tablix.org)">
-	<requires>
-		<import addon="xbmc.python" version="2.1.0"/>
-	</requires>
-	<extension point="xbmc.python.module" library="lib" />
-	<extension point="xbmc.addon.metadata">
-		<platform>all</platform>
-		<language></language>
-		<summary lang="en">ASCII transliterations of Unicode text by Sean M. Burke and Tomaz Solc</summary>
-		<description lang="en">ASCII transliterations of Unicode text by Sean M. Burke and Tomaz Solc</description>
-		<disclaimer lang="en">Code taken from https://pypi.python.org/pypi/Unidecode</disclaimer>
-		<license>GNU General Public License v.2</license>
-		<website>https://pypi.python.org/pypi/Unidecode</website>
-		<source>https://pypi.python.org/pypi/Unidecode</source>
-	</extension>
-</addon>
-
 <addon id="script.module.universalscrapers" name="Universal Scrapers" version="1.2.1" provider-name="Team Universal">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
@@ -1020,28 +930,6 @@
             <license>GPL v3</license>
             <source>https://</source>
         </extension>
-</addon>
-
-<addon id="script.module.urllib3"
-       name="urllib3"
-       version="1.25.6"
-       provider-name="Andrey Petrov">
-  <requires>
-    <import addon="xbmc.python" version="2.25.0"/>
-  </requires>
-  <extension point="xbmc.python.module"
-             library="lib" />
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en_GB">HTTP library with thread-safe connection pooling, file post, and more.</summary>
-    <description lang="en_GB">Packed for KODI from https://pypi.org/project/urllib3/</description>
-    <license>MIT</license>
-    <website>https://urllib3.readthedocs.io/en/latest/</website>
-    <source>https://github.com/urllib3/urllib3</source>
-    <email>freso.dk AT gmail.com</email>
-    <assets>
-      <icon>resources/icon.png</icon>
-    </assets>
-  </extension>
 </addon>
 
 <addon id="script.module.urlresolver" name="URLResolver" version="5.0.44" provider-name="tvaddons">
