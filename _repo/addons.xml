@@ -288,46 +288,6 @@
   </extension>
 </addon>
 
-<addon id="script.module.addon.signals"
-    name="Addon Signals"
-    version="0.0.4"
-    provider-name="Rick Phillips (ruuk)">
-    <requires>
-        <import addon="xbmc.python" version="2.14.0" />
-    </requires>
-    <extension point="xbmc.python.module" library="lib" />
-    <extension point="xbmc.addon.metadata">
-        <summary lang="en">Inter-addon signalling</summary>
-        <description lang="en">Provides signal/slot mechanism for inter-addon communication</description>
-        <platform>all</platform>
-        <license>GNU GENERAL PUBLIC LICENSE Version 2.1, February 1999</license>
-        <source>https://github.com/ruuk/script.module.addon.signals</source>
-    </extension>
-</addon>
-
-<addon id="script.module.arrow"
-       name="arrow"
-       version="0.10.0"
-       provider-name="crsmithdev, Razzeee">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-	<import addon="script.module.dateutil" version="2.4.2"/>
-  </requires>
-  <extension point="xbmc.python.module"
-             library="lib" />
-  <extension point="xbmc.addon.metadata">
-    <summary>Arrow: better dates and times for Python</summary>
-    <description>Packed for Kodi from https://github.com/crsmithdev/arrow</description>
-    <platform>all</platform>
-    <language></language>
-    <license>Apache2</license>
-    <forum></forum>
-    <website>http://crsmithdev.com/arrow/</website>
-    <source>https://github.com/Razzeee/script.module.arrow</source>
-    <email>beenje AT gmail.com</email>
-  </extension>
-</addon>
-
 <addon id="script.module.beautifulsoup"
        name="BeautifulSoup"
        version="3.2.1"
@@ -421,28 +381,6 @@
     <source>https://github.com/Twilight0/script.module.cryptolib</source>
     <platform>all</platform>
     <license>MIT</license>
-  </extension>
-</addon>
-
-<addon id="script.module.dateutil"
-       name="python-dateutil"
-       version="2.8.0"
-       provider-name="Paul Ganssle, Gustavo Niemeyer">
-  <requires>
-    <import addon="xbmc.python" version="2.25.0"/>
-    <import addon="script.module.six" version="1.5"/>
-  </requires>
-  <extension point="xbmc.python.module"
-             library="lib" />
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en_GB">Extensions to the standard Python datetime module</summary>
-    <description lang="en_GB">The dateutil module provides powerful extensions to the standard datetime module, available in Python.</description>
-    <license>Apache-2.0, BSD-3-Clause</license>
-    <website>https://dateutil.readthedocs.io/en/stable/</website>
-    <source>https://github.com/dateutil/dateutil</source>
-    <assets>
-      <icon>icon.png</icon>
-    </assets>
   </extension>
 </addon>
 
@@ -544,59 +482,6 @@
     </assets>
     <news></news>
     </extension>
-</addon>
-
-<addon id="script.module.metadatautils"
-       name="Metadata and Artwork module"
-       version="1.0.19"
-       provider-name="marcelveldt">
-    <requires>
-        <import addon="xbmc.python" version="2.24.0"/>
-        <import addon="script.module.requests" version="2.3.0"/>
-        <import addon="script.module.beautifulsoup" version="3.0.8" />
-        <import addon="script.module.thetvdb" version="0.0.1" />
-        <import addon="script.module.musicbrainz" version="0.0.1" />
-        <import addon="script.module.simplecache" version="1.0.0"/>
-        <import addon="script.module.arrow" version="0.6.0"/>
-    </requires>
-    <extension point="xbmc.python.module" library="lib" />
-    <extension point="xbmc.addon.metadata">
-        <summary>Metadata and artwork from common sources like TMDB, IMDB, TADB and fanart.tv </summary>
-        <description>
-            The metadata and artwork module for Kodi provides rich metadata, including artwork for
-            various metatypes by scraping (and caching) this information from sites like TMDB, musicbrainz and fanart.tv.[CR][CR]
-            This product uses the TMDb API but is not endorsed or certified by TMDb
-        </description>
-        <license>Apache 2.0</license>
-        <source>https://github.com/marcelveldt/script.module.metadatautils</source>
-        <platform>all</platform>
-    </extension>
-</addon>
-
-<addon id="script.module.metahandler"
-     name="metahandler"
-     version="3.99.02"
-     provider-name="Eldorado">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0" />
-    <import addon="script.module.simplejson" version="3.3.0"/>
-    <import addon="script.module.addon.common" version="2.0.0"/>
-    <import addon="script.module.myconnpy" version="1.1.6"/>
-  </requires>
-  <extension point="xbmc.python.module" library="lib" />
-  <extension point="xbmc.python.pluginsource" library="lib/default.py" />
-  <extension point="xbmc.addon.metadata">
-      <platform>all</platform>
-      <summary lang="en">Downloads Artwork for TV shows, Movies and Music videos for addons and stores them in a local SQLITE database</summary>
-      <description lang="en">Queries, stores, and returns metadata for TV shows, Movies and Musicvideos. [CR]Sources:[CR]www.thetvdb.com[CR]www.themoviedb.org[CR]www.imdb.com[CR]www.omdbapi.com[CR]This product uses the TMDb API but is not endorsed or certified by TMDb.</description>
-      <disclaimer lang="en"></disclaimer>
-      <language></language>
-      <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
-      <forum></forum>
-      <website></website>
-      <email></email>
-      <source></source>
-  </extension>
 </addon>
 
 <addon id="script.module.musicbrainz"
@@ -801,26 +686,6 @@
     <license>MIT License, Academic Free License v. 2.1</license>
     <website>https://pypi.org/project/simplejson/</website>
     <source>https://github.com/simplejson/simplejson</source>
-  </extension>
-</addon>
-
-<addon id="script.module.six"
-       name="six"
-       version="1.11.0"
-       provider-name="gutworth">
-  <requires>
-    <import addon="xbmc.python"
-    		version="2.14.0"/>
-  </requires>
-  <extension point="xbmc.python.module"
-             library="lib" />
-  <extension point="xbmc.addon.metadata">
-    <summary>Python 2 and 3 compatibility utilities.</summary>
-    <description>Six is a Python 2 and 3 compatibility library. It provides utility functions for smoothing over the differences between the Python versions with the goal of writing Python code that is compatible on both Python versions. See the documentation for more information on what is provided.</description>
-    <platform>all</platform>
-    <license>MIT</license>
-    <source>https://pypi.python.org/pypi/six</source>
-    <website>https://pypi.python.org/pypi/six</website>
   </extension>
 </addon>
 
