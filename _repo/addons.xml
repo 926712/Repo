@@ -517,7 +517,7 @@
         </extension>
     </addon>
 
-    <addon id="repository.Streetwise" name="Streetwise Repo" version="2.5" provider-name="Streetwise">
+    <addon id="repository.streetwise" name="Streetwise Repo" version="2.5" provider-name="Streetwise">
         <requires>
             <import addon="xbmc.addon" version="12.0.0"/>
         </requires>
@@ -528,7 +528,7 @@
             <hashes>false</hashes>
         </extension>
         <extension point="xbmc.addon.metadata">
-            <summary>Streetwise Repsitory</summary>
+            <summary>Streetwise Repository</summary>
             <description>Download and keep upto date with Streetwise Add-ons</description>
             <platform>all</platform>
 			</extension>
