@@ -1281,7 +1281,7 @@
         </extension>
 </addon>
 
-<addon id="script.module.urlresolver" name="URLResolver" version="0.0.1" provider-name="jsergio">
+<addon id="script.module.urlresolver" name="URLResolver" version="5.0.61" provider-name="tvaddons">
     <requires>
         <import addon="xbmc.python" version="2.1.0" />
         <import addon="plugin.video.youtube" optional="true" />
