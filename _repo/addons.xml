@@ -607,7 +607,7 @@
 	</extension>
 </addon>
 
-    <addon id="repository.projectx" name="Project X Repo" version="1.0.1" provider-name="Mr X">
+    <addon id="repository.projectx" name="Project X Repo" version="2.0" provider-name="Mr X">
         <requires>
             <import addon="xbmc.addon" version="12.0.0"/>
         </requires>
