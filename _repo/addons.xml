@@ -191,32 +191,6 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.arconaitv" name="ArconaiTV Addon" version="1.0.0" provider-name="TonyH">
-    <requires>
-        <import addon="xbmc.python" version="2.19.0" />
-        <import addon="script.module.beautifulsoup4"  />
-        <import addon="script.module.requests" version="2.9.1" />
-        <import addon="script.module.addon.common" version="2.0.0" />
-        <import addon="script.module.xmltodict" version="0.9.0" />
-        <import addon="script.module.dateutil" />
-		<import addon="script.module.pyjsparser" />
-		<import addon="script.module.js2py" />
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video</provides>
-    </extension>
-    <extension point="xbmc.service" library="service.py" start="[login|startup]" />
-    <extension point="xbmc.addon.metadata">
-        <summary lang="en">ArconaiTV Addon</summary>
-        <description lang="en">ArconaiTV channels, movies, and networks</description>
-        <disclaimer lang="en">The author is not responsible for the use of this addon. The author is not responsible for the content found using this addon. The author does not host or own any content found within this addon.[CR]The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.[CR]This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.</disclaimer>
-        <platform>all</platform>
-        <website/>
-        <video_guide></video_guide>
-        <reuselanguageinvoker>false</reuselanguageinvoker>
-    </extension>
-</addon>
-
 <addon id="plugin.video.exodusredux" version="2.0.3a" name="Exodus Redux" provider-name="I-A-C">
 	<requires>
 		<import addon="xbmc.python" version="2.19.0" />
@@ -443,23 +417,23 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.venom" version="3.7.3" name="[COLOR red]Venom[/COLOR]" provider-name="Venom">
+<addon id="plugin.video.venom" version="3.7.4" name="[COLOR red]Venom[/COLOR]" provider-name="Venom">
 	<requires>
 		<import addon="xbmc.python" version="2.19.0" />
 		<import addon="script.module.requests" version="2.19.1" />
 		<import addon="script.module.beautifulsoup4" version="4.5.3"/>
 		<import addon="script.module.metahandler" version="2.9.0" />
-		<import addon="plugin.video.youtube" version="6.2.0"/>
-		<import addon="script.module.resolveurl" version="5.0.27"/>
+		<import addon="plugin.video.youtube" version="6.2.0" />
+		<import addon="script.module.resolveurl" version="5.0.27" />
 		<import addon="script.module.openscrapers" />
-		<import addon="script.module.addon.signals" version="0.0.3"/>
+		<import addon="script.module.addon.signals" version="0.0.3" />
 		<import addon="context.venom" version="1.0.0"/>
 	</requires>
 	<extension point="xbmc.python.pluginsource" library="venom.py">
 		<provides>video</provides>
 	</extension>
 	<extension point="xbmc.service" library="service.py" start="startup" />
-	<extension point="xbmc.python.module" library="resources/lib/"/>
+	<extension point="xbmc.python.module" library="resources/lib/" />
 	<extension point="xbmc.addon.metadata">
 		<reuselanguageinvoker>false</reuselanguageinvoker> <!-- You can enable this if you want, expect some instability but much faster menu speeds -->
 		<summary lang="en">[B][COLOR red]Venom[/COLOR][/B] - We do not host any of the contents streamed</summary>
@@ -478,9 +452,13 @@
 			<screenshot>resources/screenshots/screenshot003.jpg</screenshot>
 		</assets>
 		<news>
-[B][COLOR red]Update - v3.7.3 - May 31, 2020[/COLOR][/B]
-[COLOR yellow]--[/COLOR][I] Fixed issue where if fanart.tv was disabled it prevented
-    loading of seasons list.[/I]
+[B][COLOR red]Update - v3.7.4 - June 27, 2020[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] Added new ability to show "Help" file text for settings options
+    deemed confusing.  I will add more upon request[/I]
+[COLOR yellow]--[/COLOR][I] Fixed issue with one item in Trakt progress not showing
+    show title.[/I]
+[COLOR yellow]--[/COLOR][I] Added option for multi episode lists to show or not show
+     unwatched count.  See new Help for more info[/I]
 		</news>
 	</extension>
 </addon>
@@ -1115,7 +1093,7 @@
     </extension>
 </addon>
 
-<addon id="script.module.openscrapers" name="OpenScrapers Module" version="0.0.2.005" provider-name="Addons4Kodi">
+<addon id="script.module.openscrapers" name="OpenScrapers Module" version="0.0.2.007" provider-name="Addons4Kodi">
 	<requires>
 		<import addon="xbmc.python" version="2.25.0" />
 		<import addon="script.module.beautifulsoup4" />
@@ -1142,13 +1120,14 @@
 			<screenshot></screenshot>
 		</assets>
 		<news>
-0.0.2.005
-- Update cfscrape to 1.2.41
-- Added option to Settings "Show Changelog"
-- Added option to Settings "Notify Me About Available Updates"
-- Removed SEEHD, v2 cloudflare challenge
-- Added new free hoster WATCHEPISODESERIES1
-- fixed and brought back 5MOVIES
+0.0.2.007
+- More work for Py3 compatibility
+0.0.2.006
+- Small fix to client module for Referer link
+- Added new free hoster WATCHSERIESTV
+- fixed and brought back CARTOONHD
+- small fix for SHOWBOX vid quality
+- Added new free hoster MYPUTLOCKERS
 		</news>
 	</extension>
 </addon>
