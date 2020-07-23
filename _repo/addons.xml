@@ -167,10 +167,9 @@
     </extension>
 </addon>
 
-<addon id="plugin.program.xmlerator" name="XMLerator" version="5.6.0" provider-name="TonyH">
+<addon id="plugin.program.xmlerator" name="XMLerator" version="5.6.5" provider-name="TonyH">
 	<requires>
 		<import addon="xbmc.python" version="2.19.0" />
-        <import addon="script.module.python.koding.aio" version="0.9.6.6"/>
 		<import addon="script.module.requests" version="2.9.1" />
 		<import addon="script.module.addon.common" version="2.0.0" />
 	</requires>
@@ -234,37 +233,6 @@
         <summary>f4mTester</summary>
         <description></description>
         <platform>all</platform>
-    </extension>
-</addon>
-
-<addon id="plugin.video.it" version="5.0.42" name="[COLOR red]IT[/COLOR]" provider-name="Fladnag">
-   <requires>
-        <import addon="xbmc.python" version="2.19.0" />
-        <import addon="script.module.it" />
-        <import addon="script.it.artwork" />
-        <import addon="script.it.metadata" />
-        <import addon="script.module.resolveurl" />
-        <import addon="script.module.requests" />
-        <import addon="script.module.metahandler" />
-        <import addon="plugin.video.youtube" />
-		<import addon="script.module.openscrapers"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="it.py">
-        <provides>video</provides>
-    </extension>
-    <extension point="xbmc.service" library="service.py" start="startup" />
-    <extension point="xbmc.addon.metadata">
-        <summary lang="en">[B][COLOR red]IT[/COLOR][/B] is a free portal for it freaks to see the best stuff.</summary>
-        <description lang="en">This addon does not form part of the Kodi Media Centre. Please do not seek assistance with this addon from any of the Official Kodi Support Channels.The author does not host any of the content in this addon and takes no responsibility for content found.
-		This is a fork of the 13clowns addon but with parts removed and fixed so credits must go to the 13clowns addon dev.</description>
-        <disclaimer lang="en">The author is not responsible for the use of this addon. The author is not responsible for the content found using this addon. The author does not host or own any content found within this addon. The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation. This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works</disclaimer>
-    <platform>all</platform>
-    <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
-    <assets>
-        <icon>icon.gif</icon>
-        <fanart>fanart.jpg</fanart>
-    </assets>
-    <news></news>
     </extension>
 </addon>
 
@@ -731,50 +699,6 @@
 	</extension>
 </addon>
 
-<addon id="script.it.artwork" version="5.0.8" name="[B][COLOR red]IT[/COLOR] Artwork[/B]" provider-name="nobody">
-    <requires>
-        <import addon="xbmc.python" version="2.19.0"/>
-    </requires>
-    <extension point="xbmc.python.module" library="lib" />
-    <extension point="xbmc.addon.metadata">
-    <summary lang="en">[B][COLOR red]IT[/COLOR] Artwork[/B] is a free portal for circus freaks to see the best stuff.</summary>
-    <description lang="en">This addon does not form part of the Kodi Media Centre. Please do not seek assistance with this addon from any of the Official Kodi Support Channels.The author does not host any of the content in this addon and takes no responsibility for content found.</description>
-    <disclaimer lang="en">The author is not responsible for the use of this addon. The author is not responsible for the content found using this addon. The author does not host or own any content found within this addon. The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation. This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works</disclaimer>
-    <platform>all</platform>
-    <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
-    <assets>
-        <icon>icon.png</icon>
-        <fanart></fanart>
-        <screenshot></screenshot>
-        <screenshot></screenshot>
-        <screenshot></screenshot>
-    </assets>
-    <news></news>
-    </extension>
-</addon>
-
-<addon id="script.it.metadata" version="5.0.7" name="[B][COLOR red]script.it.metadata[/COLOR][/B]" provider-name="nobody">
-    <requires>
-        <import addon="xbmc.python" version="2.19.0"/>
-    </requires>
-    <extension point="xbmc.python.module" library="lib" />
-    <extension point="xbmc.addon.metadata">
-        <summary lang="en">[B][COLOR red]it[/COLOR][/B] is a free portal for it freaks to see the best stuff.</summary>
-    <description lang="en">This addon does not form part of the Kodi Media Centre. Please do not seek assistance with this addon from any of the Official Kodi Support Channels.The author does not host any of the content in this addon and takes no responsibility for content found.</description>
-    <disclaimer lang="en">The author is not responsible for the use of this addon. The author is not responsible for the content found using this addon. The author does not host or own any content found within this addon. The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation. This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works</disclaimer>
-    <platform>all</platform>
-    <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
-    <assets>
-        <icon>icon.png</icon>
-        <fanart></fanart>
-        <screenshot></screenshot>
-        <screenshot></screenshot>
-        <screenshot></screenshot>
-    </assets>
-    <news></news>
-    </extension>
-</addon>
-
 <addon id="script.module.addon.common"
 	     name="Common addon methods"
 	     version="2.0.0"
@@ -981,32 +905,6 @@
       <icon>resources/icon.png</icon>
     </assets>
   </extension>
-</addon>
-
-<addon id="script.module.it" version="5.0.63" name="[COLOR red]script.module.it[/COLOR]" provider-name="nobody">
-    <requires>
-        <import addon="xbmc.python" version="2.19.0" />
-        <import addon="script.module.beautifulsoup4" />
-        <import addon="script.module.dateutil" />
-        <import addon="script.module.futures" />
-        <import addon="script.module.requests" />
-    </requires>
-    <extension point="xbmc.python.module" library="lib" />
-    <extension point="xbmc.addon.metadata">
-    <summary lang="en">[B][COLOR red]it[/COLOR][/B] is a free portal for it freaks to see the best stuff.</summary>
-    <description lang="en">This addon does not form part of the Kodi Media Centre. Please do not seek assistance with this addon from any of the Official Kodi Support Channels.The author does not host any of the content in this addon and takes no responsibility for content found.</description>
-    <disclaimer lang="en">The author is not responsible for the use of this addon. The author is not responsible for the content found using this addon. The author does not host or own any content found within this addon. The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation. This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works</disclaimer>
-    <platform>all</platform>
-    <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
-    <assets>
-        <icon>icon.png</icon>
-        <fanart></fanart>
-        <screenshot></screenshot>
-        <screenshot></screenshot>
-        <screenshot></screenshot>
-    </assets>
-    <news></news>
-    </extension>
 </addon>
 
 <addon id="script.module.js2py" name="js2py" version="0.6.6a" provider-name="Addons4Kodi">
