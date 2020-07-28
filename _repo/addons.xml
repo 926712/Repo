@@ -385,7 +385,7 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.venom" version="3.7.4" name="[COLOR red]Venom[/COLOR]" provider-name="Venom">
+<addon id="plugin.video.venom" version="4.0" name="[COLOR red]Venom[/COLOR]" provider-name="Venom">
 	<requires>
 		<import addon="xbmc.python" version="2.19.0" />
 		<import addon="script.module.requests" version="2.19.1" />
@@ -431,7 +431,7 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.youtube" name="YouTube" version="6.8.2" provider-name="anxdpanic, bromix">
+<addon id="plugin.video.youtube" name="YouTube" version="6.8.3" provider-name="anxdpanic, bromix">
     <requires>
         <import addon="xbmc.python" version="2.20.0"/>
         <import addon="script.module.six" version="1.11.0"/>
@@ -445,15 +445,13 @@
     <extension point="xbmc.python.module" library="resources/lib/"/>
     <extension point="xbmc.addon.metadata">
         <news>
-[fix] playback failing
-[fix] viewing comments when logged in
-[fix] intermittent issue with Subscriptions
-[fix] encoding of video unavailable messages
-[upd] updates to recommendations
-[upd] update logging for Kodi 19
-[lang] fr_fr strings |contrib: alan7000|
-[lang] pl_pl strings |contrib: drrak|
-[lang] nl_nl strings |contrib: Markman-B|
+[fix] playback of some videos
+[fix] notifications for some languages |contrib: Mutronics|
+[fix] fix rating videos causing and error even though it succeeded
+[upd] cache javascript player url for 4 hours, reduces http requests per play by 1
+[upd] use new settings format on Kodi 19
+[lang] el_gr strings |contrib: twilight0|
+[lang] hu_hu strings |contrib: thelacesz|
         </news>
         <assets>
             <icon>icon.png</icon>
@@ -955,6 +953,32 @@
     </extension>
 </addon>
 
+<addon id="script.module.metahandler"
+     name="metahandler"
+     version="3.99.02"
+     provider-name="Eldorado">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0" />
+    <import addon="script.module.simplejson" version="3.3.0"/>
+    <import addon="script.module.addon.common" version="2.0.0"/>
+    <import addon="script.module.myconnpy" version="1.1.6"/>
+  </requires>
+  <extension point="xbmc.python.module" library="lib" />
+  <extension point="xbmc.python.pluginsource" library="lib/default.py" />
+  <extension point="xbmc.addon.metadata">
+      <platform>all</platform>
+      <summary lang="en">Downloads Artwork for TV shows, Movies and Music videos for addons and stores them in a local SQLITE database</summary>
+      <description lang="en">Queries, stores, and returns metadata for TV shows, Movies and Musicvideos. [CR]Sources:[CR]www.thetvdb.com[CR]www.themoviedb.org[CR]www.imdb.com[CR]www.omdbapi.com[CR]This product uses the TMDb API but is not endorsed or certified by TMDb.</description>
+      <disclaimer lang="en"></disclaimer>
+      <language></language>
+      <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+      <forum></forum>
+      <website></website>
+      <email></email>
+      <source></source>
+  </extension>
+</addon>
+
 <addon id="script.module.musicbrainz"
        name="Musicbrainz NGS webservice python bindings"
        version="0.6.0"
@@ -991,7 +1015,7 @@
     </extension>
 </addon>
 
-<addon id="script.module.openscrapers" name="OpenScrapers Module" version="0.0.2.007" provider-name="Addons4Kodi">
+<addon id="script.module.openscrapers" name="OpenScrapers Module" version="0.0.2.008" provider-name="Addons4Kodi">
 	<requires>
 		<import addon="xbmc.python" version="2.25.0" />
 		<import addon="script.module.beautifulsoup4" />
@@ -1018,14 +1042,12 @@
 			<screenshot></screenshot>
 		</assets>
 		<news>
-0.0.2.007
-- More work for Py3 compatibility
-0.0.2.006
-- Small fix to client module for Referer link
-- Added new free hoster WATCHSERIESTV
-- fixed and brought back CARTOONHD
-- small fix for SHOWBOX vid quality
-- Added new free hoster MYPUTLOCKERS
+0.0.2.008
+- Torrent scrapers updated for pack scraping support.
+    Please read help in settings, requires addon support!!
+- New setting added to Torrent scrapers to filter undesirables
+    Please read help in settings
+- New setting added to filter identified Foreign single audio sources
 		</news>
 	</extension>
 </addon>
@@ -1142,7 +1164,7 @@
   </extension>
 </addon>
 
-<addon id="script.module.resolveurl" name="ResolveURL" version="5.1.3" provider-name="gujal">
+<addon id="script.module.resolveurl" name="ResolveURL" version="5.1.4" provider-name="gujal">
     <requires>
         <!-- <import addon="xbmc.python" version="3.0.0" /> -->
         <import addon="script.module.six" version="0.0.1"/>
@@ -1155,12 +1177,12 @@
     <extension point="xbmc.python.pluginsource" library="lib/default.py" />
     <extension point="xbmc.addon.metadata">
         <platform>all</platform>
-        <summary lang="en">Resolve common video host URL's to be playable in XBMC/Kodi.</summary>
-        <summary lang="es">Resolver enlaces a videos de sitios populares para poder reproducirlos en XBMC/Kodi.</summary>
-        <summary lang="hr">Prilagodi najčešće URL-ove video izvora kako bi radili u XBMC/Kodiju.</summary>
-        <summary lang="el">Επίλυση συνδέσμων κοινών εξυπηρετητών σε μορφή βίντεο ικανό για αναπαραγωγή στο XBMC/Kodi.</summary>
-        <description lang="en">Resolve common video host URL's to be playable in XBMC/Kodi, simplify addon development of video plugins requiring multi video hosts.</description>
-        <description lang="hr">Prilagodi najčešće URL-ove video izvora kako bi radili u XBMC/Kodiju, pojednostavnjuje razvoj priključaka za video dodatke koji zahtjevaju višestruke video izvore.</description>
+        <summary lang="en_GB">Resolve common video host URL's to be playable in XBMC/Kodi.</summary>
+        <summary lang="es_ES">Resolver enlaces a videos de sitios populares para poder reproducirlos en XBMC/Kodi.</summary>
+        <summary lang="hr_HR">Prilagodi najčešće URL-ove video izvora kako bi radili u XBMC/Kodiju.</summary>
+        <summary lang="el_GR">Επίλυση συνδέσμων κοινών εξυπηρετητών σε μορφή βίντεο ικανό για αναπαραγωγή στο XBMC/Kodi.</summary>
+        <description lang="en_GB">Resolve common video host URL's to be playable in XBMC/Kodi, simplify addon development of video plugins requiring multi video hosts.</description>
+        <description lang="hr_HR">Prilagodi najčešće URL-ove video izvora kako bi radili u XBMC/Kodiju, pojednostavnjuje razvoj priključaka za video dodatke koji zahtjevaju višestruke video izvore.</description>
         <assets>
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
