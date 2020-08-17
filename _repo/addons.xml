@@ -385,7 +385,7 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.venom" version="4.0.6" name="[COLOR red]Venom[/COLOR]" provider-name="Venom">
+<addon id="plugin.video.venom" version="4.0.7" name="[COLOR red]Venom[/COLOR]" provider-name="Venom">
 	<requires>
 		<import addon="xbmc.python" version="2.19.0" />
 		<import addon="script.module.requests" version="2.19.1" />
@@ -420,20 +420,23 @@
 			<screenshot>resources/screenshots/screenshot003.jpg</screenshot>
 		</assets>
 		<news>
-[B][COLOR red]Update - v4.0.6 - Aug. 05, 2020[/COLOR][/B]
-[COLOR yellow]--[/COLOR][I] Fixed issue with "Watched Count" setting dropping
-    show-seasons that do not contain a valid imdb_id.[/I]
-[COLOR yellow]--[/COLOR][I] Fixed db issue for shows mentioned above.  This also
-    caused issues in rare cases that the very next
-    episode scraped also did not contain a valid
-    imdb_id the returned sources would include
-    previous scrape.  This is now fixed and invalid
-    imdb_id entries are wiped from the db.[/I]
-[COLOR yellow]--[/COLOR][I] Changed Pack scraping option to ON by default
-    and changed OpenScrapers dependency to required
-    version to comply. Previous installs will not change.[/I]
-[COLOR yellow]--[/COLOR][I] Added "sample" to filter string for packs files to ignore
-    in resolving.[/I]
+[B][COLOR red]Update - v4.0.7 - Aug. 15, 2020[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] Fixed issue with free hosters not showing in source
+    select.[/I]
+[COLOR yellow]--[/COLOR][I] Added new "Premium Services" menu.  At this time
+    only Premiumize.me is fully functional.  I had no
+    intention of releasing this till PM, RD, and AD was
+    complete but the item list above bit me in the ass.
+    You can view, play, and manage your cloud account
+    from here.[/I]
+[COLOR yellow]--[/COLOR][I] Added Context Menu option "Cache to cloud" for
+    selected uncached torrent provided seeder count
+    is not 0 for the selected item.  If you have uncached
+    torrents removed this option is not available at this
+    time.  I'm considering adding a yes-no dialog to load
+    uncached torrents if no sources found and user has
+    removed uncached torrents.  This would give you an
+    opportunity to cache an item to your cloud.[/I]
 		</news>
 	</extension>
 </addon>
@@ -1022,7 +1025,7 @@
     </extension>
 </addon>
 
-<addon id="script.module.openscrapers" name="OpenScrapers Module" version="0.0.2.009" provider-name="Addons4Kodi">
+<addon id="script.module.openscrapers" name="OpenScrapers Module" version="0.0.2.010" provider-name="Addons4Kodi">
 	<requires>
 		<import addon="xbmc.python" version="2.25.0" />
 		<import addon="script.module.beautifulsoup4" />
@@ -1049,12 +1052,9 @@
 			<screenshot></screenshot>
 		</assets>
 		<news>
-0.0.2.008
-- Torrent scrapers updated for pack scraping support.
-    Please read help in settings, requires addon support!!
-- New setting added to Torrent scrapers to filter undesirables
-    Please read help in settings
-- New setting added to filter identified Foreign single audio sources
+- Fixed some hosters broken by previous pack file support inclusion.
+- Few pack file filter tweaks.
+- Removed a few new cloudflare v2 challenge scrapers
 		</news>
 	</extension>
 </addon>
@@ -1171,7 +1171,7 @@
   </extension>
 </addon>
 
-<addon id="script.module.resolveurl" name="ResolveURL" version="5.1.5" provider-name="gujal">
+<addon id="script.module.resolveurl" name="ResolveURL" version="5.1.6" provider-name="gujal">
     <requires>
         <!-- <import addon="xbmc.python" version="3.0.0" /> -->
         <import addon="script.module.six" version="0.0.1"/>
