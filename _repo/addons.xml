@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
-<addon id="context.venom" version="1.0.8" name="Venom - Global Context Menu Items" provider-name="Venom">
+<addon id="context.venom" version="1.0.9" name="Venom - Global Context Menu Items" provider-name="Venom">
 	<requires>
 		<import addon="xbmc.python" version="2.23.0" />
+		<import addon="script.module.requests" version="2.19.1" />
 	</requires>
 	<extension point="kodi.context.item">
 		<menu id="kodi.core.main">
@@ -132,9 +133,10 @@
 			<fanart>fanart.png</fanart>
 		</assets>
 		<news>
-[B][COLOR red]Update - v1.0.8 - Sept 29, 2020[/COLOR][/B]
-[COLOR yellow]--[/COLOR][I] Fix issue with accent characters causing stop errors.[/I]
-[COLOR yellow]--[/COLOR][I] added service logging notice for kodi.log.[/I]
+[B][COLOR red]Update - v1.0.9 - Oct. 05, 2020[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] Fixed Trakt Manager not opening.[/I]
+[COLOR yellow]--[/COLOR][I] Fixed Context Settings not opening.[/I]
+[COLOR yellow]--[/COLOR][I] Fixed service update check.[/I]
 		</news>
 	</extension>
 </addon>
@@ -331,7 +333,7 @@
 
 <addon id="plugin.video.shadow"
 	   name="Shadow"
-	   version="2.4.3"
+	   version="2.4.4"
 	   provider-name="Darkness">
   <requires>
 
@@ -377,7 +379,7 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.venom" name="[COLOR red]Venom[/COLOR]" provider-name="Venom" version="4.2.4">
+<addon id="plugin.video.venom" name="[COLOR red]Venom[/COLOR]" provider-name="Venom" version="4.2.5">
 	<requires>
 		<import addon="xbmc.python" version="2.19.0" />
 		<import addon="context.venom" version="1.0.0" />
@@ -412,16 +414,20 @@
 			<screenshot>resources/screenshots/screenshot003.jpg</screenshot>
 		</assets>
 		<news>
-[B][COLOR red]Update - v4.2.4 – Oct. 03, 2020[/COLOR][/B]
-[COLOR yellow]--[/COLOR][I] Removed old exo code for configurable "New Movies"
-    and "New Episodes".  All items were currently availalbe.[/I]
-[COLOR yellow]--[/COLOR][I] Renamed a few menu items.[/I]
-[COLOR yellow]--[/COLOR][I] Code changes for "My Accounts" changes.[/I]
+[B][COLOR red]Update - v4.2.5 – Oct. 09, 2020[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] Removed cache check setting for AD, PM, and RD,
+    this is now hard coded on to always check cached status.
+    You can still enable/disable showing of uncached torrents.[/I]
+[COLOR yellow]--[/COLOR][I] Removed setting to enable/disable pack scraping.
+    This is now hard coded on.[/I]
+[COLOR yellow]--[/COLOR][I] Fix for random container refresah issues
+    during playback.[/I]
+[COLOR yellow]--[/COLOR][I] Fix for Furk resolve issue.[/I]
 		</news>
 	</extension>
 </addon>
 
-<addon id="plugin.video.youtube" name="YouTube" version="6.8.4" provider-name="anxdpanic, bromix">
+<addon id="plugin.video.youtube" name="YouTube" version="6.8.5" provider-name="anxdpanic, bromix">
     <requires>
         <import addon="xbmc.python" version="2.20.0"/>
         <import addon="script.module.six" version="1.11.0"/>
@@ -435,11 +441,12 @@
     <extension point="xbmc.python.module" library="resources/lib/"/>
     <extension point="xbmc.addon.metadata">
         <news>
-[fix] next page now ignores sorting, remains at the end of the directory
-[fix] searching, no longer require remote safe search
-[fix] notifications for some languages
-[chg] only log http server ping failures
-[lang] zh_cn strings |contrib: yureng, xiaojun|
+[fix] playback of purchased movies |contrib: MisterD81|
+[fix] notifications for some languages on Kodi 19
+[fix] searching for some languages
+[fix] loading on some versions of python 3
+[fix] some videos failing to play with an Invalid URL exception
+[upd] use xbmcvfs.translatePath if available, clean up for Kodi 19
         </news>
         <assets>
             <icon>icon.png</icon>
@@ -830,7 +837,7 @@
     </extension>
 </addon>
 
-<addon id="script.module.fenomscrapers" name="FenomScrapers Module" version="1.0.5" provider-name="Mr-Kodi">
+<addon id="script.module.fenomscrapers" name="FenomScrapers Module" version="1.0.8" provider-name="Mr-Kodi">
 	<requires>
 		<import addon="xbmc.python" version="2.25.0" />
 		<import addon="script.module.beautifulsoup4" />
@@ -858,9 +865,16 @@
 			<screenshot></screenshot>
 		</assets>
 		<news>
-[B][COLOR red]Update - v1.0.5 – Oct. 3, 2020[/COLOR][/B]
-[COLOR yellow]--[/COLOR][I] Added Danish translation. Huge thanks to TINUZ97!![/I]
-[COLOR yellow]--[/COLOR][I] Code changes for My Accounts compatibility.[/I]
+[B][COLOR red]Update - v1.0.8 – Oct. 12, 2020[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] Filter tweaks for better alias title matching.[/I]
+[COLOR yellow]--[/COLOR][I] Switched piratebay(pack files only), torrentapi,
+    and torrentgalaxy(movies and pack files) to now
+    use imdb_id for query.[/I]
+[COLOR yellow]--[/COLOR][I] Fixed ext.to retreives random ".\." in magnet
+    hash.[/I]
+[COLOR yellow]--[/COLOR][I] Fixed eztv title query for meta titles containing
+    dashes.[/I]
+[COLOR yellow]--[/COLOR][I] Updated cfscrape to v1.2.48.[/I]
 		</news>
 	</extension>
 </addon>
