@@ -379,7 +379,7 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.venom" name="[COLOR red]Venom[/COLOR]" provider-name="Venom" version="4.2.5">
+<addon id="plugin.video.venom" name="[COLOR red]Venom[/COLOR]" provider-name="Venom" version="4.2.6">
 	<requires>
 		<import addon="xbmc.python" version="2.19.0" />
 		<import addon="context.venom" version="1.0.0" />
@@ -414,15 +414,16 @@
 			<screenshot>resources/screenshots/screenshot003.jpg</screenshot>
 		</assets>
 		<news>
-[B][COLOR red]Update - v4.2.5 – Oct. 09, 2020[/COLOR][/B]
-[COLOR yellow]--[/COLOR][I] Removed cache check setting for AD, PM, and RD,
-    this is now hard coded on to always check cached status.
-    You can still enable/disable showing of uncached torrents.[/I]
-[COLOR yellow]--[/COLOR][I] Removed setting to enable/disable pack scraping.
-    This is now hard coded on.[/I]
-[COLOR yellow]--[/COLOR][I] Fix for random container refresah issues
-    during playback.[/I]
-[COLOR yellow]--[/COLOR][I] Fix for Furk resolve issue.[/I]
+[B][COLOR red]Update - v4.2.6 – Oct. 13, 2020[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] Fixed settings for remove uncached torrents. Under
+    some conditions an item my be unavailable for AD, PM,
+    or RDd torrents.[/I]
+[COLOR yellow]--[/COLOR][I] Fixed AD cache check when a single item from a
+    list request contained an error the cache check process
+    halted.[/I]
+[COLOR yellow]--[/COLOR][I] Reduced the number of visible named scrapers
+    for the progressDialog.  AuraMod skin had a slight overlap
+    with the progress bar.[/I]
 		</news>
 	</extension>
 </addon>
@@ -837,7 +838,7 @@
     </extension>
 </addon>
 
-<addon id="script.module.fenomscrapers" name="FenomScrapers Module" version="1.0.8" provider-name="Mr-Kodi">
+<addon id="script.module.fenomscrapers" name="FenomScrapers Module" version="1.0.9" provider-name="Mr-Kodi">
 	<requires>
 		<import addon="xbmc.python" version="2.25.0" />
 		<import addon="script.module.beautifulsoup4" />
@@ -865,16 +866,12 @@
 			<screenshot></screenshot>
 		</assets>
 		<news>
-[B][COLOR red]Update - v1.0.8 – Oct. 12, 2020[/COLOR][/B]
-[COLOR yellow]--[/COLOR][I] Filter tweaks for better alias title matching.[/I]
-[COLOR yellow]--[/COLOR][I] Switched piratebay(pack files only), torrentapi,
-    and torrentgalaxy(movies and pack files) to now
-    use imdb_id for query.[/I]
-[COLOR yellow]--[/COLOR][I] Fixed ext.to retreives random ".\." in magnet
-    hash.[/I]
-[COLOR yellow]--[/COLOR][I] Fixed eztv title query for meta titles containing
-    dashes.[/I]
-[COLOR yellow]--[/COLOR][I] Updated cfscrape to v1.2.48.[/I]
+[B][COLOR red]Update - v1.0.9 – Oct. 13, 2020[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] Fixed typo in previous eztv query change.[/I]
+[COLOR yellow]--[/COLOR][I] Removed release_year from trakt aliases.  This
+    caused the title check for some random shows
+    to fails.  This should fix the random issues for
+    you "Big Brother" show fans.  [/I]
 		</news>
 	</extension>
 </addon>
@@ -1229,7 +1226,7 @@
   </extension>
 </addon>
 
-<addon id="script.module.resolveurl" name="ResolveURL" version="5.1.10" provider-name="gujal">
+<addon id="script.module.resolveurl" name="ResolveURL" version="5.1.11" provider-name="gujal">
     <requires>
         <!-- <import addon="xbmc.python" version="3.0.0" /> -->
         <import addon="script.module.six" version="0.0.1"/>
