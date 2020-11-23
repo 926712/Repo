@@ -333,7 +333,7 @@
 
 <addon id="plugin.video.shadow"
 	   name="Shadow"
-	   version="2.4.4"
+	   version="2.4.5"
 	   provider-name="Darkness">
   <requires>
 
@@ -826,7 +826,7 @@
     </extension>
 </addon>
 
-<addon id="script.module.fenomscrapers" name="FenomScrapers Module" version="1.1.1" provider-name="Mr-Kodi">
+<addon id="script.module.fenomscrapers" name="FenomScrapers Module" version="1.1.2" provider-name="Mr-Kodi">
 	<requires>
 		<import addon="xbmc.python" version="2.25.0" />
 		<import addon="script.module.beautifulsoup4" />
@@ -854,9 +854,11 @@
 			<screenshot></screenshot>
 		</assets>
 		<news>
-[B][COLOR red]Update - v1.1.1 - Oct. 30, 2020[/COLOR][/B]
-[COLOR yellow]--[/COLOR][I] Fixed duplicate entry in settings.xml for Easynews.[/I]
-[COLOR yellow]--[/COLOR][I] Added fanart.png for addon.[/I]
+[B][COLOR red]Update - v1.1.2 - Nov. 20, 2020[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] Fixed eztv torrent scraper.[/I]
+[COLOR yellow]--[/COLOR][I] extratorrent scraper resurrected.  Scraper has also
+    been converted to pack capable.[/I]
+[COLOR yellow]--[/COLOR][I] Fixed some bogus log errors when url timeout occurs.[/I]
 		</news>
 	</extension>
 </addon>
