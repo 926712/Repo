@@ -379,7 +379,7 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.venom" name="[COLOR red]Venom[/COLOR]" provider-name="Venom" version="4.2.8">
+<addon id="plugin.video.venom" name="[COLOR red]Venom[/COLOR]" provider-name="Venom" version="4.2.9">
 	<requires>
 		<import addon="xbmc.python" version="2.19.0" />
 		<import addon="context.venom" version="1.0.0" />
@@ -414,14 +414,21 @@
 			<screenshot>resources/screenshots/screenshot003.jpg</screenshot>
 		</assets>
 		<news>
-[B][COLOR red]Update - v4.2.8 - Nov. 12, 2020[/COLOR][/B]
-[COLOR yellow]--[/COLOR][I] Fixed Download context menu option.[/I]
-[COLOR yellow]--[/COLOR][I] Added a pre-fetch for Season watched and unwatched count.[/I]
+[B][COLOR red]Update - v4.2.9 - Nov. 29, 2020[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] Fixed for some skins info dialog not closing when playback
+    initiated from this info dialog.[/I]
+[COLOR yellow]--[/COLOR][I] Changed Venom scrape, resolve, and removed source link
+    dialog heading to now display the item being scraped vs.
+    the addon name as heading.[/I]
+[COLOR yellow]--[/COLOR][I] Added Trakt Watched status service sync.[/I]
+[COLOR yellow]--[/COLOR][I] Added setting to the "Source Options" to enable/disable the
+    IMDb year check before scraping.  See Help below setting
+    for more info[/I]
 		</news>
 	</extension>
 </addon>
 
-<addon id="plugin.video.youtube" name="YouTube" version="6.8.7" provider-name="anxdpanic, bromix">
+<addon id="plugin.video.youtube" name="YouTube" version="6.8.8" provider-name="anxdpanic, bromix">
     <requires>
         <import addon="xbmc.python" version="2.20.0"/>
         <import addon="script.module.six" version="1.11.0"/>
@@ -435,7 +442,7 @@
     <extension point="xbmc.python.module" library="resources/lib/"/>
     <extension point="xbmc.addon.metadata">
         <news>
-[fixup] encoding of titles and authors during playback
+[fixup] encoding of subtitle track names
         </news>
         <assets>
             <icon>icon.png</icon>
@@ -826,7 +833,7 @@
     </extension>
 </addon>
 
-<addon id="script.module.fenomscrapers" name="FenomScrapers Module" version="1.1.2" provider-name="Mr-Kodi">
+<addon id="script.module.fenomscrapers" name="FenomScrapers Module" version="1.1.3" provider-name="Mr-Kodi">
 	<requires>
 		<import addon="xbmc.python" version="2.25.0" />
 		<import addon="script.module.beautifulsoup4" />
@@ -854,11 +861,14 @@
 			<screenshot></screenshot>
 		</assets>
 		<news>
-[B][COLOR red]Update - v1.1.2 - Nov. 20, 2020[/COLOR][/B]
-[COLOR yellow]--[/COLOR][I] Fixed eztv torrent scraper.[/I]
-[COLOR yellow]--[/COLOR][I] extratorrent scraper resurrected.  Scraper has also
-    been converted to pack capable.[/I]
-[COLOR yellow]--[/COLOR][I] Fixed some bogus log errors when url timeout occurs.[/I]
+[B][COLOR red]Update - v1.1.3 - Nov. 28, 2020[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] Added a new filter to all scrapers for query results when
+    a movie title exists and a show with same tile and year
+    also exists.  The new filter will now check Movie results
+    for season info and remove those results.  A perfect
+    example is the movie "Run (2020)" a show also exists
+    with the same title and previousely returned results.
+    The new filter will now remove those show results.[/I]
 		</news>
 	</extension>
 </addon>
@@ -948,28 +958,69 @@
 
 <addon id="script.module.metadatautils"
        name="Metadata and Artwork module"
-       version="1.0.27"
-       provider-name="marcelveldt, finkleandeinhorn, cartmandos">
+       version="1.0.35"
+       provider-name="marcelveldt and others">
     <requires>
-        <import addon="xbmc.python" version="2.24.0"/>
+        <!-- <import addon="xbmc.python" version="3.0.0"/> -->
         <import addon="script.module.requests" version="2.3.0"/>
-        <import addon="script.module.beautifulsoup" version="3.0.8" />
+        <import addon="script.module.beautifulsoup4" version="4.0.0" />
         <import addon="script.module.thetvdb" version="0.0.1" />
-        <import addon="script.module.musicbrainz" version="0.0.1" />
+        <import addon="script.module.musicbrainz" version="0.0.1"/>
         <import addon="script.module.simplecache" version="1.0.0"/>
         <import addon="script.module.arrow" version="0.6.0"/>
     </requires>
     <extension point="xbmc.python.module" library="lib" />
     <extension point="xbmc.addon.metadata">
-        <summary>Metadata and artwork from common sources like TMDB, IMDB, TADB and fanart.tv </summary>
-        <description>
-            The metadata and artwork module for Kodi provides rich metadata, including artwork for
-            various metatypes by scraping (and caching) this information from sites like TMDB, musicbrainz and fanart.tv.[CR][CR]
-            This product uses the TMDb API but is not endorsed or certified by TMDb
-        </description>
+        <summary lang="en">Metadata and artwork from common sources like TMDB, IMDB, TADB, OMDB and fanart.tv </summary>
+		<summary lang="es">Metadatos e ilustraciones de fuentes comunes como TMDB, IMDB, TADB, OMDB y fanart.tv </summary>
+        <description lang="en">The metadata and artwork module for Kodi provides rich metadata, including artwork for various metatypes by scraping (and caching) this information from sites like TMDB, musicbrainz and fanart.tv. This product uses the TMDb API but is not endorsed or certified by TMDb.</description>
+		<description lang="es">El módulo de metadatos e ilustraciones para Kodi proporciona metadatos enriquecidos, que incluyen ilustraciones paravarios metatipos al raspar (y almacenar en caché) esta información se extrae de sitios como TMDB, musicbrainz and fanart.tv.[CR][CR]Este producto utiliza la API de TMDb pero no está avalado ni certificado por TMDb</description>
+        <news>
+v1.0.35 (wuff)
+- Remove BeautifulSoup3 dependency and use BeautifulSoup4 on Kodi 18 and 19 instead
+
+v1.0.34 (wuff)
+- Set BeautifulSoup3 and MusicBrainz dependency as optional to allow install on Matrix
+
+v1.0.33 (wuff)
+- replace xbmc.LOGNOTICE with xbmc.LOGINFO as LOGNOTICE was removed
+
+v1.0.32 (wuff)
+- Remove python requirement for Kodi 18/19 compat
+- Change imdb Top250 parsing from lxml to html.parser
+- replace xbmc.translatePath with xmbcvfs.translatePath
+v1.0.31 (berkhornet)
+- Further fixes for PVR artwork
+v1.0.30 (berkhornet)
+- Kodi 19/Python 3
+- Fixes for PVR artwork
+- Fix display of artwork when manually selecting from TVDB
+- Fixes for animated art and google
+v1.0.29 (wuff)
+- Remove python requirement for Kodi 18/19 compat
+v1.0.28 (wuff)
+- Kodi 19/Python 3 fixes
+v1.0.27 (finkleandeinhorn)
+- update omdb api key
+v1.0.26 (finkleandeinhorn, cartmandos)
+- enable caching of omdb/tmdb data
+- remove duplicate "Title" parameter
+v1.0.25 (marcelveldt)
+- Last version 30 Mar 2018
+        </news>
         <license>Apache 2.0</license>
+        <forum>https://forum.kodi.tv/showthread.php?tid=350315</forum>
         <source>https://github.com/kodi-community-addons/script.module.metadatautils</source>
         <platform>all</platform>
+		<assets>
+			<icon>resources/icon.png</icon>
+			<fanart>resources/fanart.jpg</fanart>
+			<screenshot>resources/screenshot-01.jpg</screenshot>
+			<screenshot>resources/screenshot-02.jpg</screenshot>
+			<screenshot>resources/screenshot-03.jpg</screenshot>
+			<screenshot>resources/screenshot-04.jpg</screenshot>
+			<screenshot>resources/screenshot-05.jpg</screenshot>
+		</assets>
     </extension>
 </addon>
 
@@ -1213,7 +1264,7 @@
   </extension>
 </addon>
 
-<addon id="script.module.resolveurl" name="ResolveURL" version="5.1.14" provider-name="gujal">
+<addon id="script.module.resolveurl" name="ResolveURL" version="5.1.15" provider-name="gujal">
     <requires>
         <!-- <import addon="xbmc.python" version="3.0.0" /> -->
         <import addon="script.module.six" />
