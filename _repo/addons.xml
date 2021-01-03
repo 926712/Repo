@@ -379,7 +379,7 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.venom" name="[COLOR red]Venom[/COLOR]" provider-name="Venom" version="4.3.1">
+<addon id="plugin.video.venom" name="[COLOR red]Venom[/COLOR]" provider-name="Venom" version="4.3.3">
 	<requires>
 		<import addon="xbmc.python" version="2.19.0" />
 		<import addon="context.venom" version="1.0.0" />
@@ -414,30 +414,13 @@
 			<screenshot>resources/screenshots/screenshot003.jpg</screenshot>
 		</assets>
 		<news>
-[B][COLOR red]Update - v4.3.1 - Dec. 18, 2020[/COLOR][/B]
-[COLOR yellow]--[/COLOR][I] Fixed Anime Movies and TV Shows menu not advancing to
-    next page.[/I]
-[COLOR yellow]--[/COLOR][I] Fixed RD caching of uncached torrents, stalled at file select.[/I]
-[COLOR yellow]--[/COLOR][I] Fixed RD "My Downloads" not loading results.[/I]
-[COLOR yellow]--[/COLOR][I] Fixed Trakt sync for "Scrobble Reset" items not sync'd to
-    other devices.[/I]
-[COLOR yellow]--[/COLOR][I] Added ability to auto start playback upon completion of
-    caching uncached torrent.[/I]
-[COLOR yellow]--[/COLOR][I] Added new "yes-no" dialog when cancelling caching of
-    uncached torrent.  Now user has the option to
-    close progress dialog but allow premium service
-    to continue it's download, or close and cancel both.[/I]
-[COLOR yellow]--[/COLOR][I] Request to add debrid account expiry notification.  This
-    has now been added to the "My Accounts" addon.[/I]
-[COLOR yellow]--[/COLOR][I] Removed "Multi-Line Source Select" setting.  This is now
-    the hard coded default.[/I]
-[COLOR yellow]--[/COLOR][I] Uncached torrents now has it's own color setting choice
-    under "Torrent Settings".[/I]
-[COLOR yellow]--[/COLOR][I] Due to settings changes the entire "Source Options"
-    category has be rearranged.  A new heading has been
-    added to better group settings based on the flow of
-    scraping process and source selection.  It is advisable
-    to review and save settings.[/I]
+[B][COLOR red]Update - v4.3.3 - Jan. 01, 2021[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] Fixed issue where torrents turned off produced no sources
+    with premium hosters only enabled.[/I]
+[COLOR yellow]--[/COLOR][I] Reworked file size sorting. Provider sorting has been removed.
+    Now sorting is base on group sort option and
+    (quality/size) priority sorting.[/I]
+[COLOR yellow]--[/COLOR][I] See "Source Options"-"Soures Select" for above changes.[/I]
 		</news>
 	</extension>
 </addon>
@@ -847,7 +830,7 @@
     </extension>
 </addon>
 
-<addon id="script.module.fenomscrapers" name="FenomScrapers Module" version="1.1.6" provider-name="Mr-Kodi">
+<addon id="script.module.fenomscrapers" name="FenomScrapers Module" version="1.1.8" provider-name="Mr-Kodi">
 	<requires>
 		<import addon="xbmc.python" version="2.25.0" />
 		<import addon="script.module.beautifulsoup4" />
@@ -875,15 +858,10 @@
 			<screenshot></screenshot>
 		</assets>
 		<news>
-[B][COLOR red]Update - v1.1.6 - Dec. 18, 2020[/COLOR][/B]
-[COLOR yellow]--[/COLOR][I] Moviemagnet.co looks to be dead and gone.  Scraper
-    is now removed.[/I]
-[COLOR yellow]--[/COLOR][I] Solidtorrents site is back to working so default switched
-    to "ON".[/I]
-COLOR yellow]--[/COLOR][I] Solidtorrents was previously incorrectly listed as a single
-    html request site. Solidtorrents is an api and has been
-    fixed in the "torrentInfo" file.[/I]
-COLOR yellow]--[/COLOR][I] Fixed a few "release_title" format issues.[/I]
+[B][COLOR red]Update - v1.1.8 - Jan. 01, 2021[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] Added "exkinoray" group filter to undesireables.
+    Removes single russian audio trakts.[/I]
+[COLOR yellow]--[/COLOR][I] Updated "easynews" title check for better title matches.[/I]
 		</news>
 	</extension>
 </addon>
@@ -1083,7 +1061,7 @@ v1.0.25 (marcelveldt)
   </extension>
 </addon>
 
-<addon id="script.module.myaccounts" version="1.0.6" name="My Accounts" provider-name="Venom, Fen">
+<addon id="script.module.myaccounts" version="1.0.7" name="My Accounts" provider-name="Venom, Fen">
 	<requires>
 		<import addon="xbmc.python" version="2.14.0" />
 		<import addon="script.module.requests" version="2.19.1" />
@@ -1109,8 +1087,9 @@ v1.0.25 (marcelveldt)
 			<screenshot></screenshot>
 		</assets>
 		<news>
-[B][COLOR red]Update - v1.0.5 - Oct. 30, 2020[/COLOR][/B]
-[COLOR yellow]--[/COLOR][I] Dutch translation changes.[/I]
+[B][COLOR red]Update - v1.0.7 - Dec. 30, 2020[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] Added Debrid expiry notifications fallback for server
+    errors. This avoids bogus 500 log errors etc.[/I]
 		</news>
 	</extension>
 </addon>
@@ -1279,7 +1258,7 @@ v1.0.25 (marcelveldt)
   </extension>
 </addon>
 
-<addon id="script.module.resolveurl" name="ResolveURL" version="5.1.18" provider-name="gujal">
+<addon id="script.module.resolveurl" name="ResolveURL" version="5.1.19" provider-name="gujal">
     <requires>
         <!-- <import addon="xbmc.python" version="3.0.0" /> -->
         <import addon="script.module.six" />
