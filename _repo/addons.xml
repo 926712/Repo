@@ -379,7 +379,7 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.venom" name="[COLOR red]Venom[/COLOR]" provider-name="Venom" version="4.3.3">
+<addon id="plugin.video.venom" name="[COLOR red]Venom[/COLOR]" provider-name="Venom" version="4.3.4">
 	<requires>
 		<import addon="xbmc.python" version="2.19.0" />
 		<import addon="context.venom" version="1.0.0" />
@@ -414,18 +414,17 @@
 			<screenshot>resources/screenshots/screenshot003.jpg</screenshot>
 		</assets>
 		<news>
-[B][COLOR red]Update - v4.3.3 - Jan. 01, 2021[/COLOR][/B]
-[COLOR yellow]--[/COLOR][I] Fixed issue where torrents turned off produced no sources
-    with premium hosters only enabled.[/I]
-[COLOR yellow]--[/COLOR][I] Reworked file size sorting. Provider sorting has been removed.
-    Now sorting is base on group sort option and
-    (quality/size) priority sorting.[/I]
-[COLOR yellow]--[/COLOR][I] See "Source Options"-"Soures Select" for above changes.[/I]
+[B][COLOR red]Update - v4.3.4 - Jan. 04, 2021[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] Removed setting option "Remove Captcha".  Since switching
+    to debrid only support this option is no longer needed.[/I]
+[COLOR yellow]--[/COLOR][I] Allot of cleanup has been done to the Sources module
+    for removed options. Scraping and source select is now faster.[/I]
+[COLOR yellow]--[/COLOR][I] Fixed Library Update Service exit typo.[/I]
 		</news>
 	</extension>
 </addon>
 
-<addon id="plugin.video.youtube" name="YouTube" version="6.8.8" provider-name="anxdpanic, bromix">
+<addon id="plugin.video.youtube" name="YouTube" version="6.8.9" provider-name="anxdpanic, bromix">
     <requires>
         <import addon="xbmc.python" version="2.20.0"/>
         <import addon="script.module.six" version="1.11.0"/>
@@ -439,7 +438,11 @@
     <extension point="xbmc.python.module" library="resources/lib/"/>
     <extension point="xbmc.addon.metadata">
         <news>
-[fixup] encoding of subtitle track names
+[fix] my subscriptions section using YouTube RSS |contrib: PureHemp|
+[fix] items per page settings on Kodi 19
+[chg] recommendations only available for users with custom history playlist id configured
+[chg] no longer show watch later unless custom watch later playlist is configured
+[rem] remove usage of discontinued api and dual login (no longer required)
         </news>
         <assets>
             <icon>icon.png</icon>
@@ -830,7 +833,7 @@
     </extension>
 </addon>
 
-<addon id="script.module.fenomscrapers" name="FenomScrapers Module" version="1.1.8" provider-name="Mr-Kodi">
+<addon id="script.module.fenomscrapers" name="FenomScrapers Module" version="1.1.9" provider-name="Mr-Kodi">
 	<requires>
 		<import addon="xbmc.python" version="2.25.0" />
 		<import addon="script.module.beautifulsoup4" />
@@ -858,10 +861,12 @@
 			<screenshot></screenshot>
 		</assets>
 		<news>
-[B][COLOR red]Update - v1.1.8 - Jan. 01, 2021[/COLOR][/B]
-[COLOR yellow]--[/COLOR][I] Added "exkinoray" group filter to undesireables.
-    Removes single russian audio trakts.[/I]
-[COLOR yellow]--[/COLOR][I] Updated "easynews" title check for better title matches.[/I]
+[B][COLOR red]Update - v1.1.9 - Jan. 04, 2021[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] Removed 2ddl scraper lost to Cloudflare v2 challenge.[/I]
+[COLOR yellow]--[/COLOR][I] rapidmoviez scraper was resurrected in v1.17 and I
+    neglected to list that in changelog.[/I]
+[COLOR yellow]--[/COLOR][I] rlsbb scraper has been resurrected and using a new
+    proxy that is not Cloudflare v2 challenge.[/I]
 		</news>
 	</extension>
 </addon>
