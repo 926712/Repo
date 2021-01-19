@@ -379,7 +379,7 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.venom" name="[COLOR red]Venom[/COLOR]" provider-name="Venom" version="4.3.4">
+<addon id="plugin.video.venom" name="[COLOR red]Venom[/COLOR]" provider-name="Venom" version="4.3.6">
 	<requires>
 		<import addon="xbmc.python" version="2.19.0" />
 		<import addon="context.venom" version="1.0.0" />
@@ -414,12 +414,12 @@
 			<screenshot>resources/screenshots/screenshot003.jpg</screenshot>
 		</assets>
 		<news>
-[B][COLOR red]Update - v4.3.4 - Jan. 04, 2021[/COLOR][/B]
-[COLOR yellow]--[/COLOR][I] Removed setting option "Remove Captcha".  Since switching
-    to debrid only support this option is no longer needed.[/I]
-[COLOR yellow]--[/COLOR][I] Allot of cleanup has been done to the Sources module
-    for removed options. Scraping and source select is now faster.[/I]
-[COLOR yellow]--[/COLOR][I] Fixed Library Update Service exit typo.[/I]
+[B][COLOR red]Update - v4.3.6 - Jan. 17, 2021[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] Fixed scraper dialog failing under Background setting.[/I]
+[COLOR yellow]--[/COLOR][I] Fixed issue where file size limit was accounted for before
+    a pack file size was re-calculated for actual episode
+    size inside the pack. This caused unnecessary removal
+    of items.[/I]
 		</news>
 	</extension>
 </addon>
@@ -832,7 +832,7 @@
     </extension>
 </addon>
 
-<addon id="script.module.fenomscrapers" name="FenomScrapers Module" version="1.2.0" provider-name="Mr-Kodi">
+<addon id="script.module.fenomscrapers" name="FenomScrapers Module" version="1.2.4" provider-name="Mr-Kodi">
 	<requires>
 		<import addon="xbmc.python" version="2.25.0" />
 		<import addon="script.module.beautifulsoup4" />
@@ -860,13 +860,8 @@
 			<screenshot></screenshot>
 		</assets>
 		<news>
-[B][COLOR red]Update - v1.2.0 - Jan. 08, 2021[/COLOR][/B]
-[COLOR yellow]--[/COLOR][I] rlsbb has been completely rewritten to better parse the
-    sites comment section.  This now produces more
-    accurate results.[/I]
-[COLOR yellow]--[/COLOR][I] cfscrape(aka cloudscraper) has been updated to v1.2.52.[/I]
-[COLOR yellow]--[/COLOR][I] kickass2 now uses the query param for file size and
-    sort=desc.  Better quality results are now returned.[/I]
+[B][COLOR red]Update - v1.2.4 - Jan. 17, 2021[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] new proxy for "skytorrents". Works once again.[/I]
 		</news>
 	</extension>
 </addon>
@@ -1269,7 +1264,7 @@ v1.0.25 (marcelveldt)
   </extension>
 </addon>
 
-<addon id="script.module.resolveurl" name="ResolveURL" version="5.1.20" provider-name="gujal">
+<addon id="script.module.resolveurl" name="ResolveURL" version="5.1.22" provider-name="gujal">
     <requires>
         <!-- <import addon="xbmc.python" version="3.0.0" /> -->
         <import addon="script.module.six" />
