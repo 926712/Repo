@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
-<addon id="context.venom" version="1.0.9" name="Venom - Global Context Menu Items" provider-name="Venom">
+<addon id="context.venom" version="1.1.0" name="Venom - Global Context Menu Items" provider-name="Venom">
 	<requires>
 		<import addon="xbmc.python" version="2.23.0" />
 		<import addon="script.module.requests" version="2.19.1" />
@@ -112,31 +112,29 @@
 					String.StartsWith(ListItem.path,plugin://plugin.video.venom/) +
 					String.IsEqual(ListItem.Property(isVenom_widget),true) +
 					String.IsEqual(ListItem.dbtype,episode)
-<!-- 					[String.IsEqual(ListItem.dbtype,episode) | !String.IsEmpty(ListItem.Property(multi_episodes))] -->
 				</visible>
 			</item>
 		</menu>
-</extension>
+	</extension>
 	<extension point="xbmc.service" library="service.py" />
 	<extension point="xbmc.addon.metadata">
 		<summary lang="en">Venom - This Addon is currently in beta. Please be aware there may be bugs present</summary>
-		<description lang="en">Adds Global Contextual Menu Items for Venom menu items throughout Kodi
-		</description>
+		<description lang="en">Adds Global Contextual Menu Items for Venom menu items throughout Kodi</description>
 		<platform>all</platform>
 		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
 		<forum></forum>
-		<website></website>
-		<source></source>
+		<website>https://github.com/123Venom/context.venom</website>
+		<source>https://github.com/123Venom/context.venom</source>
 		<disclaimer lang="en"></disclaimer>
 		<assets>
 			<icon>icon.png</icon>
-			<fanart>fanart.png</fanart>
+			<fanart>fanart.jpg</fanart>
+			<screenshot></screenshot>
 		</assets>
 		<news>
-[B][COLOR red]Update - v1.0.9 - Oct. 05, 2020[/COLOR][/B]
-[COLOR yellow]--[/COLOR][I] Fixed Trakt Manager not opening.[/I]
-[COLOR yellow]--[/COLOR][I] Fixed Context Settings not opening.[/I]
-[COLOR yellow]--[/COLOR][I] Fixed service update check.[/I]
+[B][COLOR red]Update - v1.1.0 - Oct. 05, 2020[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] Service module cleanup.[/I]
+[COLOR yellow]--[/COLOR][I] Changed to new fanart.[/I]
 		</news>
 	</extension>
 </addon>
@@ -379,7 +377,7 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.venom" name="[COLOR red]Venom[/COLOR]" provider-name="Venom" version="4.3.6">
+<addon id="plugin.video.venom" name="[COLOR red]Venom[/COLOR]" provider-name="Venom" version="4.3.7">
 	<requires>
 		<import addon="xbmc.python" version="2.19.0" />
 		<import addon="context.venom" version="1.0.0" />
@@ -414,12 +412,19 @@
 			<screenshot>resources/screenshots/screenshot003.jpg</screenshot>
 		</assets>
 		<news>
-[B][COLOR red]Update - v4.3.6 - Jan. 17, 2021[/COLOR][/B]
-[COLOR yellow]--[/COLOR][I] Fixed scraper dialog failing under Background setting.[/I]
-[COLOR yellow]--[/COLOR][I] Fixed issue where file size limit was accounted for before
-    a pack file size was re-calculated for actual episode
-    size inside the pack. This caused unnecessary removal
-    of items.[/I]
+[B][COLOR red]Update - v4.3.7 - Jan. 23, 2021[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] Changed scraper timeout to default 60secs. Should help
+    resolve issue with slower devices returning
+    "no sources".[/I]
+[COLOR yellow]--[/COLOR][I] Venom logging now has new option "log Level". You can
+    now set this for "Normal" or "Debug(Extra Info)".  Normal
+    will only log code errors while Debug will log additional
+    Info I may require to trace bugs.[/I]
+[COLOR yellow]--[/COLOR][I] Background progress dialog was hidden under some
+    configurations, this is now fixed.[/I]
+[COLOR yellow]--[/COLOR][I] VERY important you read the "News and Info!!" of possible
+    coming changes for end of March that will effect many
+    exo fork users.[/I]
 		</news>
 	</extension>
 </addon>
@@ -832,7 +837,7 @@
     </extension>
 </addon>
 
-<addon id="script.module.fenomscrapers" name="FenomScrapers Module" version="1.2.4" provider-name="Mr-Kodi">
+<addon id="script.module.fenomscrapers" name="FenomScrapers Module" version="1.2.5" provider-name="Mr-Kodi">
 	<requires>
 		<import addon="xbmc.python" version="2.25.0" />
 		<import addon="script.module.beautifulsoup4" />
@@ -860,8 +865,9 @@
 			<screenshot></screenshot>
 		</assets>
 		<news>
-[B][COLOR red]Update - v1.2.4 - Jan. 17, 2021[/COLOR][/B]
-[COLOR yellow]--[/COLOR][I] new proxy for "skytorrents". Works once again.[/I]
+[B][COLOR red]Update - v1.2.5 - Jan. 22, 2021[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] fixed "btdb" for changes to html elements. Working once again.[/I]
+[COLOR yellow]--[/COLOR][I] fixed "easynews" filter for episodes failed.[/I]
 		</news>
 	</extension>
 </addon>
@@ -1264,7 +1270,7 @@ v1.0.25 (marcelveldt)
   </extension>
 </addon>
 
-<addon id="script.module.resolveurl" name="ResolveURL" version="5.1.22" provider-name="gujal">
+<addon id="script.module.resolveurl" name="ResolveURL" version="5.1.23" provider-name="gujal">
     <requires>
         <!-- <import addon="xbmc.python" version="3.0.0" /> -->
         <import addon="script.module.six" />
