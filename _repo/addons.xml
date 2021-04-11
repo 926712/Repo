@@ -328,7 +328,7 @@
 
 <addon id="plugin.video.shadow"
 	   name="Shadow"
-	   version="2.6.6"
+	   version="2.6.7"
 	   provider-name="Darkness">
   <requires>
 
@@ -823,26 +823,23 @@
   </extension>
 </addon>
 
-<addon id="script.module.beautifulsoup4"
-       name="BeautifulSoup4"
-       version="4.6.2"
-       provider-name="Leonard Richardson (leonardr@segfault.org)">
-  <requires>
-    <import addon="xbmc.python"
-             version="2.25.0"/>
-  </requires>
-  <extension point="xbmc.python.module"
-             library="lib" />
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en_GB">Screen-scraping library</summary>
-    <description lang="en_GB">Beautiful Soup is a library that makes it easy to scrape information from web pages. It sits atop an HTML or XML parser, providing Pythonic idioms for iterating, searching, and modifying the parse tree.</description>
-    <license>MIT</license>
-    <platform>all</platform>
-    <website>https://www.crummy.com/software/BeautifulSoup/</website>
-    <assets>
-      <icon>icon.png</icon>
-    </assets>
-  </extension>
+<addon id="script.module.beautifulsoup4" name="BeautifulSoup4" version="4.9.3" provider-name="Leonard Richardson (leonardr@segfault.org)">
+	<requires>
+		<import addon="xbmc.python" version="2.26.0"/>
+		<import addon="script.module.soupsieve" version="1.9.6"/>
+	</requires>
+	<extension point="xbmc.python.module" library="lib" />
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en_GB">Screen-scraping library</summary>
+		<description lang="en_GB">Beautiful Soup is a library that makes it easy to scrape information from web pages. It sits atop an HTML or XML parser, providing Pythonic idioms for iterating, searching, and modifying the parse tree.</description>
+		<license>MIT</license>
+		<platform>all</platform>
+		<website>https://www.crummy.com/software/BeautifulSoup/</website>
+		<source>https://code.launchpad.net/beautifulsoup</source>
+		<assets>
+			<icon>icon.png</icon>
+		</assets>
+	</extension>
 </addon>
 
 <addon id="script.module.chardet"
@@ -927,7 +924,7 @@
     </extension>
 </addon>
 
-<addon id="script.module.fenomscrapers" name="FenomScrapers Module" version="1.3.4" provider-name="Mr-Kodi">
+<addon id="script.module.fenomscrapers" name="FenomScrapers Module" version="1.3.6" provider-name="Mr-Kodi">
 	<requires>
 		<import addon="script.module.requests" />
 		<import addon="script.module.myaccounts" version="1.0.0" />
@@ -953,15 +950,13 @@
 			<screenshot></screenshot>
 		</assets>
 		<news>
-[B][COLOR red]Update - v1.3.4 - March 16, 2021[/COLOR][/B]
-[COLOR yellow]--[/COLOR][I] Matrix fix for xbmc.translatePath.[/I]
-[COLOR yellow]--[/COLOR][I] Fixed bogus log error from torrentparadise scraper.[/I]
-[COLOR yellow]--[/COLOR][I] Note btscene has returned so will not be removing.[/I]
-[COLOR yellow]--[/COLOR][I] skytorrents appears to have gone Cloudflare v2 challenge.  Will
-    remove in future update.  Suggest to turn off.[/I]
-[COLOR yellow]--[/COLOR][I] gdrive scraper title checking has been improved.  There is also a
-    new setting option to disable the title checking if you feel a
-    title is in your gdrive but is not being pulled in.[/I]
+[B][COLOR red]Update - v1.3.6 - April 05, 2021[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] Removed skytorrent scraper, Cloudflare v2 challenge.[/I]
+[COLOR yellow]--[/COLOR][I] Removed Cloudflare logging entry left behind and was spamming
+    the FenomScrapers log.[/I]
+[COLOR yellow]--[/COLOR][I] Fixed issue with show pack filtering missing removal of some
+    obscure named pack files that did not apply to
+    current episode of a season.[/I]
 		</news>
 	</extension>
 </addon>
@@ -1362,7 +1357,7 @@ v1.0.25 (marcelveldt)
   </extension>
 </addon>
 
-<addon id="script.module.resolveurl" name="ResolveURL" version="5.1.27" provider-name="gujal">
+<addon id="script.module.resolveurl" name="ResolveURL" version="5.1.28" provider-name="gujal">
     <requires>
         <!-- <import addon="xbmc.python" version="3.0.0" /> -->
         <import addon="script.module.six" />
