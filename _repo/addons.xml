@@ -329,7 +329,7 @@
 
 <addon id="plugin.video.shadow"
 	   name="Shadow"
-	   version="2.6.8"
+	   version="2.7.0"
 	   provider-name="Darkness">
   <requires>
 
@@ -351,7 +351,7 @@
 
 </addon>
 
-<addon id="plugin.video.venom" name="[COLOR red]Venom[/COLOR]" provider-name="Venom" version="5.0.2">
+<addon id="plugin.video.venom" name="[COLOR red]Venom[/COLOR]" provider-name="Venom" version="5.0.5">
 	<requires>
 		<import addon="context.venom" />
 		<import addon="script.module.myaccounts" />
@@ -376,7 +376,7 @@
 		<forum />
 		<website>https://github.com/123Venom/plugin.video.venom</website>
 		<source>https://github.com/123Venom/plugin.video.venom</source>
-		<disclaimer lang="en">The author of this addon do not host any of the content which is found and have no affiliation with any of the content providers. This addon simply searches websites for content. Use at your own risk!</disclaimer>
+		<disclaimer lang="en">The author of this addon does not host any of the content which is found and have no affiliation with any of the content providers. This addon simply searches websites for content. Use at your own risk!</disclaimer>
 		<assets>
 			<icon>icon.png</icon>
 			<fanart>fanart.jpg</fanart>
@@ -385,8 +385,15 @@
 			<screenshot>resources/screenshots/screenshot003.jpg</screenshot>
 		</assets>
 		<news>
-[B][COLOR red]Update - v5.0.2 - April 25, 2021[/COLOR][/B]
-[COLOR yellow]--[/COLOR][I] Fixed two typo in recent library module update.[/I]
+[B][COLOR red]Update - v5.0.5 - May 14, 2021[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] Fixed RD failed resolving issue when &quot;&amp;&quot; or &quot;%&quot; exists in meta title.[/I]
+[COLOR yellow]--[/COLOR][I] Fixed RD failed resolving issue when &quot;error&quot; existed in the meta title.
+    Thanks noizex!! [/I]
+[COLOR yellow]--[/COLOR][I] Change duplicate source removal that upon hash match will keep
+    the match with longer title portion of the magnet.  This
+    results in reassuring the kept source is the one
+    containing more file info.[/I]
+[COLOR yellow]--[/COLOR][I] Fixed episode count when unwatched counts for multi list is enabled.[/I]
 		</news>
 	</extension>
 </addon>
@@ -1150,7 +1157,7 @@ v1.0.25 (marcelveldt)
   </extension>
 </addon>
 
-<addon id="script.module.myaccounts" version="1.0.9" name="My Accounts" provider-name="Venom, Fen">
+<addon id="script.module.myaccounts" version="1.1.0" name="My Accounts" provider-name="Venom, Fen">
 	<requires>
 		<import addon="script.module.requests" version="2.19.1" />
 	</requires>
@@ -1175,8 +1182,10 @@ v1.0.25 (marcelveldt)
 			<screenshot></screenshot>
 		</assets>
 		<news>
-[B][COLOR red]Update - v1.0.9 - March 16, 2021[/COLOR][/B]
-[COLOR yellow]--[/COLOR][I] Matrix fix for xbmc.translatePath.[/I]
+[B][COLOR red]Update - v1.1.0 - May 08, 2021[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] Change RD to only revoke auth under invalid account response
+    only!  Previousely a "Temporarily Down For Maintenance"
+    response would trigger a revoke of RD account.[/I]
 		</news>
 	</extension>
 </addon>
