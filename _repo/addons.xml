@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
-<addon id="context.venom" name="Venom - Global Context Menu Items" provider-name="Venom" version="1.1.5">
+<addon id="context.venom" name="Venom - Global Context Menu Items" provider-name="Venom" version="1.1.6">
 	<requires>
 		<import addon="script.module.requests" version="2.19.1" />
 	</requires>
@@ -129,8 +129,10 @@
 			<screenshot></screenshot>
 		</assets>
 		<news>
-[B][COLOR red]Update - v1.1.5 - May 21, 2021[/COLOR][/B]
-[COLOR yellow]--[/COLOR][I] Fixed "Browse Series" and "Play from Here".[/I]
+[B][COLOR red]Update - v1.1.6 - May 26, 2021[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] Update "Browse Series" to reflect "tvshow.clearart" and "tvshow.clearlogo"
+    changes in Venom  This is only seen when Venom is set to "Direct Progress Scraping"
+    and "Browse Serires" is chosen.[/I]
 		</news>
 	</extension>
 </addon>
@@ -350,7 +352,7 @@
 
 </addon>
 
-<addon id="plugin.video.venom" name="[COLOR red]Venom[/COLOR]" provider-name="Venom" version="5.0.6">
+<addon id="plugin.video.venom" name="[COLOR red]Venom[/COLOR]" provider-name="Venom" version="5.0.7">
 	<requires>
 		<import addon="context.venom" />
 		<import addon="script.module.myaccounts" />
@@ -384,13 +386,12 @@
 			<screenshot>resources/screenshots/screenshot003.jpg</screenshot>
 		</assets>
 		<news>
-[B][COLOR red]Update - v5.0.6 - May 19, 2021[/COLOR][/B]
-[COLOR yellow]--[/COLOR][I] Cam and SD filtering now has their own separate setting. SD
-    quality will only be removed when setting is in use if better
-    quality does in fact exist.[/I]
-[COLOR yellow]--[/COLOR][I] Source playback will now strictly use "setResolvedURL" for playback
-    method due to changes in Matrix 19.1[/I]
-[COLOR yellow]--[/COLOR][I] Venom now uses a router method call from plugin default for speed.[/I]
+[B][COLOR red]Update - v5.0.7 - May 26, 2021[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] Fixed multiple issues with Matrix skins requiring "tvshow.clearart" and "tvshow.clearlogo" at
+    season and episode level vs. simply "clearart" and "clearlogo".[/I]
+[COLOR yellow]--[/COLOR][I] All "Help", "Changelog", and "NewsInfo" files have been converted to window xml's to pave the
+    way for complete transition to windows xml's throughout. Slow migration over to new setup.[/I]
+[COLOR yellow]--[/COLOR][I] Fixed 24hr Delay setting not working for Library integration.[/I]
 		</news>
 	</extension>
 </addon>
@@ -916,7 +917,7 @@
     </extension>
 </addon>
 
-<addon id="script.module.fenomscrapers" name="FenomScrapers Module" version="1.4.0" provider-name="Mr-Kodi">
+<addon id="script.module.fenomscrapers" name="FenomScrapers Module" version="1.4.1" provider-name="Mr-Kodi">
 	<requires>
 		<import addon="script.module.requests" />
 		<import addon="script.module.myaccounts" version="1.0.0" />
@@ -942,11 +943,9 @@
 			<screenshot></screenshot>
 		</assets>
 		<news>
-[B][COLOR red]Update - v1.4.0 - May 20, 2021[/COLOR][/B]
-[COLOR yellow]--[/COLOR][I] Fixed issue with custom Undesirables input not converted to .lower().[/I]
-[COLOR yellow]--[/COLOR][I] Undesirables list is now a windows property for speed of access.[/I]
-[COLOR yellow]--[/COLOR][I] All settings are now converted to using window properties for speed.
-    Kodi's .getSetting() is extremely slow.[/I]
+[B][COLOR red]Update - v1.4.1 - May 26, 2021[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] 7torrents scraper is back and no longer behind Cloudflare, for now.[/I]
+[COLOR yellow]--[/COLOR][I] btdig scraper removed, reCaptcha.[/I]
 		</news>
 	</extension>
 </addon>
@@ -1349,7 +1348,7 @@ v1.0.25 (marcelveldt)
   </extension>
 </addon>
 
-<addon id="script.module.resolveurl" name="ResolveURL" version="5.1.31" provider-name="gujal">
+<addon id="script.module.resolveurl" name="ResolveURL" version="5.1.32" provider-name="gujal">
     <requires>
         <!-- <import addon="xbmc.python" version="3.0.0" /> -->
         <import addon="script.module.six" />
