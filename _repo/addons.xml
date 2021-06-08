@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
-<addon id="context.venom" name="Venom - Global Context Menu Items" provider-name="Venom" version="1.1.6">
+<addon id="context.venom" name="Venom - Global Context Menu Items" provider-name="Venom" version="1.1.8">
 	<requires>
 		<import addon="script.module.requests" version="2.19.1" />
 	</requires>
@@ -26,10 +26,12 @@
 			<item library="clearProviders.py">
 				<label>[B][COLOR red]Venom[/COLOR][/B] - Clear Providers</label>
 				<visible>
-					!String.IsEmpty(Window(home).Property(context.venom.clearProviders)) +
+					[!String.IsEmpty(Window(home).Property(context.venom.clearProviders)) +
 					String.StartsWith(ListItem.FolderPath,plugin://plugin.video.venom/?action=play) +
 					String.IsEqual(ListItem.Property(isVenom_widget),true) +
-					[String.IsEqual(ListItem.dbtype,episode) | String.IsEqual(ListItem.dbtype,movie)]
+					[String.IsEqual(ListItem.dbtype,episode) | String.IsEqual(ListItem.dbtype,movie)]] |
+					[String.Contains(Container.FolderPath,videodb://) + String.Contains(Container.ListItem.Path,plugin.video.venom) +
+					[String.IsEqual(ListItem.dbtype,episode) | String.IsEqual(ListItem.dbtype,movie)]]
 				</visible>
 			</item>
 			<item library="clearBookmark.py">
@@ -45,14 +47,17 @@
 			<item library="rescrape.py">
 				<label>[B][COLOR red]Venom[/COLOR][/B] - Rescrape Item</label>
 				<visible>
-					!String.IsEmpty(Window(home).Property(context.venom.rescrape)) +
+					[!String.IsEmpty(Window(home).Property(context.venom.rescrape)) +
 					String.StartsWith(ListItem.FolderPath,plugin://plugin.video.venom/?action=play) +
 					String.IsEqual(ListItem.Property(isVenom_widget),true) +
+					[String.IsEqual(ListItem.dbtype,episode) | String.IsEqual(ListItem.dbtype,movie)]]
+				</visible>
+			</item>
+			<item library="libRescrape.py">
+				<label>[B][COLOR red]Venom[/COLOR][/B] - Rescrape Lib Item</label>
+				<visible>
+					String.Contains(Container.FolderPath,videodb://) + String.Contains(Container.ListItem.Path,plugin.video.venom) +
 					[String.IsEqual(ListItem.dbtype,episode) | String.IsEqual(ListItem.dbtype,movie)]
-<!-- Future for Library CM to Rescrape -->
-<!-- 					!String.IsEmpty(Window(home).Property(context.venom.rescrape)) + -->
-<!-- 					[String.Contains(ListItem.Path,plugin.video.venom) + String.IsEqual(ListItem.FileExtension,strm) | String.StartsWith(ListItem.FolderPath,plugin://plugin.video.venom/?action=play)] + -->
-<!-- 					[String.IsEqual(ListItem.dbtype,episode) | String.IsEqual(ListItem.dbtype,movie)] -->
 				</visible>
 			</item>
 			<item library="playFromHere.py">
@@ -129,10 +134,9 @@
 			<screenshot></screenshot>
 		</assets>
 		<news>
-[B][COLOR red]Update - v1.1.6 - May 26, 2021[/COLOR][/B]
-[COLOR yellow]--[/COLOR][I] Update "Browse Series" to reflect "tvshow.clearart" and "tvshow.clearlogo"
-    changes in Venom  This is only seen when Venom is set to "Direct Progress Scraping"
-    and "Browse Serires" is chosen.[/I]
+[B][COLOR red]Update - v1.1.8 - June 08, 2021[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] "Rescrape Lib Item" is now availble for Library Items via context menu for
+    items added from the Venom addon.[/I]
 		</news>
 	</extension>
 </addon>
@@ -352,7 +356,7 @@
 
 </addon>
 
-<addon id="plugin.video.venom" name="[COLOR red]Venom[/COLOR]" provider-name="Venom" version="5.0.7">
+<addon id="plugin.video.venom" name="[COLOR red]Venom[/COLOR]" provider-name="Venom" version="5.1.4">
 	<requires>
 		<import addon="context.venom" />
 		<import addon="script.module.myaccounts" />
@@ -386,12 +390,16 @@
 			<screenshot>resources/screenshots/screenshot003.jpg</screenshot>
 		</assets>
 		<news>
-[B][COLOR red]Update - v5.0.7 - May 26, 2021[/COLOR][/B]
-[COLOR yellow]--[/COLOR][I] Fixed multiple issues with Matrix skins requiring "tvshow.clearart" and "tvshow.clearlogo" at
-    season and episode level vs. simply "clearart" and "clearlogo".[/I]
-[COLOR yellow]--[/COLOR][I] All "Help", "Changelog", and "NewsInfo" files have been converted to window xml's to pave the
-    way for complete transition to windows xml's throughout. Slow migration over to new setup.[/I]
-[COLOR yellow]--[/COLOR][I] Fixed 24hr Delay setting not working for Library integration.[/I]
+[B][COLOR red]Update - v5.1.4 - June 07, 2021[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] Skin changes: The new "View Uncached Torrents" button made clearlogo look off center, this is
+    now fix.[/I]
+[COLOR yellow]--[/COLOR][I] Skin changes: The secondary line is now Bold when in focus.[/I]
+[COLOR yellow]--[/COLOR][I] Skin changes: The Info icons have be recentered and the space between has been incrreased
+    for better visibility.[/I]
+[COLOR yellow]--[/COLOR][I] Playback from "Browse Debrid Pack" is now fixed.[/I]
+[COLOR yellow]--[/COLOR][I] There was a rare case where the Progress dialog during Resolving was empty and caused an
+    infinite loop.  This is now fixed.[/I]
+[COLOR yellow]--[/COLOR][I] Fixed settings page missing "Alldebrid" due to typo in ID.[/I]
 		</news>
 	</extension>
 </addon>
@@ -1348,7 +1356,7 @@ v1.0.25 (marcelveldt)
   </extension>
 </addon>
 
-<addon id="script.module.resolveurl" name="ResolveURL" version="5.1.32" provider-name="gujal">
+<addon id="script.module.resolveurl" name="ResolveURL" version="5.1.34" provider-name="gujal">
     <requires>
         <!-- <import addon="xbmc.python" version="3.0.0" /> -->
         <import addon="script.module.six" />
