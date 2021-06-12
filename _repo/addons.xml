@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
-<addon id="context.venom" name="Venom - Global Context Menu Items" provider-name="Venom" version="1.1.8">
+<addon id="context.venom" name="Venom - Global Context Menu Items" provider-name="Venom" version="1.1.9">
 	<requires>
 		<import addon="script.module.requests" version="2.19.1" />
 	</requires>
@@ -30,7 +30,8 @@
 					String.StartsWith(ListItem.FolderPath,plugin://plugin.video.venom/?action=play) +
 					String.IsEqual(ListItem.Property(isVenom_widget),true) +
 					[String.IsEqual(ListItem.dbtype,episode) | String.IsEqual(ListItem.dbtype,movie)]] |
-					[String.Contains(Container.FolderPath,videodb://) + String.Contains(Container.ListItem.Path,plugin.video.venom) +
+					[String.Contains(Container.FolderPath,videodb://) +
+					[String.Contains(Container.ListItem.Path,Window(home).Property(venom.movieLib.path)) | String.Contains(Container.ListItem.Path,Window(home).Property(venom.tvLib.path))] +
 					[String.IsEqual(ListItem.dbtype,episode) | String.IsEqual(ListItem.dbtype,movie)]]
 				</visible>
 			</item>
@@ -56,7 +57,8 @@
 			<item library="libRescrape.py">
 				<label>[B][COLOR red]Venom[/COLOR][/B] - Rescrape Lib Item</label>
 				<visible>
-					String.Contains(Container.FolderPath,videodb://) + String.Contains(Container.ListItem.Path,plugin.video.venom) +
+					String.Contains(Container.FolderPath,videodb://) +
+					[String.Contains(Container.ListItem.Path,Window(home).Property(venom.movieLib.path)) | String.Contains(Container.ListItem.Path,Window(home).Property(venom.tvLib.path))] +
 					[String.IsEqual(ListItem.dbtype,episode) | String.IsEqual(ListItem.dbtype,movie)]
 				</visible>
 			</item>
@@ -72,7 +74,7 @@
 			<item library="autoPlay.py">
 				<label>[B][COLOR red]Venom[/COLOR][/B] - Auto Play</label>
 				<visible>
-					String.IsEmpty(Window(home).Property(plugin.video.venom.autoPlay)) +
+					String.IsEmpty(Window(home).Property(venom.autoPlay.enabled)) +
 					!String.IsEmpty(Window(home).Property(context.venom.autoPlay)) +
 					String.StartsWith(ListItem.FolderPath,plugin://plugin.video.venom/?action=play) +
 					String.IsEqual(ListItem.Property(isVenom_widget),true) +
@@ -82,7 +84,7 @@
 			<item library="sourceSelect.py">
 				<label>[B][COLOR red]Venom[/COLOR][/B] - Source Select</label>
 				<visible>
-					!String.IsEmpty(Window(home).Property(plugin.video.venom.autoPlay)) +
+					!String.IsEmpty(Window(home).Property(venom.autoPlay.enabled)) +
 					!String.IsEmpty(Window(home).Property(context.venom.sourceSelect)) +
 					String.StartsWith(ListItem.FolderPath,plugin://plugin.video.venom/?action=play) +
 					String.IsEqual(ListItem.Property(isVenom_widget),true) +
@@ -134,9 +136,8 @@
 			<screenshot></screenshot>
 		</assets>
 		<news>
-[B][COLOR red]Update - v1.1.8 - June 08, 2021[/COLOR][/B]
-[COLOR yellow]--[/COLOR][I] "Rescrape Lib Item" is now availble for Library Items via context menu for
-    items added from the Venom addon.[/I]
+[B][COLOR red]Update - v1.1.9 - June 12, 2021[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] "Trakt Manager" updated for changed to Venom addon.[/I]
 		</news>
 	</extension>
 </addon>
@@ -194,37 +195,6 @@
 		<genre>uk,usa</genre>
 		<video_guide></video_guide>
 		<video_preview></video_preview>
-	</extension>
-</addon>
-
-<addon id="plugin.video.exodusredux" version="2.0.3a" name="Exodus Redux" provider-name="I-A-C">
-	<requires>
-		<import addon="xbmc.python" version="2.19.0" />
-		<import addon="script.module.exodusredux" />
-		<import addon="script.exodusredux.artwork" />
-		<import addon="script.exodusredux.metadata" />
-		<import addon="script.module.resolveurl" />
-		<import addon="script.module.requests" />
-<!--		<import addon="script.module.lambdascrapers" />-->
-		<import addon="script.module.openscrapers" />
-		<import addon="script.module.metahandler" version="1.0.0" />
-	</requires>
-	<extension point="xbmc.python.pluginsource" library="default.py">
-		<provides>video</provides>
-	</extension>
-	<extension point="xbmc.service" library="service.py" start="startup" />
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en">Exodus Redux</summary>
-		<description lang="en">[B]Exodus Redux[/B][CR] [B]***OpenScrapers Edition***[/B][CR][CR]This addon does not form part of the Kodi Media Centre. Please do not seek assistance with this addon from any of the Official Kodi Support Channels.[CR][CR]The author does not host any of the content in this addon and takes no responsibility for content found.</description>
-		<disclaimer lang="en">The author of this addon do not host any of the content which is found and have no affiliation with any of the content providers. This addon simply searches websites for content. Use at your own risk!</disclaimer>
-		<platform>all</platform>
-		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
-		<assets>
-			<icon>icon.png</icon>
-			<fanart>fanart.jpg</fanart>
-    			<screenshot></screenshot>
-		</assets>
-		<news></news>
 	</extension>
 </addon>
 
@@ -356,7 +326,7 @@
 
 </addon>
 
-<addon id="plugin.video.venom" name="[COLOR red]Venom[/COLOR]" provider-name="Venom" version="5.1.4">
+<addon id="plugin.video.venom" name="[COLOR red]Venom[/COLOR]" provider-name="Venom" version="5.1.5">
 	<requires>
 		<import addon="context.venom" />
 		<import addon="script.module.myaccounts" />
@@ -390,16 +360,32 @@
 			<screenshot>resources/screenshots/screenshot003.jpg</screenshot>
 		</assets>
 		<news>
-[B][COLOR red]Update - v5.1.4 - June 07, 2021[/COLOR][/B]
-[COLOR yellow]--[/COLOR][I] Skin changes: The new "View Uncached Torrents" button made clearlogo look off center, this is
-    now fix.[/I]
-[COLOR yellow]--[/COLOR][I] Skin changes: The secondary line is now Bold when in focus.[/I]
-[COLOR yellow]--[/COLOR][I] Skin changes: The Info icons have be recentered and the space between has been incrreased
-    for better visibility.[/I]
-[COLOR yellow]--[/COLOR][I] Playback from "Browse Debrid Pack" is now fixed.[/I]
-[COLOR yellow]--[/COLOR][I] There was a rare case where the Progress dialog during Resolving was empty and caused an
-    infinite loop.  This is now fixed.[/I]
-[COLOR yellow]--[/COLOR][I] Fixed settings page missing "Alldebrid" due to typo in ID.[/I]
+[B][COLOR red]Update - v5.1.5 - June 12, 2021[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] Please Note I have re-opened github issues. Hopefully I do not regret it!!  Conduct yourself
+    accordingly and hopefully I can help in my spare time.[/I]
+[COLOR yellow]--[/COLOR][I] Fixed, Search Movie and Tvshow title search, loading virtual keyboard a second time upon any
+    CM action used on the query results.  Also choosing cancel on the virtual keyboard no
+    longer results in an infinite busy dialog.[/I]
+[COLOR yellow]--[/COLOR][I] Trakt Manager now respects your global "Highlight Color" from General category Setting for text
+    items, default Red is now gone.[/I]
+[COLOR yellow]--[/COLOR][I] Trakt Manager now sets "watched" and "unwatched" listItem options based on received playcount.
+     No longer will both "mark as watched" and "mark as unwatched" be seen at the same
+    time.  The Venom Global Context Menu addon has also been updated for this change.[/I]
+[COLOR yellow]--[/COLOR][I] Trakt Manager "rate" and "unrate" listItem options are now only available if the trakt addon
+    is installed.[/I]
+[COLOR yellow]--[/COLOR][I] All language translation .po file have now been updated.  Any requested changes please
+    issue PR.[/I]
+[COLOR yellow]--[/COLOR][I] Meta API language changes fixed to now respect setting.  This is still a work in progress so please
+    issue PR for further changes.[/I]
+[COLOR yellow]--[/COLOR][I] Progress scrape dialog now respects the global "Highlight Color" from General category Setting for
+    fixed text, default cyan is now gone. The "Scraper Dialog Highlight Color" setting respects variable text.[/I]
+[COLOR yellow]--[/COLOR][I] Fixed meta retrieval from Kodi library when supplied TMDb meta vs. IMDb meta differs for year check.
+    This is seen when scraping for example "Flashback" from library item. IMDb reports
+    2020 while TMDb reports 2021 for year released. Now a year +1 and -1 check is
+    conducted for the match and the Kodi library meta is now retrieved..[/I]
+[COLOR yellow]--[/COLOR][I] Fixed widget refresh issue when global CM Trakt Manager is used.[/I]
+[COLOR yellow]--[/COLOR][I] Source filtering options now have a separate settings for Min. and Max. file size limits for Movies as
+    well as Episodes.[/I]
 		</news>
 	</extension>
 </addon>
@@ -713,30 +699,6 @@
         <summary>Zach Morris Add-ons</summary>
         <platform>all</platform>
     </extension>
-</addon>
-
-<addon id="script.exodusredux.artwork" version="1.0.2" name="Exodus Redux Artwork" provider-name="I-A-C">
-	<requires>
-		<import addon="xbmc.python" version="2.19.0"/>
-	</requires>
-	<extension point="xbmc.python.module" library="lib" />
-	<extension point="xbmc.addon.metadata">
-		<summary>Themes for the Exodus Redux Addon</summary>
-		<description></description>
-		<platform>all</platform>
-	</extension>
-</addon>
-
-<addon id="script.exodusredux.metadata" version="1.0.2" name="Exodus Redux Metadata" provider-name="I-A-C">
-	<requires>
-		<import addon="xbmc.python" version="2.19.0"/>
-	</requires>
-	<extension point="xbmc.python.module" library="lib" />
-	<extension point="xbmc.addon.metadata">
-		<summary>Metadata for the Exodus Redux Addon</summary>
-		<description>Metadata for Exodus Redux are maintained separately to make distribution of the the addon itself easier/faster.</description>
-		<platform>all</platform>
-	</extension>
 </addon>
 
 <addon id="script.extendedinfo" name="OpenInfo" version="6.2.4" provider-name="A4K">
