@@ -326,7 +326,7 @@
 
 </addon>
 
-<addon id="plugin.video.venom" name="[COLOR red]Venom[/COLOR]" provider-name="Venom" version="5.1.7">
+<addon id="plugin.video.venom" name="[COLOR red]Venom[/COLOR]" provider-name="Venom" version="5.1.9">
 	<requires>
 		<import addon="context.venom" />
 		<import addon="script.module.myaccounts" />
@@ -360,15 +360,21 @@
 			<screenshot>resources/screenshots/screenshot003.jpg</screenshot>
 		</assets>
 		<news>
-[B][COLOR red]Update - v5.1.7 - June 16, 2021[/COLOR][/B]
-[COLOR yellow]--[/COLOR][I] Cloud Scrapers have now been added for AD, PM, and RD. See Account Settings to
-    "Enable cloud scraper" for each of the three.[/I]
-[COLOR yellow]--[/COLOR][I] Dutch language .po file update.[/I]
+[B][COLOR red]Update - v5.1.9 - June 19, 2021[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] Added new setting to "Sources Options" called "Terminate on Cloud Sources".  Now if cloud
+    sources are found you can force the scrape process to terminate.[/I]
+[COLOR yellow]--[/COLOR][I] Resume dialog now utilizes the Kodi Matrix/19 new "yesnocustom" dialog.  Matrix users can
+    now chose from "Start from Beginning", "Resume" or "Cancel Playback". Leia users
+    can only see the first two options[/I]
+[COLOR yellow]--[/COLOR][I] I regret to inform user that the next release will drop Kodi 18 support.  I no longer desire to
+    maintain code to which I will never use again.  The Venom repo will be updated so
+    Kodi 18 users can still access an 18 version, but it will no longer be developed.
+    Matrix users will have access to a new github branch for future development.[/I]
 		</news>
 	</extension>
 </addon>
 
-<addon id="plugin.video.youtube" name="YouTube" version="6.8.11" provider-name="anxdpanic, bromix">
+<addon id="plugin.video.youtube" name="YouTube" version="6.8.15" provider-name="anxdpanic, bromix">
     <requires>
         <import addon="xbmc.python" version="2.20.0"/>
         <import addon="script.module.six" version="1.11.0"/>
@@ -382,60 +388,62 @@
     <extension point="xbmc.python.module" library="resources/lib/"/>
     <extension point="xbmc.addon.metadata">
         <news>
-[fix] mktime overflow when loading My Subscriptions
-[fix] encoding issues in search history |contrib: dreznichuk|
+[fixup] No streams found, consent cookies |contrib: jaylinski|
+[fixup] Age gate detection, show age gate error instead of 'No streams found'
+[fixup] encoding of some titles/authors - ie. russian
+[lang] translation updates from Weblate
         </news>
         <assets>
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
         </assets>
-        <summary lang="en_GB">Plugin for YouTube</summary>
-        <description lang="en_GB">YouTube is one of the biggest video-sharing websites of the world.</description>
-        <disclaimer lang="en_GB">This plugin is not endorsed by Google</disclaimer>
-        <summary lang="he_IL">תוסף עבור YouTube</summary>
-        <description lang="he_IL">YouTube הוא אחד מאתרי שיתוף הווידאו הגדולים בעולם.</description>
-        <summary lang="de_DE">Plugin für YouTube</summary>
-        <description lang="de_DE">YouTube ist eines der größten Video-Sharing-Websites der Welt.</description>
-        <summary lang="pl_PL">Wtyczka YouTube</summary>
-        <description lang="pl_PL">YouTube jest jednym z największych na świecie serwisów udostępniania wideo.</description>
-        <summary lang="hu_HU">YouTube kiegészítő</summary>
-        <description lang="hu_HU">A YouTube világ egyik legnagyobb videómegosztó weboldala.</description>
-        <summary lang="es_ES">Plugin para YouTube</summary>
-        <description lang="es_ES">YouTube es uno de los sitios web más grande del mundo para compartir vídeos.</description>
-        <disclaimer lang="es_ES">Este add-on no está respaldado por Google</disclaimer>
-        <summary lang="es_MX">Plugin para YouTube</summary>
-        <description lang="es_MX">YouTube es uno de los más grandes sitios web de intercambio de videos del mundo.</description>
-        <disclaimer lang="es_MX">Este add-on no está respaldado por Google</disclaimer>
-        <summary lang="ru_RU">Видеодополнение YouTube</summary>
-        <description lang="ru_RU">YouTube - популярнейший видеохостинговый сайт, предоставляющий пользователям услуги хранения, доставки и показа видео.</description>
-        <summary lang="fr_FR">Plugin pour YouTube</summary>
-        <description lang="fr_FR">YouTube est l'un des plus grands sites de partage vidéos du monde.</description>
-        <summary lang="zh_CN">YouTube附加元件</summary>
-        <description lang="zh_CN">「Youtube」是全世界最大的影片分享網站</description>
-        <summary lang="zh_TW">YouTube附加元件</summary>
-        <description lang="zh_TW">「Youtube」是全世界最大的影片分享網站</description>
-        <disclaimer lang="zh_TW">此附加元件未由Google支持</disclaimer>
-        <summary lang="bg_BG">Добавка за YouTube</summary>
-        <description lang="bg_BG">YouTube е един от най-големите уеб сайтове за споделяне на видео в целия свят.</description>
-        <summary lang="el_GR">Πρόσθετο YouTube</summary>
-        <description lang="el_GR">Το YouTube είναι μία από τις μεγαλύτερες ιστοσελίδες διαμοιρασμού βίντεο στον κόσμο.</description>
-        <disclaimer lang="el_GR">Η παρούσα μικροεφαρμογή δεν έχει υϊοθετηθεί από την Google</disclaimer>
-        <summary lang="nb_NO">Tillegg for YouTube</summary>
-        <description lang="nb_NO">YouTube er en av verdens største nettsider for videodeling.</description>
-        <summary lang="ko_KR">유튜브 플러그인</summary>
-        <description lang="ko_KR">유튜브는 세상에서 가장 큰 동영상 공유 사이트 중의 하나입니다.</description>
-        <summary lang="cs_CZ">Plugin pro YouTube</summary>
-        <description lang="cs_CZ">YouTube je jedna z největších webových stránek světa sdílející video.</description>
-        <disclaimer lang="cs_CZ">Tento plugin není schválen společností Google</disclaimer>
-        <summary lang="tr_TR">YouTube için eklenti</summary>
-        <description lang="tr_TR">YouTube, dünya üzerindeki en büyük video paylaşma platformlarından birisidir</description>
-        <disclaimer lang="tr_TR">Bu eklenti Google tarafından üretilmemiştir</disclaimer>
         <platform>all</platform>
         <license>GPL-2.0-only</license>
         <forum>https://ytaddon.panicked.xyz/forum</forum>
         <website>https://www.youtube.com</website>
         <source>https://github.com/anxdpanic/plugin.video.youtube</source>
         <reuselanguageinvoker>true</reuselanguageinvoker>
+        <summary lang="bg_BG">Добавка за YouTube</summary>
+        <summary lang="cs_CZ">Plugin pro YouTube</summary>
+        <summary lang="de_DE">Plugin für YouTube</summary>
+        <summary lang="el_GR">Πρόσθετο YouTube</summary>
+        <summary lang="en_GB">Plugin for YouTube</summary>
+        <summary lang="es_ES">Plugin para YouTube</summary>
+        <summary lang="es_MX">Plugin para YouTube</summary>
+        <summary lang="fr_FR">Plugin pour YouTube</summary>
+        <summary lang="he_IL">תוסף עבור YouTube</summary>
+        <summary lang="hu_HU">YouTube kiegészítő</summary>
+        <summary lang="ko_KR">유튜브 플러그인</summary>
+        <summary lang="nb_NO">Tillegg for YouTube</summary>
+        <summary lang="pl_PL">Wtyczka YouTube</summary>
+        <summary lang="ru_RU">Видеодополнение YouTube</summary>
+        <summary lang="tr_TR">YouTube için eklenti</summary>
+        <summary lang="zh_CN">YouTube附加元件</summary>
+        <summary lang="zh_TW">YouTube附加元件</summary>
+        <description lang="bg_BG">YouTube е един от най-големите уеб сайтове за споделяне на видео в целия свят.</description>
+        <description lang="cs_CZ">YouTube je jedna z největších webových stránek světa sdílející video.</description>
+        <description lang="de_DE">YouTube ist eines der größten Video-Sharing-Websites der Welt.</description>
+        <description lang="el_GR">Το YouTube είναι μία από τις μεγαλύτερες ιστοσελίδες διαμοιρασμού βίντεο στον κόσμο.</description>
+        <description lang="en_GB">YouTube is one of the biggest video-sharing websites of the world.</description>
+        <description lang="es_ES">YouTube es uno de los sitios web más grande del mundo para compartir vídeos.</description>
+        <description lang="es_MX">YouTube es uno de los más grandes sitios web de intercambio de videos del mundo.</description>
+        <description lang="fr_FR">YouTube est l'un des plus grands sites de partage vidéos du monde.</description>
+        <description lang="he_IL">YouTube הוא אחד מאתרי שיתוף הווידאו הגדולים בעולם.</description>
+        <description lang="hu_HU">A YouTube világ egyik legnagyobb videómegosztó weboldala.</description>
+        <description lang="ko_KR">유튜브는 세상에서 가장 큰 동영상 공유 사이트 중의 하나입니다.</description>
+        <description lang="nb_NO">YouTube er en av verdens største nettsider for videodeling.</description>
+        <description lang="pl_PL">YouTube jest jednym z największych na świecie serwisów udostępniania wideo.</description>
+        <description lang="ru_RU">YouTube - популярнейший видеохостинговый сайт, предоставляющий пользователям услуги хранения, доставки и показа видео.</description>
+        <description lang="tr_TR">YouTube, dünya üzerindeki en büyük video paylaşma platformlarından birisidir</description>
+        <description lang="zh_CN">「Youtube」是全世界最大的影片分享網站</description>
+        <description lang="zh_TW">「Youtube」是全世界最大的影片分享網站</description>
+        <disclaimer lang="cs_CZ">Tento plugin není schválen společností Google</disclaimer>
+        <disclaimer lang="el_GR">Η παρούσα μικροεφαρμογή δεν έχει υϊοθετηθεί από την Google</disclaimer>
+        <disclaimer lang="en_GB">This plugin is not endorsed by Google</disclaimer>
+        <disclaimer lang="es_ES">Este add-on no está respaldado por Google</disclaimer>
+        <disclaimer lang="es_MX">Este add-on no está respaldado por Google</disclaimer>
+        <disclaimer lang="tr_TR">Bu eklenti Google tarafından üretilmemiştir</disclaimer>
+        <disclaimer lang="zh_TW">此附加元件未由Google支持</disclaimer>
     </extension>
 </addon>
 
@@ -1099,7 +1107,7 @@ v1.0.25 (marcelveldt)
   </extension>
 </addon>
 
-<addon id="script.module.myaccounts" version="1.1.0" name="My Accounts" provider-name="Venom, Fen">
+<addon id="script.module.myaccounts" version="1.1.1" name="My Accounts" provider-name="Venom, Fen">
 	<requires>
 		<import addon="script.module.requests" version="2.19.1" />
 	</requires>
@@ -1124,10 +1132,11 @@ v1.0.25 (marcelveldt)
 			<screenshot></screenshot>
 		</assets>
 		<news>
-[B][COLOR red]Update - v1.1.0 - May 08, 2021[/COLOR][/B]
-[COLOR yellow]--[/COLOR][I] Change RD to only revoke auth under invalid account response
-    only!  Previousely a "Temporarily Down For Maintenance"
-    response would trigger a revoke of RD account.[/I]
+[B][COLOR red]Update - v1.1.1 - June 18, 2021[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] Trakt improvements to account auth for better server error capturing.[/I]
+[COLOR yellow]--[/COLOR][I] Trakt expire duration was not properly saved to user settings.
+    This is now fixed.[/I]
+[COLOR yellow]--[/COLOR][I] Fixed entry point import issue.[/I]
 		</news>
 	</extension>
 </addon>
