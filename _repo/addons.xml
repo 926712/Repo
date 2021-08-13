@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
-<addon id="context.venom" name="Venom - Global Context Menu Items" provider-name="Venom" version="1.1.9">
+<addon id="context.venom" name="Venom - Global Context Menu Items" provider-name="Venom" version="1.2.0">
 	<requires>
 		<import addon="script.module.requests" version="2.19.1" />
 	</requires>
@@ -136,8 +136,8 @@
 			<screenshot></screenshot>
 		</assets>
 		<news>
-[B][COLOR red]Update - v1.1.9 - June 12, 2021[/COLOR][/B]
-[COLOR yellow]--[/COLOR][I] "Trakt Manager" updated for changed to Venom addon.[/I]
+[B][COLOR red]Update - v1.2.0 - June 12, 2021[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] Fix for missing tvshow_poster that breaks [B]Browse Series[/B] when Venom addon is set to [B]Direct Progress Scraping[/B].[/I]
 		</news>
 	</extension>
 </addon>
@@ -374,7 +374,7 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.youtube" name="YouTube" version="6.8.15" provider-name="anxdpanic, bromix">
+<addon id="plugin.video.youtube" name="YouTube" version="6.8.16" provider-name="anxdpanic, bromix">
     <requires>
         <import addon="xbmc.python" version="2.20.0"/>
         <import addon="script.module.six" version="1.11.0"/>
@@ -388,9 +388,8 @@
     <extension point="xbmc.python.module" library="resources/lib/"/>
     <extension point="xbmc.addon.metadata">
         <news>
-[fixup] No streams found, consent cookies |contrib: jaylinski|
-[fixup] Age gate detection, show age gate error instead of 'No streams found'
-[fixup] encoding of some titles/authors - ie. russian
+[fix] Fix playback of some content (ie. Music videos)
+[fix] Calcuate n parameter to enable ratebypass
 [lang] translation updates from Weblate
         </news>
         <assets>
@@ -434,14 +433,17 @@
         <description lang="nb_NO">YouTube er en av verdens største nettsider for videodeling.</description>
         <description lang="pl_PL">YouTube jest jednym z największych na świecie serwisów udostępniania wideo.</description>
         <description lang="ru_RU">YouTube - популярнейший видеохостинговый сайт, предоставляющий пользователям услуги хранения, доставки и показа видео.</description>
-        <description lang="tr_TR">YouTube, dünya üzerindeki en büyük video paylaşma platformlarından birisidir</description>
+        <description lang="tr_TR">YouTube, dünya üzerindeki en büyük video paylaşma platformlarından birisidir.</description>
         <description lang="zh_CN">「Youtube」是全世界最大的影片分享網站</description>
         <description lang="zh_TW">「Youtube」是全世界最大的影片分享網站</description>
         <disclaimer lang="cs_CZ">Tento plugin není schválen společností Google</disclaimer>
+        <disclaimer lang="de_DE">Dieses Plugin ist nicht von Google befürwortet</disclaimer>
         <disclaimer lang="el_GR">Η παρούσα μικροεφαρμογή δεν έχει υϊοθετηθεί από την Google</disclaimer>
         <disclaimer lang="en_GB">This plugin is not endorsed by Google</disclaimer>
         <disclaimer lang="es_ES">Este add-on no está respaldado por Google</disclaimer>
         <disclaimer lang="es_MX">Este add-on no está respaldado por Google</disclaimer>
+        <disclaimer lang="pl_PL">Ta wtyczka nie jest zatwierdzona przez Google</disclaimer>
+        <disclaimer lang="ru_RU">Плагин не поддерживается Google</disclaimer>
         <disclaimer lang="tr_TR">Bu eklenti Google tarafından üretilmemiştir</disclaimer>
         <disclaimer lang="zh_TW">此附加元件未由Google支持</disclaimer>
     </extension>
@@ -811,7 +813,7 @@
     </extension>
 </addon>
 
-<addon id="script.module.fenomscrapers" name="FenomScrapers Module" version="1.4.3" provider-name="Mr-Kodi">
+<addon id="script.module.fenomscrapers" name="FenomScrapers Module" version="1.4.4" provider-name="Mr-Kodi">
 	<requires>
 		<import addon="script.module.requests" />
 		<import addon="script.module.myaccounts" version="1.0.0" />
@@ -837,10 +839,8 @@
 			<screenshot></screenshot>
 		</assets>
 		<news>
-[B][COLOR red]Update - v1.4.3 - July 26, 2021[/COLOR][/B]
-[COLOR yellow]--[/COLOR][I] Fixed [B]300mbfilms[/B].[/I]
-[COLOR yellow]--[/COLOR][I] Scrapers no longer set any source "extra_info".  Addons will now be responsible to set their own.[/I]
-[COLOR yellow]--[/COLOR][I] Fixed random issue where returned source from [B]eztv[/B] may have null value for a size.[/I]
+[B][COLOR red]Update - v1.4.4 - Aug. 01, 2021[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] Fixed [B]torrentfunk[/B] name and size parsing random issue.[/I]
 		</news>
 	</extension>
 </addon>
@@ -1244,7 +1244,7 @@ v1.0.25 (marcelveldt)
   </extension>
 </addon>
 
-<addon id="script.module.resolveurl" name="ResolveURL" version="5.1.36" provider-name="gujal">
+<addon id="script.module.resolveurl" name="ResolveURL" version="5.1.38" provider-name="gujal">
     <requires>
         <!-- <import addon="xbmc.python" version="3.0.0" /> -->
         <import addon="script.module.six" />
