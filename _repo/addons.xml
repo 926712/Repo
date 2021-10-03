@@ -921,7 +921,7 @@
     </extension>
 </addon>
 
-<addon id="script.module.fenomscrapers" name="FenomScrapers Module" version="1.5.2" provider-name="Mr-Kodi">
+<addon id="script.module.fenomscrapers" name="FenomScrapers Module" version="1.5.4" provider-name="Mr-Kodi">
 	<requires>
 		<import addon="script.module.requests" />
 		<import addon="script.module.myaccounts" version="1.0.0" />
@@ -947,8 +947,9 @@
 			<screenshot></screenshot>
 		</assets>
 		<news>
-[B][COLOR red]Update - v1.5.2 - Sept. 19, 2021[/COLOR][/B]
-[COLOR yellow]--[/COLOR][I] Fixed encoding issue when opening changelog file.[/I]
+[B][COLOR red]Update - v1.5.4 - Sept. 25, 2021[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] Improved regex range check of show packs.  This helps to pull a few new sources that previously failed.[/I]
+[COLOR yellow]--[/COLOR][I] BITLORD scraper tweak to deal with their size reporting MB vs GB from one source link to the next.[/I]
 		</news>
 	</extension>
 </addon>
@@ -1360,7 +1361,7 @@ v1.0.25 (marcelveldt)
   </extension>
 </addon>
 
-<addon id="script.module.resolveurl" name="ResolveURL" version="5.1.43" provider-name="gujal">
+<addon id="script.module.resolveurl" name="ResolveURL" version="5.1.44" provider-name="gujal">
     <requires>
         <!-- <import addon="xbmc.python" version="3.0.0" /> -->
         <import addon="script.module.six" />
