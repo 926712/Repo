@@ -198,6 +198,30 @@
 	</extension>
 </addon>
 
+<addon id="plugin.video.chains"
+	   name="[COLORghostwhite][B]Chain Reaction[/B][/COLOR]"
+	   version="5.0.4"
+	   provider-name="Chains">
+  <requires>
+	<import addon="script.module.resolveurl" />
+  </requires>
+  <extension point="xbmc.python.pluginsource"
+            library="default.py">
+        <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Chains Reaction All in one addon</summary>
+    <description lang="en">Chains Addon</description>
+
+    <platform>all</platform>
+	<assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+    </assets>
+  </extension>
+
+</addon>
+
 <addon id="plugin.video.f4mTester" name="f4mTester" version="2.7.2" provider-name="Shani">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
@@ -210,6 +234,35 @@
         <summary>f4mTester</summary>
         <description></description>
         <platform>all</platform>
+    </extension>
+</addon>
+
+<addon id="plugin.video.magicdragon" name="Magic Dragon" provider-name="tomb raider" version="3.0.8">
+    <requires>
+	    <import addon="script.module.six" version="0.0.1"/>
+		<import addon="script.module.requests"/>
+        <import addon="script.module.resolveurl"/>
+    </requires>
+    <extension library="default.py" point="xbmc.python.pluginsource">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <reuselanguageinvoker>false</reuselanguageinvoker>
+        <summary lang="en">Magic Dragon</summary>
+        <description lang="en">All Content Is Freely Available On The Internet. Not Owned Or Stored In Any Way By MD</description>
+        <platform>all</platform>
+        <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+        <forum />
+        <website />
+        <source />
+        <disclaimer lang="en">The author of this add-on does not host any of the content which is found and has no affiliation with any of the content providers. This add-on simply searches websites for content. Use at your own risk!</disclaimer>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+        <news>
+
+        </news>
     </extension>
 </addon>
 
@@ -274,7 +327,7 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.projectx" name="Project X" version="3.0.6" provider-name="Mr X">
+<addon id="plugin.video.projectx" name="Project X" version="3.0.5" provider-name="Mr X">
     <requires>
         <import addon="xbmc.python" version="2.19.0" />
         <import addon="script.module.universalscrapers" version="1.0.0" />
@@ -302,20 +355,24 @@
     </extension>
 </addon>
 
-<addon id="plugin.video.shadow"
-	   name="Shadow"
-	   version="2.7.0"
-	   provider-name="Darkness">
+<addon id="plugin.video.thechains"
+	   name="Chain Reaction Lite"
+	   version="1.0.6"
+	   provider-name="Chains">
   <requires>
-
+	<import addon="script.module.resolveurl"/>
   </requires>
   <extension point="xbmc.python.pluginsource"
             library="default.py">
         <provides>video</provides>
   </extension>
+  <extension library="resources/modules/" point="xbmc.python.module" />
+  <extension library="resources/sources/" point="xbmc.python.module" />
+  <extension library="resources/" point="xbmc.python.module" />
   <extension point="xbmc.addon.metadata">
-    <summary lang="en">The single light in the Darkness</summary>
-    <description lang="en">All the media as fast as possible</description>
+	<reuselanguageinvoker>true</reuselanguageinvoker>
+    <summary lang="en">Chain Reaction Lite</summary>
+    <description lang="en">Faster Than A Speeding Bullet</description>
 
     <platform>all</platform>
 	<assets>
@@ -367,7 +424,7 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.youtube" name="YouTube" version="6.8.18" provider-name="anxdpanic, bromix">
+<addon id="plugin.video.youtube" name="YouTube" version="6.8.9" provider-name="anxdpanic, bromix">
     <requires>
         <import addon="xbmc.python" version="2.20.0"/>
         <import addon="script.module.six" version="1.11.0"/>
@@ -381,104 +438,64 @@
     <extension point="xbmc.python.module" library="resources/lib/"/>
     <extension point="xbmc.addon.metadata">
         <news>
-[fix] Fix to_str |contrib: RNavega|
-[fix] Fix playback buffering |contrib: RNavega|
-[lang] translation updates from Weblate
+[fix] my subscriptions section using YouTube RSS |contrib: PureHemp|
+[fix] items per page settings on Kodi 19
+[chg] recommendations only available for users with custom history playlist id configured
+[chg] no longer show watch later unless custom watch later playlist is configured
+[rem] remove usage of discontinued api and dual login (no longer required)
         </news>
         <assets>
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
         </assets>
+        <summary lang="en_GB">Plugin for YouTube</summary>
+        <description lang="en_GB">YouTube is one of the biggest video-sharing websites of the world.</description>
+        <disclaimer lang="en_GB">This plugin is not endorsed by Google</disclaimer>
+        <summary lang="he_IL">תוסף עבור YouTube</summary>
+        <description lang="he_IL">YouTube הוא אחד מאתרי שיתוף הווידאו הגדולים בעולם.</description>
+        <summary lang="de_DE">Plugin für YouTube</summary>
+        <description lang="de_DE">YouTube ist eines der größten Video-Sharing-Websites der Welt.</description>
+        <summary lang="pl_PL">Wtyczka YouTube</summary>
+        <description lang="pl_PL">YouTube jest jednym z największych na świecie serwisów udostępniania wideo.</description>
+        <summary lang="hu_HU">YouTube kiegészítő</summary>
+        <description lang="hu_HU">A YouTube világ egyik legnagyobb videómegosztó weboldala.</description>
+        <summary lang="es_ES">Plugin para YouTube</summary>
+        <description lang="es_ES">YouTube es uno de los sitios web más grande del mundo para compartir vídeos.</description>
+        <disclaimer lang="es_ES">Este add-on no está respaldado por Google</disclaimer>
+        <summary lang="es_MX">Plugin para YouTube</summary>
+        <description lang="es_MX">YouTube es uno de los más grandes sitios web de intercambio de videos del mundo.</description>
+        <disclaimer lang="es_MX">Este add-on no está respaldado por Google</disclaimer>
+        <summary lang="ru_RU">Видеодополнение YouTube</summary>
+        <description lang="ru_RU">YouTube - популярнейший видеохостинговый сайт, предоставляющий пользователям услуги хранения, доставки и показа видео.</description>
+        <summary lang="fr_FR">Plugin pour YouTube</summary>
+        <description lang="fr_FR">YouTube est l'un des plus grands sites de partage vidéos du monde.</description>
+        <summary lang="zh_CN">YouTube附加元件</summary>
+        <description lang="zh_CN">「Youtube」是全世界最大的影片分享網站</description>
+        <summary lang="zh_TW">YouTube附加元件</summary>
+        <description lang="zh_TW">「Youtube」是全世界最大的影片分享網站</description>
+        <disclaimer lang="zh_TW">此附加元件未由Google支持</disclaimer>
+        <summary lang="bg_BG">Добавка за YouTube</summary>
+        <description lang="bg_BG">YouTube е един от най-големите уеб сайтове за споделяне на видео в целия свят.</description>
+        <summary lang="el_GR">Πρόσθετο YouTube</summary>
+        <description lang="el_GR">Το YouTube είναι μία από τις μεγαλύτερες ιστοσελίδες διαμοιρασμού βίντεο στον κόσμο.</description>
+        <disclaimer lang="el_GR">Η παρούσα μικροεφαρμογή δεν έχει υϊοθετηθεί από την Google</disclaimer>
+        <summary lang="nb_NO">Tillegg for YouTube</summary>
+        <description lang="nb_NO">YouTube er en av verdens største nettsider for videodeling.</description>
+        <summary lang="ko_KR">유튜브 플러그인</summary>
+        <description lang="ko_KR">유튜브는 세상에서 가장 큰 동영상 공유 사이트 중의 하나입니다.</description>
+        <summary lang="cs_CZ">Plugin pro YouTube</summary>
+        <description lang="cs_CZ">YouTube je jedna z největších webových stránek světa sdílející video.</description>
+        <disclaimer lang="cs_CZ">Tento plugin není schválen společností Google</disclaimer>
+        <summary lang="tr_TR">YouTube için eklenti</summary>
+        <description lang="tr_TR">YouTube, dünya üzerindeki en büyük video paylaşma platformlarından birisidir</description>
+        <disclaimer lang="tr_TR">Bu eklenti Google tarafından üretilmemiştir</disclaimer>
         <platform>all</platform>
         <license>GPL-2.0-only</license>
         <forum>https://ytaddon.panicked.xyz/forum</forum>
         <website>https://www.youtube.com</website>
         <source>https://github.com/anxdpanic/plugin.video.youtube</source>
         <reuselanguageinvoker>true</reuselanguageinvoker>
-        <summary lang="bg_BG">Добавка за YouTube</summary>
-        <summary lang="cs_CZ">Plugin pro YouTube</summary>
-        <summary lang="de_DE">Plugin für YouTube</summary>
-        <summary lang="el_GR">Πρόσθετο YouTube</summary>
-        <summary lang="en_GB">Plugin for YouTube</summary>
-        <summary lang="es_ES">Plugin para YouTube</summary>
-        <summary lang="es_MX">Plugin para YouTube</summary>
-        <summary lang="fr_FR">Plugin pour YouTube</summary>
-        <summary lang="he_IL">תוסף עבור YouTube</summary>
-        <summary lang="hu_HU">YouTube kiegészítő</summary>
-        <summary lang="it_IT">Plugin per YouTube</summary>
-        <summary lang="ko_KR">유튜브 플러그인</summary>
-        <summary lang="nb_NO">Tillegg for YouTube</summary>
-        <summary lang="pl_PL">Wtyczka YouTube</summary>
-        <summary lang="ru_RU">Видеодополнение YouTube</summary>
-        <summary lang="tr_TR">YouTube için eklenti</summary>
-        <summary lang="vi_VN">Plugin dành cho YouTube</summary>
-        <summary lang="zh_CN">YouTube附加元件</summary>
-        <summary lang="zh_TW">YouTube附加元件</summary>
-        <description lang="bg_BG">YouTube е един от най-големите уеб сайтове за споделяне на видео в целия свят.</description>
-        <description lang="cs_CZ">YouTube je jedna z největších webových stránek světa sdílející video.</description>
-        <description lang="de_DE">YouTube ist eines der größten Video-Sharing-Websites der Welt.</description>
-        <description lang="el_GR">Το YouTube είναι μία από τις μεγαλύτερες ιστοσελίδες διαμοιρασμού βίντεο στον κόσμο.</description>
-        <description lang="en_GB">YouTube is one of the biggest video-sharing websites of the world.</description>
-        <description lang="es_ES">YouTube es uno de los sitios web más grande del mundo para compartir vídeos.</description>
-        <description lang="es_MX">YouTube es uno de los más grandes sitios web de intercambio de videos del mundo.</description>
-        <description lang="fr_FR">YouTube est l'un des plus grands sites de partage vidéos du monde.</description>
-        <description lang="he_IL">YouTube הוא אחד מאתרי שיתוף הווידאו הגדולים בעולם.</description>
-        <description lang="hu_HU">A YouTube világ egyik legnagyobb videómegosztó weboldala.</description>
-        <description lang="it_IT">YouTube è uno dei più grandi siti web di condivisione video del mondo.</description>
-        <description lang="ko_KR">유튜브는 세상에서 가장 큰 동영상 공유 사이트 중의 하나입니다.</description>
-        <description lang="nb_NO">YouTube er en av verdens største nettsider for videodeling.</description>
-        <description lang="pl_PL">YouTube jest jednym z największych na świecie serwisów udostępniania wideo.</description>
-        <description lang="ru_RU">YouTube - популярнейший видеохостинговый сайт, предоставляющий пользователям услуги хранения, доставки и показа видео.</description>
-        <description lang="tr_TR">YouTube, dünya üzerindeki en büyük video paylaşma platformlarından birisidir.</description>
-        <description lang="vi_VN">YouTube là một trong những trang web chia sẻ video lớn nhất trên thế giới.</description>
-        <description lang="zh_CN">「Youtube」是全世界最大的影片分享網站</description>
-        <description lang="zh_TW">「Youtube」是全世界最大的影片分享網站</description>
-        <disclaimer lang="cs_CZ">Tento plugin není schválen společností Google</disclaimer>
-        <disclaimer lang="de_DE">Dieses Plugin ist nicht von Google befürwortet</disclaimer>
-        <disclaimer lang="el_GR">Η παρούσα μικροεφαρμογή δεν έχει υϊοθετηθεί από την Google</disclaimer>
-        <disclaimer lang="en_GB">This plugin is not endorsed by Google</disclaimer>
-        <disclaimer lang="es_ES">Este add-on no está respaldado por Google</disclaimer>
-        <disclaimer lang="es_MX">Este add-on no está respaldado por Google</disclaimer>
-        <disclaimer lang="it_IT">Questo plugin non è promosso da Google</disclaimer>
-        <disclaimer lang="ko_KR">이 플러그인은 Google의 허가를 받지 않았습니다</disclaimer>
-        <disclaimer lang="pl_PL">Ta wtyczka nie jest zatwierdzona przez Google</disclaimer>
-        <disclaimer lang="ru_RU">Плагин не поддерживается Google</disclaimer>
-        <disclaimer lang="tr_TR">Bu eklenti Google tarafından üretilmemiştir</disclaimer>
-        <disclaimer lang="vi_VN">Plugin này không được xác nhận bởi Google</disclaimer>
-        <disclaimer lang="zh_TW">此附加元件未由Google支持</disclaimer>
     </extension>
-</addon>
-
-<addon id="repository.marcelveldt" version="1.0.3" name="Marcelveldt's BETA repository" provider-name="marcelveldt, finkleandeinhorn">
-	<requires>
-		<import addon="xbmc.addon" version="12.0.0"/>
-	</requires>
-	<extension point="xbmc.addon.repository" name="Marcelveldt's BETA repository">
-		<dir>
-			<info compressed="false">https://raw.githubusercontent.com/kodi-community-addons/repository.marcelveldt/master/repository/addons.xml</info>
-			<checksum>https://raw.githubusercontent.com/kodi-community-addons/repository.marcelveldt/master/repository/addons.xml.md5</checksum>
-			<datadir zip="true">https://raw.githubusercontent.com/kodi-community-addons/repository.marcelveldt/master/repository/</datadir>
-		</dir>
-		<dir minversion="18.9.700">
-			<info compressed="false">https://raw.githubusercontent.com/kodi-community-addons/repository.marcelveldt/master/matrix/addons.xml</info>
-			<checksum>https://raw.githubusercontent.com/kodi-community-addons/repository.marcelveldt/master/matrix/addons.xml.md5</checksum>
-			<datadir zip="true">https://raw.githubusercontent.com/kodi-community-addons/repository.marcelveldt/master/matrix/</datadir>
-		</dir>
-		<dir maxversion="18.9.0">
-			<info compressed="false">https://raw.githubusercontent.com/kodi-community-addons/repository.marcelveldt/master/olderversions/addons.xml</info>
-			<checksum>https://raw.githubusercontent.com/kodi-community-addons/repository.marcelveldt/master/olderversions/addons.xml.md5</checksum>
-			<datadir zip="true">https://raw.githubusercontent.com/kodi-community-addons/repository.marcelveldt/master/olderversions/</datadir>
-		</dir>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en">Kodi repository for beta/test versions of Marcelveldt's addons</summary>
-		<description lang="en">Kodi repository for beta/test versions of Marcelveldt's addons, for stable versions please just use the official Kodi repository. This repo is for test/beta versions of my work only</description>
-		<platform>all</platform>
-		<assets>
-			<icon>icon.png</icon>
-			<fanart>fanart.jpg</fanart>
-		</assets>
-	</extension>
 </addon>
 
 <addon id="repository.openmeta" name="OpenMeta Repository" version="1.4" provider-name="A4K">
@@ -590,63 +607,6 @@
         </extension>
     </addon>
 
-<addon id="repository.venom" name="[COLOR red]Venom[/COLOR] Repository" version="1.19" provider-name="Venom">
-	<extension point="xbmc.addon.repository" name="Venom Repo">
-		<dir minversion="18.0">
-			<info compressed="false">https://raw.githubusercontent.com/123Venom/repository.venom/main/repo/zips/addons.xml</info>
-			<checksum>https://raw.githubusercontent.com/123Venom/repository.venom/main/repo/zips/addons.xml.md5</checksum>
-			<datadir zip="true">https://raw.githubusercontent.com/123Venom/repository.venom/main/repo/zips/</datadir>
-		</dir>
-		<dir minversion="18.0" maxversion="18.9.0">
-			<info compressed="false">https://raw.githubusercontent.com/123Venom/repository.venom/main/leia/zips/addons.xml</info>
-			<checksum>https://raw.githubusercontent.com/123Venom/repository.venom/main/leia/zips/addons.xml.md5</checksum>
-			<datadir zip="true">https://raw.githubusercontent.com/123Venom/repository.venom/main/leia/zips/</datadir>
-		</dir>
-		<dir minversion="18.9.0">
-			<info compressed="false">https://raw.githubusercontent.com/123Venom/repository.venom/main/matrix/zips/addons.xml</info>
-			<checksum>https://raw.githubusercontent.com/123Venom/repository.venom/main/matrix/zips/addons.xml.md5</checksum>
-			<datadir zip="true">https://raw.githubusercontent.com/123Venom/repository.venom/main/matrix/zips/</datadir>
-		</dir>
-		<dir>
-			<info compressed="false">https://raw.githubusercontent.com/mr-kodi/repository.myaccounts/master/zips/addons.xml</info>
-			<checksum>https://raw.githubusercontent.com/mr-kodi/repository.myaccounts/master/zips/addons.xml.md5</checksum>
-			<datadir zip="true">https://raw.githubusercontent.com/mr-kodi/repository.myaccounts/master/zips/</datadir>
-		</dir>
-		<dir>
-			<info compressed="false">https://raw.githubusercontent.com/mr-kodi/repository.fenomscrapers/master/zips/addons.xml</info>
-			<checksum>https://raw.githubusercontent.com/mr-kodi/repository.fenomscrapers/master/zips/addons.xml.md5</checksum>
-			<datadir zip="true">https://raw.githubusercontent.com/mr-kodi/repository.fenomscrapers/master/zips/</datadir>
-		</dir>
-		<dir minversion="18.0" maxversion="18.9.0">
-			<info compressed="false">https://raw.githubusercontent.com/123Venom/repository.metahandler/main/leia/zips/addons.xml</info>
-			<checksum>https://raw.githubusercontent.com/123Venom/repository.metahandler/main/leia/zips/addons.xml.md5</checksum>
-			<datadir zip="true">https://raw.githubusercontent.com/123Venom/repository.metahandler/main/leia/zips/</datadir>
-		</dir>
-		<dir minversion="18.9.0">
-			<info compressed="false">https://raw.githubusercontent.com/123Venom/repository.metahandler/main/matrix/zips/addons.xml</info>
-			<checksum>https://raw.githubusercontent.com/123Venom/repository.metahandler/main/matrix/zips/addons.xml.md5</checksum>
-			<datadir zip="true">https://raw.githubusercontent.com/123Venom/repository.metahandler/main/matrix/zips/</datadir>
-		</dir>
-	</extension>
-
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en">[B][COLOR red]Venom[/COLOR][/B] - We do not host any of the contents streamed</summary>
-		<description lang="en">[B][COLOR red]Venom[/COLOR][/B] - This addon does not form part of the Kodi Media Centre. Please do not seek assistance with this addon from any of the Official Kodi Support Channels.The author does not host any of the content in this addon and takes no responsibility for content found.</description>
-		<disclaimer lang="en">The author is not responsible for the use of this addon. The author is not responsible for the content found using this addon. The author does not host or own any content found within this addon. The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation. This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.</disclaimer>
-		<platform>all</platform>
-		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
-		<assets>
-			<icon>icon.png</icon>
-			<fanart>fanart.jpg</fanart>
-			<screenshot></screenshot>
-		</assets>
-		<news>
-[B][COLOR red]Update - v1.19 - June 29, 2021[/COLOR][/B]
-[COLOR yellow]--[/COLOR][I] Moved to new repo.[/I]
-		</news>
-	</extension>
-</addon>
-
 <addon id="repository.zachmorris" name="Zach Morris Add-ons" version="1.0.0" provider-name="zachmorris">
     <extension point="xbmc.addon.repository" name="Zach Morris Add-ons">
         <info compressed="true">https://github.com/zach-morris/repository.zachmorris/raw/master/addons.xml</info>
@@ -657,6 +617,30 @@
         <summary>Zach Morris Add-ons</summary>
         <platform>all</platform>
     </extension>
+</addon>
+
+<addon id="script.exodusredux.artwork" version="1.0.2" name="Exodus Redux Artwork" provider-name="I-A-C">
+	<requires>
+		<import addon="xbmc.python" version="2.19.0"/>
+	</requires>
+	<extension point="xbmc.python.module" library="lib" />
+	<extension point="xbmc.addon.metadata">
+		<summary>Themes for the Exodus Redux Addon</summary>
+		<description></description>
+		<platform>all</platform>
+	</extension>
+</addon>
+
+<addon id="script.exodusredux.metadata" version="1.0.2" name="Exodus Redux Metadata" provider-name="I-A-C">
+	<requires>
+		<import addon="xbmc.python" version="2.19.0"/>
+	</requires>
+	<extension point="xbmc.python.module" library="lib" />
+	<extension point="xbmc.addon.metadata">
+		<summary>Metadata for the Exodus Redux Addon</summary>
+		<description>Metadata for Exodus Redux are maintained separately to make distribution of the the addon itself easier/faster.</description>
+		<platform>all</platform>
+	</extension>
 </addon>
 
 <addon id="script.extendedinfo" name="OpenInfo" version="6.2.4" provider-name="A4K">
@@ -726,49 +710,6 @@
   </extension>
 </addon>
 
-<addon id="script.module.arrow"
-       name="arrow"
-       version="0.15.5"
-       provider-name="crsmithdev, Razzeee">
-  <requires>
-    <import addon="xbmc.python" version="2.25.0"/>
-    <import addon="script.module.dateutil" version="2.8.1"/>
-    <import addon="script.module.backports.functools_lru_cache" version="1.5.0"/>
-  </requires>
-  <extension point="xbmc.python.module"
-             library="lib" />
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">Arrow: better dates and times for Python</summary>
-    <description lang="en">Packed for Kodi from https://github.com/crsmithdev/arrow</description>
-    <platform>all</platform>
-    <license>Apache2</license>
-    <source>https://github.com/Razzeee/script.module.arrow</source>
-    <email>beenje AT gmail.com</email>
-    <assets>
-      <icon>icon.png</icon>
-    </assets>
-  </extension>
-</addon>
-
-<addon id="script.module.backports.functools_lru_cache"
-       name="backports.functools_lru_cache"
-       version="1.6.1"
-       provider-name="Jason R. Coombs">
-  <requires>
-    <import addon="xbmc.python" version="2.14.0"/>
-  </requires>
-  <extension point="xbmc.python.module"
-             library="lib" />
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">Backport of functools.lru_cache from Python 3.3</summary>
-    <description lang="en">Packed for Kodi from https://github.com/jaraco/backports.functools_lru_cache</description>
-    <platform>all</platform>
-    <license>MIT</license>
-    <website>https://github.com/jaraco/backports.functools_lru_cache</website>
-    <source>https://github.com/Razzeee/script.module.backports.functools_lru_cache</source>
-  </extension>
-</addon>
-
 <addon id="script.module.beautifulsoup"
        name="BeautifulSoup"
        version="3.2.1"
@@ -787,43 +728,24 @@
   </extension>
 </addon>
 
-<addon id="script.module.beautifulsoup4" name="BeautifulSoup4" version="4.9.3" provider-name="Leonard Richardson (leonardr@segfault.org)">
-	<requires>
-		<import addon="xbmc.python" version="2.26.0"/>
-		<import addon="script.module.soupsieve" version="1.9.6"/>
-	</requires>
-	<extension point="xbmc.python.module" library="lib" />
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en_GB">Screen-scraping library</summary>
-		<description lang="en_GB">Beautiful Soup is a library that makes it easy to scrape information from web pages. It sits atop an HTML or XML parser, providing Pythonic idioms for iterating, searching, and modifying the parse tree.</description>
-		<license>MIT</license>
-		<platform>all</platform>
-		<website>https://www.crummy.com/software/BeautifulSoup/</website>
-		<source>https://code.launchpad.net/beautifulsoup</source>
-		<assets>
-			<icon>icon.png</icon>
-		</assets>
-	</extension>
-</addon>
-
-<addon id="script.module.certifi"
-       name="certifi"
-       version="2019.9.11"
-       provider-name="Kenneth Reitz">
+<addon id="script.module.beautifulsoup4"
+       name="BeautifulSoup4"
+       version="4.6.2"
+       provider-name="Leonard Richardson (leonardr@segfault.org)">
   <requires>
-    <import addon="xbmc.python" version="2.25.0"/>
+    <import addon="xbmc.python"
+             version="2.25.0"/>
   </requires>
   <extension point="xbmc.python.module"
              library="lib" />
   <extension point="xbmc.addon.metadata">
-    <summary lang="en_GB">Python package for providing Mozilla's CA Bundle.</summary>
-    <description lang="en_GB">Certifi is a carefully curated collection of Root Certificates for validating the trustworthiness of SSL certificates while verifying the identity of TLS hosts. It has been extracted from the Requests project.</description>
-    <license>MPL-2.0</license>
-    <website>https://certifi.io</website>
-    <source>https://github.com/certifi/python-certifi</source>
-    <email>freso.dk AT gmail.com</email>
+    <summary lang="en_GB">Screen-scraping library</summary>
+    <description lang="en_GB">Beautiful Soup is a library that makes it easy to scrape information from web pages. It sits atop an HTML or XML parser, providing Pythonic idioms for iterating, searching, and modifying the parse tree.</description>
+    <license>MIT</license>
+    <platform>all</platform>
+    <website>https://www.crummy.com/software/BeautifulSoup/</website>
     <assets>
-      <icon>resources/icon.png</icon>
+      <icon>icon.png</icon>
     </assets>
   </extension>
 </addon>
@@ -852,10 +774,9 @@
 
 <addon id="script.module.cherrypy"
        name="CherryPy Kodi module"
-       version="12.0.1"
+       version="12.0.0"
        provider-name="marcelveldt, CherryPy Team">
     <requires>
-        <import addon="xbmc.python" version="2.24.0"/>
         <import addon="script.module.six" version="1.9.0"/>
     </requires>
     <extension point="xbmc.python.module" library="lib" />
@@ -866,7 +787,7 @@
             CherryPy is now more than ten years old and it is has proven to be very fast and stable. It is being used in production by many sites, from the simplest to the most demanding.
         </description>
         <license>BSD</license>
-        <source>https://github.com/marcelveldt/script.module.cherrypy</source>
+        <source>https://github.com/kodi-community-addons/script.module.cherrypy</source>
         <platform>all</platform>
     </extension>
 </addon>
@@ -884,26 +805,16 @@
   </extension>
 </addon>
 
-<addon id="script.module.dateutil"
-       name="python-dateutil"
-       version="2.8.1"
-       provider-name="Paul Ganssle, Gustavo Niemeyer">
-  <requires>
-    <import addon="xbmc.python" version="2.25.0"/>
-    <import addon="script.module.six" version="1.12.0"/>
-  </requires>
-  <extension point="xbmc.python.module"
-             library="lib" />
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en_GB">Extensions to the standard Python datetime module</summary>
-    <description lang="en_GB">The dateutil module provides powerful extensions to the standard datetime module, available in Python.</description>
-    <license>Apache-2.0, BSD-3-Clause</license>
-    <website>https://dateutil.readthedocs.io/en/stable/</website>
-    <source>https://github.com/dateutil/dateutil</source>
-    <assets>
-      <icon>icon.png</icon>
-    </assets>
-  </extension>
+<addon id="script.module.exodusredux" name="Exodus Redux Module" version="2.0.5" provider-name="I-A-C">
+	<requires>
+		<import addon="xbmc.python" version="2.1.0" />
+		<import addon="script.module.beautifulsoup4"/>
+	</requires>
+	<extension point="xbmc.python.module" library="lib" />
+	<extension point="xbmc.addon.metadata">
+		<platform>all</platform>
+		<summary lang="en">Exodus Redux</summary>
+	</extension>
 </addon>
 
 <addon id="script.module.feedparser" name="feedparser" version="5.2.1" provider-name="Kurt McKee">
@@ -1039,14 +950,15 @@
 
 <addon id="script.module.metadatautils"
        name="Metadata and Artwork module"
-       version="1.0.40"
+       version="1.0.37"
        provider-name="marcelveldt and others">
     <requires>
-        <import addon="xbmc.python" version="2.24.0"/>
+        <!-- <import addon="xbmc.python" version="3.0.0"/> -->
         <import addon="script.module.requests" version="2.3.0"/>
         <import addon="script.module.beautifulsoup" version="3.0.8" />
+        <import addon="script.module.beautifulsoup4" version="4.0.0" />
         <import addon="script.module.thetvdb" version="0.0.1" />
-        <import addon="script.module.musicbrainz" version="0.0.1" />
+        <import addon="script.module.musicbrainz" version="0.0.1"/>
         <import addon="script.module.simplecache" version="1.0.0"/>
         <import addon="script.module.arrow" version="0.6.0"/>
     </requires>
@@ -1057,18 +969,6 @@
         <description lang="en">The metadata and artwork module for Kodi provides rich metadata, including artwork for various metatypes by scraping (and caching) this information from sites like TMDB, musicbrainz and fanart.tv. This product uses the TMDb API but is not endorsed or certified by TMDb.</description>
 		<description lang="es">El módulo de metadatos e ilustraciones para Kodi proporciona metadatos enriquecidos, que incluyen ilustraciones paravarios metatipos al raspar (y almacenar en caché) esta información se extrae de sitios como TMDB, musicbrainz and fanart.tv.[CR][CR]Este producto utiliza la API de TMDb pero no está avalado ni certificado por TMDb</description>
         <news>
-v1.0.40
-- Fix for missing TADB key
-v1.0.39
-- Remove unicode
-- Fix for break site Kyradb
-- Add support for TADB encoding Ascii key
-- Add new info for TMDB (number_of_seasons, number_of_episodes and Seasons)
-v1.0.38
-- fix for error 'sys' is not defined for extrafanart
-- fix for google
-- fix for colecting imdb.250 (movie and tv)
-- add new rotentomatoes info from omdb
 v1.0.37
 - Smal fix for theaudiodb scraper
 v1.0.36
@@ -1361,7 +1261,7 @@ v1.0.25 (marcelveldt)
   </extension>
 </addon>
 
-<addon id="script.module.resolveurl" name="ResolveURL" version="5.1.52" provider-name="gujal">
+<addon id="script.module.resolveurl" name="ResolveURL" version="5.1.61" provider-name="gujal">
     <requires>
         <!-- <import addon="xbmc.python" version="3.0.0" /> -->
         <import addon="script.module.six" />
@@ -1405,24 +1305,6 @@ v1.0.25 (marcelveldt)
   <extension library="lib" point="xbmc.python.module" />
 </addon>
 
-<addon id="script.module.simplecache" name="Simple Cache Module" version="1.0.20" provider-name="sualfred">
-    <requires>
-        <import addon="xbmc.python" version="2.26.0"/>
-    </requires>
-    <extension point="xbmc.python.module" library="lib" />
-    <extension point="xbmc.addon.metadata">
-        <summary lang="en_GB">Provides a simple file- and memory based cache for Kodi addons</summary>
-        <description lang="en_GB">Provides a simple file- and memory based cache for Kodi addons. Based on the original work of Marcelveldt.</description>
-        <platform>all</platform>
-        <license>Apache 2.0</license>
-        <forum/>
-        <source>https://github.com/sualfred/script.module.simplecache</source>
-        <assets>
-            <icon>resources/icon.png</icon>
-        </assets>
-    </extension>
-</addon>
-
 <addon id="script.module.simplejson"
        name="simplejson"
        version="3.16.1"
@@ -1441,28 +1323,6 @@ v1.0.25 (marcelveldt)
     <license>MIT License, Academic Free License v. 2.1</license>
     <website>https://pypi.org/project/simplejson/</website>
     <source>https://github.com/simplejson/simplejson</source>
-  </extension>
-</addon>
-
-<addon id="script.module.six"
-       name="six"
-       version="1.15.0"
-       provider-name="gutworth">
-  <requires>
-    <import addon="xbmc.python"
-    		version="2.14.0"/>
-  </requires>
-  <extension point="xbmc.python.module" library="lib" />
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en_GB">Python 2 and 3 compatibility utilities.</summary>
-    <description lang="en_GB">Six is a Python 2 and 3 compatibility library. It provides utility functions for smoothing over the differences between the Python versions with the goal of writing Python code that is compatible on both Python versions. See the documentation for more information on what is provided.</description>
-    <platform>all</platform>
-    <license>MIT</license>
-    <source>https://github.com/benjaminp/six</source>
-    <website>https://pypi.org/project/six/</website>
-    <assets>
-      <icon>icon.png</icon>
-    </assets>
   </extension>
 </addon>
 
@@ -1578,28 +1438,6 @@ v1.0.25 (marcelveldt)
         </extension>
 </addon>
 
-<addon id="script.module.urllib3"
-       name="urllib3"
-       version="1.25.6"
-       provider-name="Andrey Petrov">
-  <requires>
-    <import addon="xbmc.python" version="2.25.0"/>
-  </requires>
-  <extension point="xbmc.python.module"
-             library="lib" />
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en_GB">HTTP library with thread-safe connection pooling, file post, and more.</summary>
-    <description lang="en_GB">Packed for KODI from https://pypi.org/project/urllib3/</description>
-    <license>MIT</license>
-    <website>https://urllib3.readthedocs.io/en/latest/</website>
-    <source>https://github.com/urllib3/urllib3</source>
-    <email>freso.dk AT gmail.com</email>
-    <assets>
-      <icon>resources/icon.png</icon>
-    </assets>
-  </extension>
-</addon>
-
 <addon id="script.module.urlresolver" name="URLResolver" version="5.1.6" provider-name="tvaddons">
     <requires>
         <import addon="xbmc.python" version="2.1.0" />
@@ -1638,27 +1476,27 @@ v1.0.25 (marcelveldt)
     </extension>
 </addon>
 
-    <addon id="script.skin.helper.service" name="Skin Helper Service" version="1.1.33" provider-name="marcelveldt, wuff">
-    <requires>
-	<!-- <import addon="xbmc.python" version="3.0.0"/> -->
-        <import addon="xbmc.addon" version="12.0.0"/>
+	<addon id="script.skin.helper.service" name="Skin Helper Service" version="1.1.32" provider-name="marcelveldt, cartman.dos">
+	<requires>
+		<import addon="xbmc.python" version="2.13.0"/>
+		<import addon="xbmc.addon" version="12.0.0"/>
         <import addon="script.module.simplejson" version="3.3.0"/>
         <import addon="script.module.simplecache" version="1.0.0"/>
         <import addon="script.module.metadatautils" version="1.0.0"/>
-        <import addon="script.module.cherrypy" version="12.0.0"/>
-    </requires>
+        <import addon="script.module.cherrypy" version="11.0.1"/>
+	</requires>
 
     <extension point="kodi.context.item">
         <menu id="kodi.core.main">
             <item library="resources\lib\context_animatedart.py">
               <label>32024</label>
-              <visible>!IsEmpty(Window(Home).Property(SkinHelper.EnableAnimatedPosters)) + Container.Content(movies)</visible>
+              <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.EnableAnimatedPosters)) + Container.Content(movies)</visible>
             </item>
             <item library="resources\lib\context_pvr.py">
                 <label>32023</label>
                 <description>PVR artwork Configuration</description>
                 <visible>
-                    !IsEmpty(Window(Home).Property(SkinHelper.EnablePvrThumbs)) +
+                    !String.IsEmpty(Window(Home).Property(SkinHelper.EnablePvrThumbs)) +
                     [Window.IsActive(MyPVRChannels.xml) |
                     Window.IsActive(MyPVRGuide.xml) | Window.IsActive(MyPVRRecordings.xml) |
                     Window.IsActive(MyPVRTimers.xml) | Window.IsActive(MyPVRSearch.xml)]
@@ -1668,52 +1506,28 @@ v1.0.25 (marcelveldt)
                 <label>32023</label>
                 <description>Music artwork Configuration</description>
                 <visible>
-                    !IsEmpty(Window(Home).Property(SkinHelper.EnableMusicArt)) +
+                    !String.IsEmpty(Window(Home).Property(SkinHelper.EnableMusicArt)) +
                     [Container.Content(albums) | Container.Content(artists) | Container.Content(songs)]
                 </visible>
             </item>
         </menu>
-    </extension>
+	</extension>
 
     <extension point="xbmc.python.library" library="default.py" />
-    <extension point="xbmc.python.pluginsource" library="plugin.py" />
-    <extension library="service.py" point="xbmc.service" start="login" />
-
-    <extension point="xbmc.addon.metadata">
-        <summary lang="en">Helper service for Kodi skins</summary>
-        <description>Helper service for Kodi skins</description>
-        <news>
-v1.1.31
-- fix urllib.parse vs urlparse in utils for Kodi 18
-- add commits from Angelinas1
-
-v1.1.30
-- fix module import of context menu items
-
-v1.1.29
-- compatibility change for CherryPy 17.4.2 and bump version requirement
-
-v1.1.28
-- replace xbmc.LOGNOTICE with xbmc.LOGINFO as LOGNOTICE was removed
-
-v1.1.27
-- Replace xbmc.translatePath with xbmcvfs.translatePath for Kodi 19 compat
-
-v1.1.26
-- Remove python dependency for Kodi18/19 compatibility
-- minor fix
-
-v1.1.25
-- Kodi 19/Python 3 compatibility
-- minor fixes
-        </news>
-        <language></language>
-        <platform>all</platform>
-        <license>GPL v2.0</license>
-        <forum>http://forum.kodi.tv/showthread.php?tid=235676</forum>
-        <website></website>
-        <source>https://github.com/AnonTester/script.skin.helper.service</source>
+	<extension point="xbmc.python.pluginsource" library="plugin.py">
     </extension>
+	<extension library="service.py" point="xbmc.service" start="login" />
+
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Helper service for Kodi skins</summary>
+        <description>Helper service for Kodi skins</description>
+		<language></language>
+		<platform>all</platform>
+		<license>GPL v2.0</license>
+		<forum>http://forum.kodi.tv/showthread.php?tid=235676</forum>
+		<website></website>
+		<source>https://github.com/cartmandos/script.skin.helper.service</source>
+	</extension>
 </addon>
 
 <addon id="script.video.F4mProxy" name="F4mProxy" version="2.8.8" provider-name="Shani">
