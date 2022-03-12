@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
-<addon id="context.venom" name="Venom - Global Context Menu Items" provider-name="Venom" version="1.2.0">
+<addon id="context.venom" name="Venom - Global Context Menu Items" provider-name="Venom" version="1.2.1">
 	<requires>
 		<import addon="script.module.requests" version="2.19.1" />
 	</requires>
@@ -136,8 +136,8 @@
 			<screenshot></screenshot>
 		</assets>
 		<news>
-[B][COLOR red]Update - v1.2.0 - June 12, 2021[/COLOR][/B]
-[COLOR yellow]--[/COLOR][I] Fix for missing tvshow_poster that breaks [B]Browse Series[/B] when Venom addon is set to [B]Direct Progress Scraping[/B].[/I]
+[B][COLOR red]Update - v1.2.1 - Nov. 04, 2021[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] The "Rescrape Item" context menu now has a pop-up select method of 4 possible choices to rescrape.  You can set a preferred default action in the settings to bypass the select dialog pop up.[/I]
 		</news>
 	</extension>
 </addon>
@@ -326,8 +326,9 @@
 
 </addon>
 
-<addon id="plugin.video.venom" name="[COLOR red]Venom[/COLOR]" provider-name="Venom" version="5.1.9">
+<addon id="plugin.video.venom" name="[COLOR red]Venom[/COLOR]" provider-name="Venom" version="5.2.0">
 	<requires>
+		<import addon="xbmc.python" version="2.26.0"/>
 		<import addon="context.venom" />
 		<import addon="script.module.myaccounts" />
 		<import addon="script.module.fenomscrapers" />
@@ -335,7 +336,6 @@
 		<import addon="script.module.beautifulsoup4" />
 		<import addon="script.module.metahandler" optional="true" />
 		<import addon="plugin.video.youtube" optional="true" />
-		<import addon="script.module.addon.signals" optional="true" />
 	</requires>
 	<extension library="venom.py" point="xbmc.python.pluginsource">
 		<provides>video</provides>
@@ -360,21 +360,14 @@
 			<screenshot>resources/screenshots/screenshot003.jpg</screenshot>
 		</assets>
 		<news>
-[B][COLOR red]Update - v5.1.9 - June 19, 2021[/COLOR][/B]
-[COLOR yellow]--[/COLOR][I] Added new setting to "Sources Options" called "Terminate on Cloud Sources".  Now if cloud
-    sources are found you can force the scrape process to terminate.[/I]
-[COLOR yellow]--[/COLOR][I] Resume dialog now utilizes the Kodi Matrix/19 new "yesnocustom" dialog.  Matrix users can
-    now chose from "Start from Beginning", "Resume" or "Cancel Playback". Leia users
-    can only see the first two options[/I]
-[COLOR yellow]--[/COLOR][I] I regret to inform user that the next release will drop Kodi 18 support.  I no longer desire to
-    maintain code to which I will never use again.  The Venom repo will be updated so
-    Kodi 18 users can still access an 18 version, but it will no longer be developed.
-    Matrix users will have access to a new github branch for future development.[/I]
+[B][COLOR red]Update - v5.2.0 - Nov. 13, 2021[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] Update for Leia users for compatibility with latest version of Fenom Scrapers.[/I]
+[COLOR yellow]--[/COLOR][I] This is a one shot deal to get Venom back to working, there will be no further updates and it is advised to update to Matrix.[/I]
 		</news>
 	</extension>
 </addon>
 
-<addon id="plugin.video.youtube" name="YouTube" version="6.8.16" provider-name="anxdpanic, bromix">
+<addon id="plugin.video.youtube" name="YouTube" version="6.8.18" provider-name="anxdpanic, bromix">
     <requires>
         <import addon="xbmc.python" version="2.20.0"/>
         <import addon="script.module.six" version="1.11.0"/>
@@ -388,8 +381,8 @@
     <extension point="xbmc.python.module" library="resources/lib/"/>
     <extension point="xbmc.addon.metadata">
         <news>
-[fix] Fix playback of some content (ie. Music videos)
-[fix] Calcuate n parameter to enable ratebypass
+[fix] Fix to_str |contrib: RNavega|
+[fix] Fix playback buffering |contrib: RNavega|
 [lang] translation updates from Weblate
         </news>
         <assets>
@@ -412,11 +405,13 @@
         <summary lang="fr_FR">Plugin pour YouTube</summary>
         <summary lang="he_IL">תוסף עבור YouTube</summary>
         <summary lang="hu_HU">YouTube kiegészítő</summary>
+        <summary lang="it_IT">Plugin per YouTube</summary>
         <summary lang="ko_KR">유튜브 플러그인</summary>
         <summary lang="nb_NO">Tillegg for YouTube</summary>
         <summary lang="pl_PL">Wtyczka YouTube</summary>
         <summary lang="ru_RU">Видеодополнение YouTube</summary>
         <summary lang="tr_TR">YouTube için eklenti</summary>
+        <summary lang="vi_VN">Plugin dành cho YouTube</summary>
         <summary lang="zh_CN">YouTube附加元件</summary>
         <summary lang="zh_TW">YouTube附加元件</summary>
         <description lang="bg_BG">YouTube е един от най-големите уеб сайтове за споделяне на видео в целия свят.</description>
@@ -429,11 +424,13 @@
         <description lang="fr_FR">YouTube est l'un des plus grands sites de partage vidéos du monde.</description>
         <description lang="he_IL">YouTube הוא אחד מאתרי שיתוף הווידאו הגדולים בעולם.</description>
         <description lang="hu_HU">A YouTube világ egyik legnagyobb videómegosztó weboldala.</description>
+        <description lang="it_IT">YouTube è uno dei più grandi siti web di condivisione video del mondo.</description>
         <description lang="ko_KR">유튜브는 세상에서 가장 큰 동영상 공유 사이트 중의 하나입니다.</description>
         <description lang="nb_NO">YouTube er en av verdens største nettsider for videodeling.</description>
         <description lang="pl_PL">YouTube jest jednym z największych na świecie serwisów udostępniania wideo.</description>
         <description lang="ru_RU">YouTube - популярнейший видеохостинговый сайт, предоставляющий пользователям услуги хранения, доставки и показа видео.</description>
         <description lang="tr_TR">YouTube, dünya üzerindeki en büyük video paylaşma platformlarından birisidir.</description>
+        <description lang="vi_VN">YouTube là một trong những trang web chia sẻ video lớn nhất trên thế giới.</description>
         <description lang="zh_CN">「Youtube」是全世界最大的影片分享網站</description>
         <description lang="zh_TW">「Youtube」是全世界最大的影片分享網站</description>
         <disclaimer lang="cs_CZ">Tento plugin není schválen společností Google</disclaimer>
@@ -442,9 +439,12 @@
         <disclaimer lang="en_GB">This plugin is not endorsed by Google</disclaimer>
         <disclaimer lang="es_ES">Este add-on no está respaldado por Google</disclaimer>
         <disclaimer lang="es_MX">Este add-on no está respaldado por Google</disclaimer>
+        <disclaimer lang="it_IT">Questo plugin non è promosso da Google</disclaimer>
+        <disclaimer lang="ko_KR">이 플러그인은 Google의 허가를 받지 않았습니다</disclaimer>
         <disclaimer lang="pl_PL">Ta wtyczka nie jest zatwierdzona przez Google</disclaimer>
         <disclaimer lang="ru_RU">Плагин не поддерживается Google</disclaimer>
         <disclaimer lang="tr_TR">Bu eklenti Google tarafından üretilmemiştir</disclaimer>
+        <disclaimer lang="vi_VN">Plugin này không được xác nhận bởi Google</disclaimer>
         <disclaimer lang="zh_TW">此附加元件未由Google支持</disclaimer>
     </extension>
 </addon>
@@ -1361,11 +1361,12 @@ v1.0.25 (marcelveldt)
   </extension>
 </addon>
 
-<addon id="script.module.resolveurl" name="ResolveURL" version="5.1.44" provider-name="gujal">
+<addon id="script.module.resolveurl" name="ResolveURL" version="5.1.52" provider-name="gujal">
     <requires>
         <!-- <import addon="xbmc.python" version="3.0.0" /> -->
         <import addon="script.module.six" />
         <import addon="script.module.kodi-six" />
+        <import addon="script.module.certifi" />
         <import addon="plugin.video.youtube" optional="true" />
         <import addon="script.module.python.twitch" optional="true" />
         <import addon="plugin.googledrive" optional="true" />
