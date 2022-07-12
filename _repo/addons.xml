@@ -1,5 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
+<addon id="plugin.program.projectxwizard" name="[COLOR limegreen]Project X[/COLOR] Wizard" version="2.0.7" provider-name="Mr X">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0" />
+        <import addon="script.module.requests" />
+        <import addon="script.module.six" />
+        <import addon="script.kodi.android.update" optional="true" version="1.1.7" />
+        <import addon="script.speedtester" optional="true" version="1.1.2" />
+    </requires>
+
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>executable</provides>
+    </extension>
+
+    <extension point="xbmc.service" library="startup.py" start="startup" />
+
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">[COLOR limegreen]Project X[/COLOR] Wizard</summary>
+        <description lang="en">[COLOR limegreen]Project X[/COLOR] Wizard offers many maintenance features, selective add-on data saving, and automated build installs.</description>
+        <platform>all</platform>
+        <reuselanguageinvoker>false</reuselanguageinvoker>
+        <source></source>
+        <news>
+        </news>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.png</fanart>
+        </assets>
+    </extension>
+</addon>
+
 <addon id="plugin.video.projectx" name="Project X" version="1.0" provider-name="Mr X">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
