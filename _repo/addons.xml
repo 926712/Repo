@@ -30,7 +30,7 @@
     </extension>
 </addon>
 
-<addon id="plugin.video.projectx" name="Project X" version="1.0" provider-name="Mr X">
+<addon id="plugin.video.projectx" name="Project X" version="1.1" provider-name="Mr X">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
     <import addon="script.module.requests" />
